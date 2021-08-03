@@ -113,6 +113,7 @@
   align-items: center;
   width: 100%;
   color: #fff;
+  transition: all 0.5s;
 }
 
 #partners .section02 .inner .group p {

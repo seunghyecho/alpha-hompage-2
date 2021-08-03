@@ -89,6 +89,24 @@
   text-align: left;
   letter-spacing: -0.01;
   color: #fff;
+  animation: fadeInDown;
+}
+
+#gnb .inner ul li:nth-of-type(1) a {
+  animation-duration: 0.2s;
+  opacity: 1;
+}
+#gnb .inner ul li:nth-of-type(2) a {
+  opacity: 1;
+  animation-duration: 0.4s;
+}
+#gnb .inner ul li:nth-of-type(3) a {
+  opacity: 1;
+  animation-duration: 0.6s;
+}
+#gnb .inner ul li:nth-of-type(4) a {
+  opacity: 1;
+  animation-duration: 0.8s;
 }
 @media (max-width: 1280px) {
   .popup .inner {

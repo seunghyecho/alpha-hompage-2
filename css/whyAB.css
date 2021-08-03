@@ -118,7 +118,7 @@
 
 #whyAb .section02 .inner .sectionInfo.animate__fadeInUp {
   animation         : fadeInUp;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   opacity           : 1;
 }
 
@@ -178,7 +178,7 @@
 
 #whyAb .section03 .sectionInfo.sectionInfo.animate__fadeInUp {
   animation         : fadeInUp;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   opacity           : 1;
 }
 
@@ -200,18 +200,32 @@
 }
 #whyAb .section03 .sectionImg{
   margin             : 100px auto;
-  width              : 480px;
-  height             : 480px;
+  width              : 960px;
+  height             : 100%;
   background-repeat  : no-repeat;
   background-size    : cover;
   background-position: center;
-  background-image   : url(../assets/video/pc_03_1.gif);
 }
 
 /* section04 */
 #whyAb .section04 {
+  margin: 0 0 400px;
   width : 100%;
   height: 100%;
+  position: relative;
+}
+#whyAb .section04::before{
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -100px;
+  width: 960px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url(../assets/WhyAB/p03_BG_03.svg);
 }
 
 #whyAb .section04 .inner {
@@ -229,7 +243,7 @@
 
 #whyAb .section04 .animate__fadeInUp {
   animation         : fadeInUp;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   opacity           : 1;
 }
 
@@ -248,7 +262,7 @@
 
 #whyAb .section05 .animate__fadeInUp {
   animation         : fadeInUp;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   opacity           : 1;
 }
 
@@ -292,7 +306,7 @@
 
 #whyAb .section06 .inner h2.animate__fadeInUp {
   animation         : fadeInUp;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   opacity           : 1;
 }
 
@@ -311,7 +325,7 @@
   line-height   : 1;
   letter-spacing: -0.03em;
   color         : rgba(255, 255, 255, 0.2);
-  transition    : all 1s;
+  transition    : all 0.5s;
 }
 
 #whyAb .section06 .imgWrap .hoverWrap .item:nth-of-type(2) {
@@ -335,7 +349,7 @@
   background-size  : cover;
   z-index          : -1;
   display: block;
-  transition       : all 1s;
+  transition       : all 0.5s;
 }
 
 #whyAb .section06 .imgWrap .hoverWrap .item:hover:nth-of-type(1)::before {
@@ -498,7 +512,6 @@
     margin-top      : 20px;
     width           : 100%;
     height          : 320px;
-    background-image: url(../assets/WhyAB/img_section03_m.svg);
   }
 
   /* section04 */

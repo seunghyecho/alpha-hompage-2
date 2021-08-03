@@ -1,0 +1,109 @@
+.bodyFix .pc-main{
+  margin-top: -100px;
+  position: relative;
+  height: 100vh;
+  overflow-y: hidden;
+  z-index: -1;
+}
+.video {
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-image: url(../assets/video/pc_02_1920-1080.gif);
+}
+/* mb-main */
+
+.mb-main .section01 .inner {
+  width: 100%;
+  position: relative;
+}
+
+.mb-main .section01 .inner .videoWrap {
+  padding: 0 20px;
+  height: 639px;
+  position: relative;
+}
+
+.mb-main .section01 .inner .videoWrap .textWrap {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: max-content;
+  /* height    : 150px; */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.mb-main .section01 .inner .videoWrap .textWrap h1 {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.mb-main .section01 .inner .scrollBtn {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 37px;
+  height: 45px;
+  background-repeat: no-repeat;
+  background-size: 25px 34px;
+  background-position: center;
+  background-image: url(../assets/icon/icon_scroll.svg);
+}
+
+.mb-main .section02 .inner {
+  padding: 100px 20px;
+}
+
+.mb-main .section02 .inner .tit {
+  width: 154px;
+  height: 54px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  background-image: url(../assets/text/text-active.svg);
+}
+
+.mb-main .section02 .inner h1 {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.mb-main .section02 .arrowBtn {
+  margin-top: 20px;
+}
+
+.mb-main .section02 .arrowBtn span {
+  position: relative;
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+.mb-main .section02 .arrowBtn:hover span {
+  color: #4c4c4c;
+}
+
+.mb-main .section02 .arrowBtn span::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -15px;
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../assets/icon/icon_arrow_next.svg);
+  transition: all 0.5s;
+}
+
+.mb-main .section02 .arrowBtn:hover span::after {
+  background-image: url(../assets/icon/icon_arrow_next_g.svg);
+}

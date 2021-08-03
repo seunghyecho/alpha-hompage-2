@@ -1,0 +1,310 @@
+@charset "UTF-8";
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+a:active,
+a:hover,
+a:focus {
+  cursor: url(../assets/cursor/cursor_Hover.svg), auto;
+}
+
+/* ----------------------------- COMMON ------------------------------- */
+body {
+  background : #010101;
+  font-size  : 100%;
+  font-family: Pretendard;
+  font-weight: 300;
+  color      : #fff;
+  cursor     : url(../assets/cursor/cursor_Basic.svg), auto;
+}
+
+/* 마우스로 드래그하여 선택된 부분의 색상 변경 */
+::-moz-selection {
+  background: #fdad15;
+  color     : #fff;
+}
+
+::selection {
+  background: #fdad15;
+  color     : #fff;
+}
+
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover,
+h5:hover,
+h6:hover,
+p:hover {
+  cursor: url(../assets/cursor/cursor_Hover.svg), auto;
+}
+
+/* index 원페이지 */
+.mb {
+  display: none;
+}
+
+.pc {
+  display: block;
+}
+
+/* header */
+
+header .inner {
+  width          : 1280px;
+  height         : 100px;
+  margin         : 0 auto;
+  display        : flex;
+  justify-content: space-between;
+  align-items    : center;
+}
+
+header .inner .logo a {
+  width              : 60px;
+  height             : 60px;
+  background-position: center;
+  background-repeat  : no-repeat;
+  background-size    : cover;
+  background-image   : url(../assets/gnb/GNB_AB_logo.svg);
+}
+
+header .inner .gnb ul {
+  display: flex;
+}
+
+header .inner .gnb ul li {
+  width: 115px;
+}
+
+header .inner .gnb ul li a {
+  font-size : 16px;
+  text-align: center;
+  color     : #ffffff;
+  transition: all 0.5s;
+}
+
+header .inner .gnb ul li:hover a {
+  font-weight: 600;
+  color      : #4c4c4c;
+}
+
+footer {
+  background-color: #fff;
+}
+
+footer .inner {
+  width   : 1280px;
+  margin  : 0 auto;
+  padding : 40px 0;
+  position: relative;
+}
+
+footer .inner .logo::before {
+  display            : inline-block;
+  content            : "";
+  width              : 40px;
+  height             : 40px;
+  background-position: center;
+  background-repeat  : no-repeat;
+  background-size    : cover;
+  background-image   : url(../assets/footer/footer_AB_Logo.svg);
+}
+
+footer .inner .logo a {
+  display    : flex;
+  align-items: center;
+}
+
+footer .inner .logo h1 {
+  padding-left: 16px;
+  display     : inline-block;
+  font-size   : 25px;
+  color       : #000;
+}
+
+footer .inner .company {
+  margin-top: 17px;
+  font-size : 20px;
+  color     : #000;
+}
+
+footer .inner .info {
+  margin-top: 25px;
+}
+
+footer .inner .info dl {
+  margin: 5px 0;
+}
+
+footer .inner .info dt,
+footer .inner .info dd {
+  display    : inline-block;
+  font-size  : 18px;
+  font-weight: 400;
+  color      : #000;
+}
+
+footer .inner .info dt {
+  width: 8%;
+}
+
+footer .inner .btmInfo {
+  position: absolute;
+  right   : 0;
+}
+
+footer .inner .btmInfo ul li {
+  margin-left: 25px;
+  display    : inline-block;
+}
+
+footer .inner .btmInfo ul li a {
+  color: #000;
+}
+
+footer .inner .btmInfo ul li a:hover {
+  color: #c4c4c4;
+}
+
+/* 화면 너비가 0 ~ 1280px: 피시-------------------------------------- */
+@media (max-width: 1280px) {
+  .bodyFix {
+    width   : 100%;
+    height  : 100%;
+    overflow: auto;
+  }
+
+  .mb {
+    display: block;
+  }
+
+  .pc {
+    display: none;
+  }
+
+  body {
+    font-size: 14px;
+    overflow-x: hidden;
+  }
+
+  /* header */
+
+  header {
+    padding         : 0 20px;
+    position        : relative;
+    z-index         : 9;
+    background-color: transparent;
+  }
+
+  header.fixed {
+    background-color: #000;
+    border-bottom   : 1px solid #fff;
+    position        : fixed;
+    z-index         : 9;
+    width           : 100%;
+    top             : 0;
+    padding         : 0 20px;
+    box-sizing      : border-box;
+    transition      : all 0.5s;
+  }
+
+  header .inner {
+    width          : 100%;
+    height         : 48px;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+  }
+
+  header .inner .logo a {
+    width : 24px;
+    height: 24px;
+  }
+
+  header .inner .gnbBtn {
+    width              : 20px;
+    height             : 12px;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    background-position: center;
+    background-image   : url(../assets/gnb/icn_GNB_bar.png);
+  }
+
+  footer.f-fixed {
+    position: fixed;
+    width   : 100%;
+    bottom  : 0;
+  }
+
+  footer .inner {
+    width           : 100%;
+    padding         : 40px 20px;
+    box-sizing      : border-box;
+    background-color: #fff;
+  }
+
+  footer .inner .logo::before {
+    width : 24px;
+    height: 24px;
+  }
+
+  footer .inner .logo h1 {
+    padding-left: 10px;
+    font-size   : 16px;
+  }
+
+  footer .inner .company {
+    margin-top: 0;
+    font-size : 14px;
+  }
+
+  footer .inner .info {
+    margin-top: 20px;
+  }
+
+  footer .inner .info dl::after {
+    content: "";
+    display: block;
+    clear  : both;
+  }
+
+  footer .inner .info dt,
+  footer .inner .info dd {
+    font-size: 14px;
+  }
+
+  footer .inner .info dt {
+    width: 80px;
+    float: left;
+  }
+
+  footer .inner .btmInfo {
+    margin-top: 30px;
+    position  : unset;
+    right     : unset;
+  }
+
+  footer .inner .btmInfo ul li {
+    margin-left : 0;
+    margin-right: 20px;
+  }
+
+}

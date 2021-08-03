@@ -1,0 +1,574 @@
+#whyAb section {
+  padding: 100px 0;
+  height : 100vh;
+}
+
+#whyAb section h1 {
+  font-size  : 122px;
+  line-height: 120px;
+  font-weight: 800;
+  color      : #fff;
+}
+
+#whyAb section h1.textStroke {
+  color              : transparent;
+  -webkit-text-stroke: 1px #fff;
+}
+
+#whyAb section h2 {
+  font-size     : 73px;
+  font-weight   : 800;
+  line-height   : 78px;
+  letter-spacing: -0.05em;
+}
+
+#whyAb section p {
+  font-size     : 20px;
+  line-height   : 29px;
+  letter-spacing: 0.03em;
+  font-weight   : 400;
+}
+
+#whyAb section p .text_bg {
+  position   : relative;
+  color      : #000;
+  font-weight: 600;
+  z-index    : 1;
+}
+
+#whyAb section p .text_bg::before {
+  content         : "";
+  padding         : 0 5px;
+  display         : inline-block;
+  position        : absolute;
+  left            : -6px;
+  top             : 0;
+  width           : 100%;
+  height          : 100%;
+  background-color: #fff;
+  z-index         : -1;
+}
+
+/* section01 */
+#whyAb .section01 {
+  position           : relative;
+  width              : 100%;
+  height             : 100vh;
+  background-size    : cover;
+  background-position: center;
+  background-image   : url(../assets/WhyAB/img_p04_mainBG.png);
+}
+
+#whyAb .section01 .inner {
+  width    : 1280px;
+  margin   : 0 auto;
+  position : absolute;
+  top      : 50%;
+  left     : 50%;
+  transform: translate(-50%, -50%);
+}
+
+#whyAb .section01 h1 {
+  margin-bottom: 23px;
+}
+
+/* section02 */
+#whyAb .section02 {
+  position: relative;
+}
+
+#whyAb .section02 .inner {
+  width          : 1280px;
+  margin         : 0 auto;
+  position       : absolute;
+  top            : 50%;
+  left           : 50%;
+  transform      : translate(-50%, -50%);
+  display        : flex;
+  justify-content: space-between;
+}
+
+#whyAb .section02 p {
+  margin-bottom: 20px;
+}
+
+#whyAb .section02 p .text_bg {
+  position: relative;
+  color   : #000;
+  z-index : 1;
+}
+
+#whyAb .section02 p .text_bg::before {
+  content         : "";
+  padding         : 0 1px;
+  display         : inline-block;
+  position        : absolute;
+  left            : -6px;
+  top             : 0;
+  width           : 100%;
+  height          : 100%;
+  background-color: #fff;
+  z-index         : -1;
+}
+
+#whyAb .section02 .inner .sectionInfo {
+  padding: 20px 0;
+  opacity: 0;
+}
+
+#whyAb .section02 .inner .sectionInfo.animate__fadeInUp {
+  animation         : fadeInUp;
+  animation-duration: 1s;
+  opacity           : 1;
+}
+
+#whyAb .section02 .inner .sectionImg {
+  width              : 490px;
+  height             : 523px;
+  background-repeat  : no-repeat;
+  background-size    : cover;
+  background-position: center;
+  background-image   : url(../assets/WhyAB/img_p03.png);
+}
+
+/* section03 */
+#whyAb .section03 {
+  width : 100%;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+
+}
+.bg_text_ani{
+  width: 100%;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  white-space: nowrap;
+  animation: animation 60s linear infinite;
+}
+.bg_text_ani span{
+  font-size  : 142px;
+  line-height: 120px;
+  font-weight: 800;
+  color      : rgba(255, 255, 255, 0.2);
+}
+
+@keyframes animation{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+
+}
+
+#whyAb .section03 .inner {
+  width : 1380px;
+  margin: 0 auto;
+}
+
+#whyAb .section03 .sectionInfo {
+  display        : flex;
+  justify-content: space-between;
+  width          : 100%;
+  opacity        : 0;
+}
+
+#whyAb .section03 .sectionInfo.sectionInfo.animate__fadeInUp {
+  animation         : fadeInUp;
+  animation-duration: 1s;
+  opacity           : 1;
+}
+
+#whyAb .section03 .sectionInfo h2 {
+  width: 57%;
+}
+
+#whyAb .section03 .sectionInfo p {
+  width: 100%;
+}
+
+#whyAb .section03 p .text_bg::before {
+  padding: 0 4px;
+  left   : -8px;
+}
+
+#whyAb .section03 .sectionImg{
+  text-align: center;
+}
+#whyAb .section03 .sectionImg{
+  margin             : 100px auto;
+  width              : 480px;
+  height             : 480px;
+  background-repeat  : no-repeat;
+  background-size    : cover;
+  background-position: center;
+  background-image   : url(../assets/video/pc_03_1.gif);
+}
+
+/* section04 */
+#whyAb .section04 {
+  width : 100%;
+  height: 100%;
+}
+
+#whyAb .section04 .inner {
+  width : 1280px;
+  margin: 0 auto;
+}
+
+#whyAb .section04 .inner h2 {
+  margin-bottom: 20px;
+}
+
+#whyAb .section04 .animate__animated {
+  opacity: 0;
+}
+
+#whyAb .section04 .animate__fadeInUp {
+  animation         : fadeInUp;
+  animation-duration: 1s;
+  opacity           : 1;
+}
+
+#whyAb .section04 p .text_bg::before {
+  padding: 0 2px;
+}
+
+/* section05 */
+#whyAb .section05 {
+  height: 100%;
+}
+
+#whyAb .section05 .animate__animated {
+  opacity: 0;
+}
+
+#whyAb .section05 .animate__fadeInUp {
+  animation         : fadeInUp;
+  animation-duration: 1s;
+  opacity           : 1;
+}
+
+#whyAb .section05 .inner {
+  width : 1280px;
+  margin: 0 auto;
+}
+
+#whyAb .section05 .inner h2 {
+  margin-bottom: 20px;
+}
+
+#whyAb .section05 p .text_bg::before {
+  padding: 0 2px;
+  left   : -3px;
+}
+
+#whyAb .section05 .sectionImg {
+  box-sizing         : border-box;
+  margin             : 50px auto;
+  width              : 1280px;
+  height             : 373px;
+  background-repeat  : no-repeat;
+  background-size    : cover;
+  background-position: center;
+  background-image   : url(../assets/WhyAB/img_section05.svg);
+}
+
+/* section06 */
+
+#whyAb .section06 {
+  width : 100%;
+  height: 100%;
+}
+
+#whyAb .section06 .inner h2 {
+  width  : 1280px;
+  margin : 0 auto 80px;
+  opacity: 0;
+}
+
+#whyAb .section06 .inner h2.animate__fadeInUp {
+  animation         : fadeInUp;
+  animation-duration: 1s;
+  opacity           : 1;
+}
+
+#whyAb .section06 .imgWrap {
+  width          : 100%;
+  height         : 535px;
+  position       : relative;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+}
+
+#whyAb .section06 .imgWrap .hoverWrap .item {
+  font-size     : 160px;
+  font-weight   : 800;
+  line-height   : 1;
+  letter-spacing: -0.03em;
+  color         : rgba(255, 255, 255, 0.2);
+  transition    : all 1s;
+}
+
+#whyAb .section06 .imgWrap .hoverWrap .item:nth-of-type(2) {
+  text-align: right;
+}
+
+#whyAb .section06 .imgWrap .hoverWrap .item:hover {
+  color: #fff;
+}
+
+#whyAb .section06 .imgWrap .hoverWrap .item:hover::before {
+  content          : "";
+  position         : absolute;
+  top              : 0;
+  bottom           : 0;
+  left             : 0;
+  right            : 0;
+  width            : 100%;
+  height           : 100%;
+  background-repeat: no-repeat;
+  background-size  : cover;
+  z-index          : -1;
+  display: block;
+  transition       : all 1s;
+}
+
+#whyAb .section06 .imgWrap .hoverWrap .item:hover:nth-of-type(1)::before {
+  background-image: url(../assets/WhyAB/png_p03_Ideation_BG.png);
+}
+
+#whyAb .section06 .imgWrap .hoverWrap .item:hover:nth-of-type(2)::before {
+  background-image: url(../assets/WhyAB/png_p03_development_BG.png);
+}
+
+#whyAb .section06 .imgWrap .hoverWrap .item:hover:nth-of-type(3)::before {
+  background-image: url(../assets/WhyAB/png_p03_MarketEntry_BG.png);
+}
+
+#whyAb .section06 .imgWrap .hoverWrap .item:hover::after {
+  content       : "";
+  display       : block;
+  font-size     : 30px;
+  font-weight   : 400;
+  letter-spacing: 0.03em;
+}
+
+#whyAb .section06 .imgWrap .hoverWrap .item:hover:nth-of-type(1)::after {
+  content: "잠재고객에게 수요가 있는지 궁금한가요?";
+}
+
+#whyAb .section06 .imgWrap .hoverWrap .item:hover:nth-of-type(2)::after {
+  content: "고객에게 소구할 매력적인 형태의 솔루션일까요?";
+}
+
+#whyAb .section06 .imgWrap .hoverWrap .item:hover:nth-of-type(3)::after {
+  content: "실제 매출을 일으키고 싶은가요?";
+}
+
+/* section07 */
+#whyAb .section07 {
+  width         : 100%;
+  height        : 100%;
+  padding-bottom: 160px;
+}
+
+#whyAb .section07 .inner {
+  margin: 0 auto;
+  width : 1280px;
+}
+
+#whyAb .section07 .inner h1 {
+  position      : relative;
+  font-size     : 103px;
+  line-height   : 118px;
+  letter-spacing: -0.05em;
+}
+
+#whyAb .section07 .inner h1::before {
+  content          : "";
+  display          : inline-block;
+  position         : absolute;
+  top              : -90px;
+  left             : 0;
+  width            : 68px;
+  height           : 68px;
+  background-repeat: no-repeat;
+  background-size  : cover;
+  background-image : url(../assets/WhyAB/vector_quotes.svg);
+}
+
+@media (max-width: 1280px) {
+  #whyAb section {
+    padding: 50px 0;
+    width  : 100%;
+    height : 100%;
+  }
+
+  #whyAb section h1 {
+    font-size  : 54px;
+    line-height: 64.8px;
+  }
+
+  #whyAb section h2 {
+    font-size     : 32px;
+    line-height   : 33.4px;
+    letter-spacing: -0.01em;
+  }
+
+  #whyAb section p {
+    font-size  : 14px;
+    line-height: 20px;
+  }
+
+  /* section01 */
+  #whyAb .section01 {
+    padding   : 0 20px;
+    box-sizing: border-box;
+    height    : 447px;
+  }
+
+  #whyAb .section01 .inner {
+    width     : 100%;
+    padding   : 0 20px;
+    box-sizing: border-box;
+  }
+
+  #whyAb .section01::after {
+    content            : "";
+    position           : absolute;
+    bottom             : 20px;
+    left               : 50%;
+    transform          : translateX(-50%);
+    width              : 32px;
+    height             : 40px;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    background-position: center;
+    background-image   : url(../assets/ABGround/icon_p02_scroll.svg);
+  }
+
+  #whyAb .section01 h1 {
+    margin-bottom: 0;
+  }
+
+  /* section02 */
+  #whyAb .section02 .inner {
+    padding       : 0 20px;
+    box-sizing    : border-box;
+    width         : 100%;
+    height        : auto;
+    flex-direction: column;
+    position      : unset;
+    top           : 0;
+    left          : 0;
+    transform     : none;
+  }
+
+  #whyAb .section02 .inner .sectionImg {
+    width : 100%;
+    height: 320px;
+  }
+
+  /* section03 */
+  
+  #whyAb .section03 .inner {
+    width     : 100%;
+    padding   : 0 20px;
+    box-sizing: border-box;
+  }
+
+  #whyAb .section03 .sectionInfo {
+    flex-direction: column;
+  }
+
+  #whyAb .section03 .sectionInfo h2 {
+    width: 100%;
+  }
+
+  #whyAb .section03 .sectionInfo p {
+    width: 100%;
+  }
+
+  #whyAb .section03 .sectionImg {
+    margin-top      : 20px;
+    width           : 100%;
+    height          : 320px;
+    background-image: url(../assets/WhyAB/img_section03_m.svg);
+  }
+
+  /* section04 */
+  #whyAb .section04 .inner {
+    width     : 100%;
+    padding   : 0 20px;
+    box-sizing: border-box;
+  }
+
+  /* section05 */
+  #whyAb .section05 .inner {
+    width     : 100%;
+    padding   : 0 20px;
+    box-sizing: border-box;
+  }
+
+  #whyAb .section05 .sectionImg {
+    width           : 180px;
+    height          : 350px;
+    margin          : 20px 0;
+    background-image: url(../assets/WhyAB/img_section05_m.svg);
+  }
+
+  /* section06 */
+  #whyAb .section06 .inner h2 {
+    box-sizing: border-box;
+    padding   : 0 20px;
+    margin    : 0 auto 20px;
+    width     : 100%;
+  }
+
+  #whyAb .section06 .imgWrap {
+    box-sizing: border-box;
+    padding   : 0 20px;
+    height    : 196px;
+  }
+
+  #whyAb .section06 .imgWrap .hoverWrap .item {
+    font-size     : 43px;
+    line-height   : 1;
+    letter-spacing: -0.04em;
+  }
+
+  #whyAb .section06 .imgWrap .hoverWrap .item:hover::after {
+    font-size: 14px;
+  }
+
+  /* section07 */
+  #whyAb .section07 .inner {
+    width     : 100%;
+    padding   : 0 20px;
+    box-sizing: border-box;
+  }
+
+  #whyAb .section07 .inner h1::before {
+    content          : "";
+    display          : inline-block;
+    position         : absolute;
+    top              : -30px;
+    left             : 0;
+    width            : 32px;
+    height           : 32px;
+    background-repeat: no-repeat;
+    background-size  : cover;
+    background-image : url(../assets/WhyAB/vector_quotes.svg);
+  }
+
+  #whyAb .section07 .inner h1 {
+    font-size     : 42px;
+    line-height   : 53.4px;
+    letter-spacing: -0.01em;
+  }
+}

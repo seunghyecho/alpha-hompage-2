@@ -133,6 +133,7 @@
 
 /* section03 */
 #whyAb .section03 {
+  padding: 0;
   width : 100%;
   height: 100%;
   position: relative;
@@ -209,7 +210,7 @@
 
 /* section04 */
 #whyAb .section04 {
-  margin: 0 0 400px;
+  margin: 0;
   width : 100%;
   height: 100%;
   position: relative;
@@ -219,7 +220,7 @@
   display: block;
   position: absolute;
   right: 0;
-  top: -100px;
+  top: -38px;
   width: 960px;
   height: 100%;
   background-repeat: no-repeat;
@@ -253,6 +254,7 @@
 
 /* section05 */
 #whyAb .section05 {
+  padding: 200px 0;
   height: 100%;
 }
 

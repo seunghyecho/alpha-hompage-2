@@ -271,6 +271,10 @@
 #portfolio .section04 .inner .portfolio .infoImg ul li:nth-of-type(2n) {
   margin-top: 100px;
 }
+#portfolio .section04 .inner .portfolio .infoImg ul li.t-100{
+  position: relative;
+  top: 100px;
+}
 
 #portfolio .section04 .inner .portfolio .infoImg .img,
 #portfolio .section04 .inner .found .infoImg .img {

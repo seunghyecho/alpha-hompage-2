@@ -1,8 +1,47 @@
+.scrollBtn {
+  z-index: 2;
+  position: absolute;
+  bottom: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 37px;
+  height: 45px;
+  background-repeat: no-repeat;
+  background-size: 25px 34px;
+  background-position: center;
+  background-image: url(../assets/icon/icon_scroll.svg);
+}
+
+.textStroke {
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+}
+
 /* sticky */
 .sticky {
   position: sticky;
   top: 0;
   height: 100%;
+}
+
+.section05 p .text_bg {
+  position: relative;
+  color: #000;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.section05 p .text_bg::before {
+  content: "";
+  padding: 0 5px;
+  display: inline-block;
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
 }
 
 /* width */
@@ -36,7 +75,6 @@ section {
   align-items: center;
   justify-content: center;
 }
-
 .section01 .inner::after {
   content: "";
   display: block;
@@ -49,14 +87,56 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(../assets/ABGround/icon_p02_scroll.svg);
+  /* background-image: url(../assets/ABGround/icon_p02_scroll.svg); */
   cursor: url(../assets/cursor/cursor_Hover.svg), auto;
 }
+
+/* ABground 애니메이션 처리 추가 s */
+.section01.highlight .inner {
+  /* header 영역과 h1 밑에 텍스트의 높이를 고려하여 height 조절 */
+  height: 920px;
+  max-width: 1400px;
+  margin: 0px auto;
+  background: #fff;
+}
+.section01.highlight .inner h1 {
+  margin-top: 100px;
+}
+.section01.highlight .inner.bottom-top {
+  background: linear-gradient(to top, rgb(0, 0, 0) 50%, #fff 50%);
+  background-size: 100% 200%;
+  background-position: top;
+  transition: all 0.5s ease-out;
+  background-position: bottom;
+}
+.section01.highlight .inner::after {
+  display: none;
+}
+
+.section01.normal .inner h1,
+.section01.normal .inner p {
+  z-index: 2;
+}
+.section01.normal .normal-image-bg {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  position: absolute;
+}
+.section01.normal .normal-image-bg div {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+/* ABground 애니메이션 처리 추가 e */
 
 .section01 .inner h1 {
   font-weight: 800;
   font-size: 223px;
   text-align: center;
+  color: #fff;
 }
 
 .section01 .inner p {
@@ -66,7 +146,7 @@ section {
 }
 
 .section02 {
-  margin: 200px 0;
+  padding: 200px 0 0;
 }
 
 .section02 .inner {
@@ -192,8 +272,13 @@ section {
   display: block;
   width: 114px;
   height: 114px;
+  background-position: center;
+  background-size: contain;
   background-image: url(../assets/ABGround/icon_p02_play.svg);
   border-radius: 50%;
+}
+.video-play-button:hover:before {
+  opacity: 0.7;
 }
 .video-overlay {
   position: relative;
@@ -305,11 +390,12 @@ section {
 
 .section05 {
   padding: 100px 0 0;
-  margin: 100px auto;
-  width: 1280px;
 }
 
 .section05 .inner {
+  width: 1280px;
+  box-sizing: border-box;
+  margin: 100px auto;
   padding: 100px 0;
   display: flex;
   justify-content: space-between;
@@ -368,6 +454,7 @@ section {
 
 .section05 .des a {
   display: block;
+  color: #fff;
 }
 
 .section05 .des a span {
@@ -389,18 +476,19 @@ section {
   background-image: url(../assets/ABGround/icon_p02_more.svg);
 }
 
-.section05 .textArea .des a:hover {
+.section05 .des a:hover {
   color: #4c4c4c;
 }
 
-.section05 .textArea .des a:hover span::after {
-  background-image: url(../assets/ABGround/icon_p02_more.svg);
+.section05 .des a:hover span::after {
+  background-image: url(../assets/icon/icon_more_g.svg);
 }
 
 .section05 .imgArea {
   margin-top: 54px;
   display: flex;
-  width: 100%;
+  width: 1280px;
+  margin: 0 auto;
   height: auto;
 }
 
@@ -471,7 +559,7 @@ section {
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
 
@@ -479,7 +567,8 @@ section {
   opacity: 1;
 }
 
-.section06 {
+/* section06 */
+.section06 .inner {
   margin: 200px auto;
   width: 1280px;
 }
@@ -592,10 +681,43 @@ section {
 }
 
 @media (max-width: 1280px) {
+  .section01 {
+    position: relative;
+  }
+  .section01::before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 365px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../assets/ABGround/img_p02_section01_BG.png);
+    position: absolute;
+    z-index: -1;
+  }
   .section01 .inner {
     height: 413px;
+    position: relative;
   }
-
+  .section01 .inner::before {
+    content: "";
+    display: inline-block;
+    width: 213px;
+    height: 213px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../assets/ABGround/vector_p02_section01_arrow.svg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -70%);
+    z-index: -1;
+  }
+  .section01 .inner::after {
+    bottom: 70px;
+  }
   .section01 .inner h1 {
     font-size: 54px;
   }
@@ -606,7 +728,7 @@ section {
   }
 
   .section02 {
-    margin: 100px 0;
+    margin: 50px 0;
     padding: 0 20px;
   }
 
@@ -621,6 +743,7 @@ section {
 
   .section02 .inner h2 {
     font-size: 32px;
+    line-height: 33px;
     letter-spacing: -0.01em;
   }
 
@@ -631,6 +754,7 @@ section {
   .section02 .inner .item.img {
     width: 100%;
     height: 160px;
+    top: 0;
   }
 
   .section02 .inner .item .item-info {
@@ -661,6 +785,13 @@ section {
     margin: 0 auto;
     width: 100%;
   }
+  .section03 .inner {
+    height: 180px;
+  }
+  .video-play-button:before {
+    width: 36px;
+    height: 36px;
+  }
 
   .section04 {
     margin: 100px auto;
@@ -672,7 +803,23 @@ section {
   .section04 .inner {
     height: 469px;
   }
-
+  .section04 .inner .scrollItem {
+    position: relative;
+  }
+  .section04 .inner .scrollItem::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 216px;
+    height: 216px;
+    transform: rotate(90deg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../assets/ABGround/vector_p02_section01_arrow.svg);
+  }
   .section04 .inner .scrollItem .center {
     padding: 0 20px;
     display: flex;
@@ -700,13 +847,23 @@ section {
     width: 100%;
     overflow: hidden;
   }
-
-  .section05 .textArea {
+  .section05 .inner {
+    width: 100%;
+    padding: 0;
+    margin: 0;
     flex-direction: column;
   }
+  .section05 .textArea {
+    flex-direction: column;
+    height: 33px;
+  }
 
-  .section05 h1 {
+  .section05 .inner h1,
+  .section05 .textArea,
+  .section05 .textArea p {
     font-size: 32px;
+    line-height: 33px;
+    letter-spacing: -0.01em;
   }
 
   .section05 .textArea .des > * {
@@ -735,7 +892,7 @@ section {
   }
 
   .section05 .imgArea .item .imgWrap {
-    width: 100%;
+    width: 320px;
     height: 210px;
     background-position: center;
     background-repeat: no-repeat;
@@ -744,16 +901,17 @@ section {
 
   .section05 .imgArea .item:nth-of-type(1) .imgWrap {
     margin-bottom: 0;
-    background-image: url(../assets/ABGround/img_p02_Section05_Online01_x2.png);
+    background-image: url(../assets/ABGround/img_p02_Section05_Online01_x1_m.png);
   }
 
   .section05 .imgArea .item:nth-of-type(2) .imgWrap {
-    background-image: url(../assets/ABGround/img_p02_Section05_Online02_x2.png);
+    background-image: url(../assets/ABGround/img_p02_Section05_Online02_x1_m.png);
   }
 
   .section05 .imgArea .item:nth-of-type(3) .imgWrap {
-    background-image: url(../assets/ABGround/img_p02_Section05_Online03_x2.png);
+    background-image: url(../assets/ABGround/img_p02_Section05_Online03_x1_m.png);
   }
+  
 
   .section05 .imgArea .item .hoverText {
     margin-top: 10px;
@@ -777,10 +935,6 @@ section {
     font-size: 14px;
   }
 
-  .section05 .inner {
-    padding: 0;
-    flex-direction: column;
-  }
 
   .section05 .des.textAni04 {
     width: 100%;
@@ -797,11 +951,14 @@ section {
     margin-bottom: 0;
     margin-top: 0;
   }
-
   /* section06 */
   .section06 {
     padding: 0 20px;
     box-sizing: border-box;
+    margin: 100px auto;
+    width: 100%;
+  }
+  .section06 .inner {
     margin: 100px auto;
     width: 100%;
   }
@@ -814,6 +971,8 @@ section {
   .section06 .item-container .item {
     width: 320px;
     height: 380px;
+    opacity: 1;
+
   }
 
   .section06 .item-container .item .imgWrap {

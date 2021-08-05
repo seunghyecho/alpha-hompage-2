@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
 /* width */
 ::-webkit-scrollbar {
@@ -20,6 +21,9 @@
   background: #555;
 }
 
+a{
+  color: #000;
+}
 a:active,
 a:hover,
 a:focus {
@@ -28,23 +32,23 @@ a:focus {
 
 /* ----------------------------- COMMON ------------------------------- */
 body {
-  background : #010101;
-  font-size  : 100%;
+  background: #010101;
+  font-size: 100%;
   font-family: Pretendard;
   font-weight: 300;
-  color      : #fff;
-  cursor     : url(../assets/cursor/cursor_Basic.svg), auto;
+  color: #fff;
+  cursor: url(../assets/cursor/cursor_Basic.svg), auto;
 }
 
 /* 마우스로 드래그하여 선택된 부분의 색상 변경 */
 ::-moz-selection {
   background: #fdad15;
-  color     : #fff;
+  color: #fff;
 }
 
 ::selection {
   background: #fdad15;
-  color     : #fff;
+  color: #fff;
 }
 
 h1:hover,
@@ -69,21 +73,21 @@ p:hover {
 /* header */
 
 header .inner {
-  width          : 1280px;
-  height         : 100px;
-  margin         : 0 auto;
-  display        : flex;
+  width: 1280px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
   justify-content: space-between;
-  align-items    : center;
+  align-items: center;
 }
 
 header .inner .logo a {
-  width              : 60px;
-  height             : 60px;
+  width: 60px;
+  height: 60px;
   background-position: center;
-  background-repeat  : no-repeat;
-  background-size    : cover;
-  background-image   : url(../assets/gnb/GNB_AB_logo.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../assets/gnb/GNB_AB_logo.svg);
 }
 
 header .inner .gnb ul {
@@ -95,15 +99,17 @@ header .inner .gnb ul li {
 }
 
 header .inner .gnb ul li a {
-  font-size : 16px;
+  font-size: 16px;
   text-align: center;
-  color     : #ffffff;
+  font-weight: 300;
+
+  color: #ffffff;
   transition: all 0.5s;
 }
 
 header .inner .gnb ul li:hover a {
-  font-weight: 600;
-  color      : #4c4c4c;
+  color: #4c4c4c;
+  font-weight: 900;
 }
 
 footer {
@@ -111,39 +117,39 @@ footer {
 }
 
 footer .inner {
-  width   : 1280px;
-  margin  : 0 auto;
-  padding : 40px 0;
+  width: 1280px;
+  margin: 0 auto;
+  padding: 40px 0;
   position: relative;
 }
 
 footer .inner .logo::before {
-  display            : inline-block;
-  content            : "";
-  width              : 40px;
-  height             : 40px;
+  display: inline-block;
+  content: "";
+  width: 40px;
+  height: 40px;
   background-position: center;
-  background-repeat  : no-repeat;
-  background-size    : cover;
-  background-image   : url(../assets/footer/footer_AB_Logo.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../assets/footer/footer_AB_Logo.svg);
 }
 
-footer .inner .logo a {
-  display    : flex;
+footer .inner a.logo {
+  display: flex;
   align-items: center;
 }
 
 footer .inner .logo h1 {
   padding-left: 16px;
-  display     : inline-block;
-  font-size   : 25px;
-  color       : #000;
+  display: inline-block;
+  font-size: 25px;
+  color: #000;
 }
 
 footer .inner .company {
-  margin-top: 17px;
-  font-size : 20px;
-  color     : #000;
+  margin-top: 50px;
+  font-size: 20px;
+  color: #000;
 }
 
 footer .inner .info {
@@ -151,15 +157,15 @@ footer .inner .info {
 }
 
 footer .inner .info dl {
-  margin: 5px 0;
+  margin: 6px 0;
 }
 
 footer .inner .info dt,
 footer .inner .info dd {
-  display    : inline-block;
-  font-size  : 18px;
+  display: inline-block;
+  font-size: 18px;
   font-weight: 400;
-  color      : #000;
+  color: #000;
 }
 
 footer .inner .info dt {
@@ -168,12 +174,13 @@ footer .inner .info dt {
 
 footer .inner .btmInfo {
   position: absolute;
-  right   : 0;
+  right: 0;
+  bottom: 45px;
 }
 
 footer .inner .btmInfo ul li {
   margin-left: 25px;
-  display    : inline-block;
+  display: inline-block;
 }
 
 footer .inner .btmInfo ul li a {
@@ -187,8 +194,8 @@ footer .inner .btmInfo ul li a:hover {
 /* 화면 너비가 0 ~ 1280px: 피시-------------------------------------- */
 @media (max-width: 1280px) {
   .bodyFix {
-    width   : 100%;
-    height  : 100%;
+    width: 100%;
+    height: 100%;
     overflow: auto;
   }
 
@@ -208,72 +215,74 @@ footer .inner .btmInfo ul li a:hover {
   /* header */
 
   header {
-    padding         : 0 20px;
-    position        : relative;
-    z-index         : 9;
+    padding: 0 20px;
+    position: relative;
+    z-index: 9;
     background-color: transparent;
   }
 
   header.fixed {
     background-color: #000;
-    border-bottom   : 1px solid #fff;
-    position        : fixed;
-    z-index         : 9;
-    width           : 100%;
-    top             : 0;
-    padding         : 0 20px;
-    box-sizing      : border-box;
-    transition      : all 0.5s;
+    border-bottom: 1px solid #fff;
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    top: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    transition: all 0.5s;
+
+    z-index: 99;
   }
 
   header .inner {
-    width          : 100%;
-    height         : 48px;
-    display        : flex;
+    width: 100%;
+    height: 48px;
+    display: flex;
     justify-content: space-between;
-    align-items    : center;
+    align-items: center;
   }
 
   header .inner .logo a {
-    width : 24px;
+    width: 24px;
     height: 24px;
   }
 
   header .inner .gnbBtn {
-    width              : 20px;
-    height             : 12px;
-    background-repeat  : no-repeat;
-    background-size    : cover;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: 20px 12px;
     background-position: center;
-    background-image   : url(../assets/gnb/icn_GNB_bar.png);
+    background-image: url(../assets/gnb/icn_GNB_bar.png);
   }
 
   footer.f-fixed {
     position: fixed;
-    width   : 100%;
-    bottom  : 0;
+    width: 100%;
+    bottom: 0;
   }
 
   footer .inner {
-    width           : 100%;
-    padding         : 40px 20px;
-    box-sizing      : border-box;
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
     background-color: #fff;
   }
 
   footer .inner .logo::before {
-    width : 24px;
+    width: 24px;
     height: 24px;
   }
 
   footer .inner .logo h1 {
     padding-left: 10px;
-    font-size   : 16px;
+    font-size: 16px;
   }
 
   footer .inner .company {
     margin-top: 0;
-    font-size : 14px;
+    font-size: 14px;
   }
 
   footer .inner .info {
@@ -283,7 +292,7 @@ footer .inner .btmInfo ul li a:hover {
   footer .inner .info dl::after {
     content: "";
     display: block;
-    clear  : both;
+    clear: both;
   }
 
   footer .inner .info dt,
@@ -292,19 +301,21 @@ footer .inner .btmInfo ul li a:hover {
   }
 
   footer .inner .info dt {
-    width: 80px;
+    width: 25%;
     float: left;
+  }
+  footer .inner .info dd{
+    width: 73%;
   }
 
   footer .inner .btmInfo {
     margin-top: 30px;
-    position  : unset;
-    right     : unset;
+    position: unset;
+    right: unset;
   }
 
   footer .inner .btmInfo ul li {
-    margin-left : 0;
+    margin-left: 0;
     margin-right: 20px;
   }
-
 }

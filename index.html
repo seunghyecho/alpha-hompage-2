@@ -16,8 +16,15 @@
     <title>Alpha</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/popup.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+
     <!-- jQuery CDN -->
     <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" ></script> -->
     <!-- jQuery file -->
@@ -32,35 +39,54 @@
         <button class="gnbBtn mb"></button>
         <div class="gnb pc">
           <ul>
-            <li><a href="pages/ABground.html">AB GROUND</a></li>
+            <li><a href="pages/ABground.html?type=1">AB GROUND</a></li>
             <li><a href="pages/whyAB.html">WHY AB</a></li>
-            <li><a href="pages/ABground.html">PORTFOLIO</a></li>
+            <li><a href="pages/portfolio.html">PORTFOLIO</a></li>
             <li><a href="pages/partners.html">PARTNERS</a></li>
-        </ul>
+          </ul>
         </div>
       </div>
     </header>
     <div class="pc-main pc">
       <section class="section01">
         <div class="inner">
-          <video class="video" src="assets/video/pc_01_1920-1080.mp4" muted autoplay playsinline width="100%" poster="">
-          </video>
+          <video
+            class="video"
+            src="assets/video/pc_01_1920-1080.mp4"
+            muted
+            loop
+            autoplay
+            playsinline
+            poster=""
+          ></video>
         </div>
       </section>
     </div>
     <div class="mb-main mb">
       <section class="section01">
-        <div class="inner">
-          <div class="videoWrap">
+        <video
+          class="video"
+          src="assets/video/mb_01_1.mp4"
+          muted
+          autoplay
+          loop
+          playsinline
+          width="100%"
+          poster=""
+        ></video>
+        <div class="sticky">
+          <div class="inner">
             <div class="textWrap">
-              <div class="text">
+              <div class="text mainText01">
                 <h1>
                   투자에만 머물던<br />
                   엑셀러레이팅의<br />
                   ACTIVE한 진화
                 </h1>
               </div>
-              <div class="text">
+            </div>
+            <div class="textWrap">
+              <div class="text mainText02">
                 <h1>
                   ALPHA<br />
                   BROTHERS X<br />
@@ -69,10 +95,10 @@
               </div>
             </div>
           </div>
-          <button class="scrollBtn"></button>
+          <a class="scrollBtn" href="#section02"></a>
         </div>
       </section>
-      <div class="section02">
+      <section class="section02" id="section02">
         <div class="inner">
           <div class="tit"></div>
           <h1>
@@ -80,9 +106,11 @@
             알파브라더스에<br />
             대해 더 알아보세요
           </h1>
-          <a href="pages/ABground.html" class="arrowBtn"><span>지금 더 알아보러 가기</span></a>
+          <a href="pages/ABground.html" class="arrowBtn"
+            ><span>지금 더 알아보러 가기</span></a
+          >
         </div>
-      </div>
+      </section>
     </div>
     <footer class="mb">
       <div class="inner">
@@ -588,10 +616,10 @@
           <button class="closeBtn"></button>
         </div>
         <ul>
-          <li><a href="pages/ABground.html">AB GROUND</a></li>
-          <li><a href="pages/whyAB.html">WHY AB?</a></li>
-          <li><a href="pages/portfolio.html">PORTFOLIO</a></li>
-          <li><a href="pages/partners.html">PARTNERS</a></li>
+          <li><a id="menu01" class="animate__animated animate__fadeInDown" href="pages/ABground.html">AB GROUND</a></li>
+          <li><a id="menu02" class="animate__animated animate__fadeInDown" href="pages/whyAB.html">WHY AB</a></li>
+          <li><a id="menu03" class="animate__animated animate__fadeInDown" href="pages/portfolio.html">PORTFOLIO</a></li>
+          <li><a id="menu04" class="animate__animated animate__fadeInDown" href="pages/partners.html">PARTNERS</a></li>
         </ul>
       </div>
     </div>

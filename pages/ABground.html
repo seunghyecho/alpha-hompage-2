@@ -31,6 +31,67 @@
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
   </head>
+  <script text="javascript">
+    function getParam(sname) {
+      var params = location.search.substr(location.search.indexOf("?") + 1);
+      var sval = "";
+      params = params.split("&");
+      for (var i = 0; i < params.length; i++) {
+          temp = params[i].split("=");
+          if ([temp[0]] == sname) { sval = temp[1]; }
+      }
+      return sval;
+
+    }
+    console.log(getParam("type"));
+    $( document ).ready(function() {
+      //ABground 외에 다른 페이지에서 접속했을 때
+      if(getParam("type") == 1){
+        //header menu 숨김 처리
+        $("header .inner").css('display', 'none');
+        //기존에 section1 숨김 처리
+        $(".section01.normal").css('display', 'none');
+
+        //animation 처리
+          //폰트 bottom-up 0.5s, 하얀색 -> 검정색 animation 0.5s
+          setTimeout(function(){
+            $(".section01.highlight .inner h1").animate(
+              { marginTop: '0px', color: '#222' 
+            }, 500);
+            $(".section01.highlight .inner h1").css({ 'color': "#222", 'transition' : 'color 0.5s' });
+          },300);
+          
+          //배경 bottome-up : 0.5s
+
+          setTimeout(function(){
+            //0.5초 후에 슬라이드업하는 class 추가
+            $(".section01.highlight .inner").addClass("bottom-top"); 
+          },1000);
+          
+          //폰트 검정색 -> 하얀색 : 1.2초 후 ( bottom-up 애니메이션 중간에 추가하기 )
+          setTimeout(function(){
+            $(".section01.highlight .inner h1").css({ 'color': "#fff", 'transition' : 'color 0.5s' });
+          }, 1200);
+        
+        //현재 섹션 숨김 처리 : 2.5초 후
+        setTimeout(function(){
+          //기존의 section01 노출하기
+          $(".section01.normal").fadeIn('slow');
+          //header menu 메뉴 노출 처리
+          $("header .inner").css('display', 'flex');
+          $(".section01.highlight").css('display','none');
+        }, 2500);
+      }else{
+        //현재 페이지에서 새로고침했을 때
+        $(".section01.highlight").css('display','none');
+      }
+      
+      $( ".normal-image-bg div" ).mouseenter(function() {
+        var image = $(this).data("bg");
+        $(".normal-image-bg").css('background-image', 'url(../assets/ABGround/abground_bg_'+image+'.png)');
+      });
+  });
+  </script>
 
   <body>
     <header>
@@ -39,22 +100,38 @@
         <button class="gnbBtn mb"></button>
         <div class="gnb pc">
           <ul>
-            <li><a href="ABground.html">AB GROUND</a></li>
+            <li><a href="ABground.html?type=2">AB GROUND</a></li>
             <li><a href="whyAB.html">WHY AB</a></li>
-            <li><a href="ABground.html">PORTFOLIO</a></li>
+            <li><a href="portfolio.html">PORTFOLIO</a></li>
             <li><a href="partners.html">PARTNERS</a></li>
           </ul>
         </div>
       </div>
     </header>
     <div id="abGround">
-      <section class="section01">
+      <section class="section01 highlight">
+        <div class="inner">
+          <h1>AB GROUND</h1>
+        </div>
+      </section>
+      <section class="section01 normal">
         <div class="inner">
           <h1>AB GROUND</h1>
           <p>ACTIVE 엑셀러레이팅이 이루어지는 장 AB GROUND</p>
+          <div class="normal-image-bg">
+            <div class="top1" data-bg="top1">&nbsp;</div>
+            <div class="top2" data-bg="top2">&nbsp;</div>
+            <div class="top3" data-bg="top3">&nbsp;</div>
+            <div class="top4" data-bg="top4">&nbsp;</div>
+            <div class="bottom1" data-bg="bottom1">&nbsp;</div>
+            <div class="bottom2" data-bg="bottom2">&nbsp;</div>
+            <div class="bottom3" data-bg="bottom3">&nbsp;</div>
+            <div class="bottom4" data-bg="bottom4">&nbsp;</div>
+          </div>
+          <a class="scrollBtn" href="#section02"></a>
         </div>
       </section>
-      <section class="section02">
+      <section class="section02" id="section02">
         <div class="inner">
           <h2 class="pc">ALPHA BROTHERS</h2>
           <h2 class="arrow">
@@ -126,7 +203,7 @@
               <div class="center">
                 <h1>
                   PARADIGM<br />
-                  CHANGING
+                  <span class="textStroke">CHANGING</span>
                 </h1>
                 <p>
                   세상을 바라보는 새로운 관점과 가치를
@@ -138,10 +215,10 @@
               <div class="center">
                 <h1>
                   LIFESTYLE<br />
-                  CHANGING
+                  <span class="textStroke">CHANGING</span>
                 </h1>
                 <p>
-                  우리의 삶은 변화시킬 아이디어를 구현할
+                  우리의 삶을 변화시킬 아이디어를 구현할
                   <br class="mb" />스타트업을 찾습니다.
                 </p>
               </div>
@@ -150,7 +227,7 @@
               <div class="center">
                 <h1>
                   MARKET<br />
-                  CHANGING
+                  <span class="textStroke">CHANGING</span>
                 </h1>
                 <p>
                   새로운 가치로 비즈니스 세계의 판도를 바꿀
@@ -179,10 +256,10 @@
             </div>
           </h1>
 
-          <div class="des textAni04">
+          <div class="des textAni04 pc">
             <p>
               알파브라더스는 CHANGING WAY라는 미션에 부합하는 기업들 중에서도
-              <br class="pc" />온라인을 통해서 서비스 혹은 제품을 판매할 고객사
+              <br class="pc" /><span class="text_bg">온라인을 통해서 서비스 혹은 제품을 판매할 고객사</span>
               들을 위주로
               <br class="pc" />
               ACTIVE 엑셀러레이팅을 진행하고 있습니다.
@@ -191,6 +268,15 @@
               본 고객사들은 온라인을
               <br />통해 보다 넓은 범위의 사람들에게, 심지어 글로벌 단위의
               고객에게 닿아 <br />세상을 변화시킬 가능성을 보입니다.
+            </p>
+            <a href="portfolio.html"
+              ><span>AB그라운드에서의 온라인 사업들 더 보러 가기</span></a
+            >
+          </div>
+          <div class="des textAni04 mb">
+            <p>
+              알파브라더스는 CHANGING WAY라는 미션에 부합하는 기업들 중에서도온라인을 통해서 서비스 혹은 제품을 판매할 고객사 들을 위주로
+              ACTIVE 엑셀러레이팅을 진행하고 있습니다.
             </p>
             <a href="#"
               ><span>AB그라운드에서의 온라인 사업들 더 보러 가기</span></a
@@ -224,21 +310,21 @@
         </div>
 
         <div class="imgArea mb section05-slider">
-          <div class="item">
+          <div class="item" >
             <div class="imgWrap"></div>
             <div class="hoverText">
               <h2>ONLINE SERVICES</h2>
               <p>온라인을 통해 새로운 서비스를 런칭하고자 하는 기업</p>
             </div>
           </div>
-          <div class="item">
+          <div class="item" >
             <div class="imgWrap"></div>
             <div class="hoverText">
               <h2>ONLINE PRODUCTS</h2>
               <p>온라인을 통해 제품을 판매하고자 하는 기업</p>
             </div>
           </div>
-          <div class="item">
+          <div class="item" >
             <div class="imgWrap"></div>
             <div class="hoverText">
               <h2>ONLINE TO GLOBAL</h2>
@@ -313,7 +399,7 @@
           </div>
           <div class="mb">
             <div class="item-container section06-slider">
-              <div class="item">
+              <div class="item animate__animated">
                 <div class="imgWrap"></div>
                 <div class="text">
                   <p><span>홍길동</span> 대표이사</p>
@@ -322,7 +408,7 @@
                   </p>
                 </div>
               </div>
-              <div class="item">
+              <div class="item animate__animated">
                 <div class="imgWrap"></div>
                 <div class="text">
                   <p><span>홍길동</span> 대표이사</p>
@@ -331,7 +417,7 @@
                   </p>
                 </div>
               </div>
-              <div class="item">
+              <div class="item animate__animated">
                 <div class="imgWrap"></div>
                 <div class="text">
                   <p><span>홍길동</span> 대표이사</p>
@@ -340,7 +426,7 @@
                   </p>
                 </div>
               </div>
-              <div class="item">
+              <div class="item animate__animated">
                 <div class="imgWrap"></div>
                 <div class="text">
                   <p><span>홍길동</span> 대표이사</p>
@@ -349,7 +435,7 @@
                   </p>
                 </div>
               </div>
-              <div class="item">
+              <div class="item animate__animated">
                 <div class="imgWrap"></div>
                 <div class="text">
                   <p><span>홍길동</span> 대표이사</p>
@@ -358,7 +444,7 @@
                   </p>
                 </div>
               </div>
-              <div class="item">
+              <div class="item animate__animated">
                 <div class="imgWrap"></div>
                 <div class="text">
                   <p><span>홍길동</span> 대표이사</p>
@@ -876,10 +962,10 @@
           <button class="closeBtn"></button>
         </div>
         <ul>
-          <li><a class="animate__animated animate__fadeInDown" href="ABground.html">AB GROUND</a></li>
-          <li><a class="animate__animated animate__fadeInDown" href="whyAB.html">WHY AB</a></li>
-          <li><a class="animate__animated animate__fadeInDown" href="ABground.html">PORTFOLIO</a></li>
-          <li><a class="animate__animated animate__fadeInDown" href="ABground.html">PARTNERS</a></li>
+          <li><a id="menu01" class="animate__animated animate__fadeInDown" href="ABground.html">AB GROUND</a></li>
+          <li><a id="menu02" class="animate__animated animate__fadeInDown" href="whyAB.html">WHY AB</a></li>
+          <li><a id="menu03" class="animate__animated animate__fadeInDown" href="portfolio.html">PORTFOLIO</a></li>
+          <li><a id="menu04" class="animate__animated animate__fadeInDown" href="partners.html">PARTNERS</a></li>
         </ul>
       </div>
     </div>
@@ -891,10 +977,12 @@
   $(".section05-slider").slick({
     arrows: false,
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
+    variableWidth: true,
+
   });
 
   $(".section06-slider").slick({

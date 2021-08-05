@@ -7,7 +7,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: 9;
+  z-index: 999;
 }
 .popup .inner {
   width: 35%;
@@ -84,30 +84,18 @@
   margin: 34px 0;
 }
 #gnb .inner ul li a {
+  position: relative;
+  top: -20px;
+
   font-size: 32px;
   font-weight: 900;
   text-align: left;
   letter-spacing: -0.01;
   color: #fff;
-  animation: fadeInDown;
+
+  opacity: 0;
 }
 
-#gnb .inner ul li:nth-of-type(1) a {
-  animation-duration: 0.2s;
-  opacity: 1;
-}
-#gnb .inner ul li:nth-of-type(2) a {
-  opacity: 1;
-  animation-duration: 0.4s;
-}
-#gnb .inner ul li:nth-of-type(3) a {
-  opacity: 1;
-  animation-duration: 0.6s;
-}
-#gnb .inner ul li:nth-of-type(4) a {
-  opacity: 1;
-  animation-duration: 0.8s;
-}
 @media (max-width: 1280px) {
   .popup .inner {
     width: 90%;

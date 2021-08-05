@@ -33,7 +33,7 @@
       <button class="gnbBtn mb"></button>
       <div class="gnb pc">
         <ul>
-          <li><a href="ABground.html">AB GROUND</a></li>
+          <li><a href="ABground.html?type=1">AB GROUND</a></li>
           <li><a href="whyAB.html">WHY AB</a></li>
           <li><a href="portfolio.html">PORTFOLIO</a></li>
           <li><a href="partners.html">PARTNERS</a></li>
@@ -53,12 +53,13 @@
         </h1>
         <p>
           WHY AB?라는 질문에는 간단한 해답이 있습니다.<br />
-          고객사의 아이템이 시장성이 있는지 알파브라더스만큼<br />
+          고객사의 아이템이 시장성이 있는지 알파브라더스만큼<br class="pc" />
           빠르고 정확하게 진단 후 발굴하는 곳이 없기 때문입니다.
         </p>
+        <a class="scrollBtn" href="#section02"></a>
       </div>
     </section>
-    <section class="section02">
+    <section class="section02" id="section02">
       <div class="inner">
         <div class="sectionInfo animate__animated">
           <h2>
@@ -94,7 +95,7 @@
         </div>
       </div>
     </section>
-    <section class="section03">
+    <section class="section03" id="section03">
       <!-- 배경 text ani -->
       <div class="bg_text_ani"><span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad numquam alias dolor? In, expedita necessitatibus eius minus modi ipsam autem quos fuga maxime, doloribus ratione nisi! Ut ipsam natus suscipit beatae, quibusdam dolore adipisci impedit voluptatem alias eos? Consectetur eos minus vero nisi repudiandae placeat fugiat blanditiis iusto eligendi porro eum earum unde libero magnam officia adipisci optio quo quaerat, ratione obcaecati veritatis id aliquid odio sed? Mollitia quo magni maxime. Possimus fugit tenetur vero et, temporibus, saepe dignissimos ipsa enim tempore fuga, dolor dolore error perferendis consequatur cumque cum nisi eveniet hic repudiandae. Temporibus excepturi a alias dolores id.</span></div>
       <div class="inner">
@@ -138,8 +139,7 @@
           <p>
             드랍박스, 에어비앤비와 같이 해외에서는 MVP 성공신화가 많이
             들립니다.<br class="pc" />
-            그러나 아직 국내에는 MVP테스트와 LEAN STARTUP에 대한 개념이
-            생소합니다. <br />
+            그러나 아직 국내에는 MVP테스트와 LEAN STARTUP에 대한 개념이 생소합니다. <br />
             <span class="text_bg">중요성을 알더라도 제작할 수 있는 인력이 부족 </span>하기에 실행에 옮기기는 더더욱 어렵습니다.
           </p>
         </div>
@@ -703,10 +703,10 @@
         <button class="closeBtn"></button>
       </div>
       <ul>
-        <li><a href="ABground.html">AB GROUND</a></li>
-        <li><a href="whyAB.html">WHY AB</a></li>
-        <li><a href="portfolio.html">PORTFOLIO</a></li>
-        <li><a href="partners.html">PARTNERS</a></li>
+        <li><a id="menu01" class="animate__animated animate__fadeInDown" href="ABground.html">AB GROUND</a></li>
+          <li><a id="menu02" class="animate__animated animate__fadeInDown" href="whyAB.html">WHY AB</a></li>
+          <li><a id="menu03" class="animate__animated animate__fadeInDown" href="portfolio.html">PORTFOLIO</a></li>
+          <li><a id="menu04" class="animate__animated animate__fadeInDown" href="partners.html">PARTNERS</a></li>
       </ul>
     </div>
   </div>

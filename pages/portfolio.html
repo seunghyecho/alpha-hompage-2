@@ -32,6 +32,7 @@
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
+        cssEase: 'ease-in-out',
 
       });
       $(".portfolio-slider").slick({
@@ -53,7 +54,7 @@
       <button class="gnbBtn mb"></button>
       <div class="gnb pc">
         <ul>
-          <li><a href="ABground.html">AB GROUND</a></li>
+          <li><a href="ABground.html?type=1">AB GROUND</a></li>
           <li><a href="whyAB.html">WHY AB</a></li>
           <li><a href="portfolio.html">PORTFOLIO</a></li>
           <li><a href="partners.html">PARTNERS</a></li>
@@ -84,9 +85,10 @@
           알파브라더스는 THE CHANGING WAY라는 AB 미션을<br />온라인으로
           구현하는 기업에 투자한 이력과<br />직접 창업한 경험이 풍부합니다.
         </p>
+        <a class="scrollBtn" href="#section02"></a>
       </div>
     </section>
-    <section class="section02">
+    <section class="section02" id="section02">
       <div class="inner">
         <div class="inner-item">
           <div class="animate__animated">
@@ -603,8 +605,8 @@
               <ul>
                 <li>
                   <p>
-                    피부 미용 전문 의료기기를 개발/ 제조/<br />
-                    판매하는 기술력 그대로 담아 토탈 뷰티<br />
+                    피부 미용 전문 의료기기를 개발/ 제조/<br class="pc" />
+                    판매하는 기술력 그대로 담아 토탈 뷰티<br class="pc"/>
                     솔루션을 개발하는 기업입니다.
                   </p>
                 </li>
@@ -706,7 +708,7 @@
         </div>
       </div>
       <div class="inner">
-        <h2>창업 포트폴리오</h2>
+        <h2><span>창업 포트폴리오</span></h2>
         <div class="portfolio found01">
           <div class="d-flex">
             <div class="info">
@@ -1331,10 +1333,10 @@
         <button class="closeBtn"></button>
       </div>
       <ul>
-        <li><a href="ABground.html">AB GROUND</a></li>
-        <li><a href="whyAB.html">WHY AB</a></li>
-        <li><a href="portfolio.html">PORTFOLIO</a></li>
-        <li><a href="partners.html">PARTNERS</a></li>
+        <li><a id="menu01" class="animate__animated animate__fadeInDown" href="ABground.html">AB GROUND</a></li>
+        <li><a id="menu02" class="animate__animated animate__fadeInDown" href="whyAB.html">WHY AB</a></li>
+        <li><a id="menu03" class="animate__animated animate__fadeInDown" href="portfolio.html">PORTFOLIO</a></li>
+        <li><a id="menu04" class="animate__animated animate__fadeInDown" href="partners.html">PARTNERS</a></li>
       </ul>
     </div>
   </div>

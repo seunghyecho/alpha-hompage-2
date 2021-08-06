@@ -37,60 +37,71 @@
       var sval = "";
       params = params.split("&");
       for (var i = 0; i < params.length; i++) {
-          temp = params[i].split("=");
-          if ([temp[0]] == sname) { sval = temp[1]; }
+        temp = params[i].split("=");
+        if ([temp[0]] == sname) {
+          sval = temp[1];
+        }
       }
       return sval;
-
     }
     console.log(getParam("type"));
-    $( document ).ready(function() {
+    $(document).ready(function () {
       //ABground 외에 다른 페이지에서 접속했을 때
-      if(getParam("type") == 1){
+      if (getParam("type") == 1) {
         //header menu 숨김 처리
-        $("header .inner").css('display', 'none');
+        $("header .inner").css("display", "none");
         //기존에 section1 숨김 처리
-        $(".section01.normal").css('display', 'none');
+        $(".section01.normal").css("display", "none");
 
         //animation 처리
-          //폰트 bottom-up 0.5s, 하얀색 -> 검정색 animation 0.5s
-          setTimeout(function(){
-            $(".section01.highlight .inner h1").animate(
-              { marginTop: '0px', color: '#222' 
-            }, 500);
-            $(".section01.highlight .inner h1").css({ 'color': "#222", 'transition' : 'color 0.5s' });
-          },300);
-          
-          //배경 bottome-up : 0.5s
+        //폰트 bottom-up 0.5s, 하얀색 -> 검정색 animation 0.5s
+        setTimeout(function () {
+          $(".section01.highlight .inner h1").animate(
+            { marginTop: "0px", color: "#222" },
+            500
+          );
+          $(".section01.highlight .inner h1").css({
+            color: "#222",
+            transition: "color 0.5s",
+          });
+        }, 300);
 
-          setTimeout(function(){
-            //0.5초 후에 슬라이드업하는 class 추가
-            $(".section01.highlight .inner").addClass("bottom-top"); 
-          },1000);
-          
-          //폰트 검정색 -> 하얀색 : 1.2초 후 ( bottom-up 애니메이션 중간에 추가하기 )
-          setTimeout(function(){
-            $(".section01.highlight .inner h1").css({ 'color': "#fff", 'transition' : 'color 0.5s' });
-          }, 1200);
-        
+        //배경 bottome-up : 0.5s
+
+        setTimeout(function () {
+          //0.5초 후에 슬라이드업하는 class 추가
+          $(".section01.highlight .inner").addClass("bottom-top");
+        }, 1000);
+
+        //폰트 검정색 -> 하얀색 : 1.2초 후 ( bottom-up 애니메이션 중간에 추가하기 )
+        setTimeout(function () {
+          $(".section01.highlight .inner h1").css({
+            color: "#fff",
+            transition: "color 0.5s",
+          });
+        }, 1200);
+
         //현재 섹션 숨김 처리 : 2.5초 후
-        setTimeout(function(){
+        setTimeout(function () {
           //기존의 section01 노출하기
-          $(".section01.normal").fadeIn('slow');
+          $(".section01.normal").fadeIn("slow");
           //header menu 메뉴 노출 처리
-          $("header .inner").css('display', 'flex');
-          $(".section01.highlight").css('display','none');
+          $("header .inner").css("display", "flex");
+          $(".section01.highlight").css("display", "none");
         }, 2500);
-      }else{
+      } else {
         //현재 페이지에서 새로고침했을 때
-        $(".section01.highlight").css('display','none');
+        $(".section01.highlight").css("display", "none");
       }
-      
-      $( ".normal-image-bg div" ).mouseenter(function() {
+
+      $(".normal-image-bg div").mouseenter(function () {
         var image = $(this).data("bg");
-        $(".normal-image-bg").css('background-image', 'url(../assets/ABGround/abground_bg_'+image+'.png)');
+        $(".normal-image-bg").css(
+          "background-image",
+          "url(../assets/ABGround/abground_bg_" + image + ".png)"
+        );
       });
-  });
+    });
   </script>
 
   <body>
@@ -259,7 +270,9 @@
           <div class="des textAni04 pc">
             <p>
               알파브라더스는 CHANGING WAY라는 미션에 부합하는 기업들 중에서도
-              <br class="pc" /><span class="text_bg">온라인을 통해서 서비스 혹은 제품을 판매할 고객사</span>
+              <br class="pc" /><span class="text_bg"
+                >온라인을 통해서 서비스 혹은 제품을 판매할 고객사</span
+              >
               들을 위주로
               <br class="pc" />
               ACTIVE 엑셀러레이팅을 진행하고 있습니다.
@@ -275,8 +288,9 @@
           </div>
           <div class="des textAni04 mb">
             <p>
-              알파브라더스는 CHANGING WAY라는 미션에 부합하는 기업들 중에서도온라인을 통해서 서비스 혹은 제품을 판매할 고객사 들을 위주로
-              ACTIVE 엑셀러레이팅을 진행하고 있습니다.
+              알파브라더스는 CHANGING WAY라는 미션에 부합하는 기업들
+              중에서도온라인을 통해서 서비스 혹은 제품을 판매할 고객사 들을
+              위주로 ACTIVE 엑셀러레이팅을 진행하고 있습니다.
             </p>
             <a href="#"
               ><span>AB그라운드에서의 온라인 사업들 더 보러 가기</span></a
@@ -309,26 +323,28 @@
           </div>
         </div>
 
-        <div class="imgArea mb section05-slider">
-          <div class="item" >
-            <div class="imgWrap"></div>
-            <div class="hoverText">
-              <h2>ONLINE SERVICES</h2>
-              <p>온라인을 통해 새로운 서비스를 런칭하고자 하는 기업</p>
+        <div class="imgArea mb">
+          <div class="item-container section05-slider">
+            <div class="item">
+              <div class="imgWrap"></div>
+              <div class="hoverText">
+                <h2>ONLINE SERVICES</h2>
+                <p>온라인을 통해 새로운 서비스를 런칭하고자 하는 기업</p>
+              </div>
             </div>
-          </div>
-          <div class="item" >
-            <div class="imgWrap"></div>
-            <div class="hoverText">
-              <h2>ONLINE PRODUCTS</h2>
-              <p>온라인을 통해 제품을 판매하고자 하는 기업</p>
+            <div class="item">
+              <div class="imgWrap"></div>
+              <div class="hoverText">
+                <h2>ONLINE PRODUCTS</h2>
+                <p>온라인을 통해 제품을 판매하고자 하는 기업</p>
+              </div>
             </div>
-          </div>
-          <div class="item" >
-            <div class="imgWrap"></div>
-            <div class="hoverText">
-              <h2>ONLINE TO GLOBAL</h2>
-              <p>사업모델에 대한 글로벌 확장성을 가지고 있는 기업</p>
+            <div class="item">
+              <div class="imgWrap"></div>
+              <div class="hoverText">
+                <h2>ONLINE TO GLOBAL</h2>
+                <p>사업모델에 대한 글로벌 확장성을 가지고 있는 기업</p>
+              </div>
             </div>
           </div>
         </div>
@@ -494,7 +510,7 @@
     <!-- 약관 팝업 : s -->
     <div class="popup" id="agreement">
       <div class="inner">
-        <button class="closeBtn" onclick="btmInfoClosePopup()"></button>
+        <button class="closeBtn"></button>
         <h1>이용약관</h1>
         <div class="contents">
           <p>
@@ -758,7 +774,7 @@
     <!-- 개인정보 팝업 : s -->
     <div class="popup" id="privacy">
       <div class="inner">
-        <button class="closeBtn" onclick="btmInfoClosePopup()"></button>
+        <button class="closeBtn"></button>
         <h1>개인정보</h1>
         <div class="contents">
           <p>
@@ -962,10 +978,38 @@
           <button class="closeBtn"></button>
         </div>
         <ul>
-          <li><a id="menu01" class="animate__animated animate__fadeInDown" href="ABground.html">AB GROUND</a></li>
-          <li><a id="menu02" class="animate__animated animate__fadeInDown" href="whyAB.html">WHY AB</a></li>
-          <li><a id="menu03" class="animate__animated animate__fadeInDown" href="portfolio.html">PORTFOLIO</a></li>
-          <li><a id="menu04" class="animate__animated animate__fadeInDown" href="partners.html">PARTNERS</a></li>
+          <li>
+            <a
+              id="menu01"
+              class="animate__animated animate__fadeInDown"
+              href="ABground.html"
+              >AB GROUND</a
+            >
+          </li>
+          <li>
+            <a
+              id="menu02"
+              class="animate__animated animate__fadeInDown"
+              href="whyAB.html"
+              >WHY AB</a
+            >
+          </li>
+          <li>
+            <a
+              id="menu03"
+              class="animate__animated animate__fadeInDown"
+              href="portfolio.html"
+              >PORTFOLIO</a
+            >
+          </li>
+          <li>
+            <a
+              id="menu04"
+              class="animate__animated animate__fadeInDown"
+              href="partners.html"
+              >PARTNERS</a
+            >
+          </li>
         </ul>
       </div>
     </div>
@@ -974,24 +1018,91 @@
 </html>
 
 <script>
-  $(".section05-slider").slick({
+ 
+
+  jQuery(document).ready(function(){
+
+    $(".section05-slider").slick({
     arrows: false,
     dots: false,
     infinite: false,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    variableWidth: true,
-
+    variableWidth: false,
   });
 
   $(".section06-slider").slick({
     arrows: false,
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    variableWidth: true,
+    variableWidth: false,
+  });
+
+
+    $(window).on("scroll", function () {
+    var height = $(document).scrollTop();
+  var _scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    var _abGround_section02 = $("#abGround .section02").offset().top;
+    console.log(_abGround_section02)
+    var _abGround_section05 = $("#abGround .section05").offset().top;
+    var _abGround_section06 = $("#abGround .section06").offset().top;
+
+    if (_scrollTop > _abGround_section02 - 350) {
+      var $arrow = $("#abGround .arrow");
+      $arrow.addClass("on");
+    }
+    if (_scrollTop > _abGround_section05 - 350) {
+      var textAni01 = $(".textAni01");
+      var textAni02 = $(".textAni02");
+      var textAni03 = $(".textAni03");
+      var textAni04 = $(".textAni04");
+
+      textAni02.animate({ opacity: "1" }, 500);
+      textAni01.animate(
+        {
+          opacity: "0",
+          top: "-20px",
+        },
+        500,
+        function () {
+          textAni02.animate(
+            {
+              left: $(".textAni03").width(),
+            },
+            500,
+            function () {
+              textAni03.animate(
+                {
+                  opacity: "1",
+                },
+                500
+              );
+              textAni04.animate(
+                {
+                  opacity: "1",
+                  marginTop: "0",
+                },
+                500
+              );
+            }
+          );
+        }
+      );
+    }
+
+    if (_scrollTop > _abGround_section06 - 350) {
+
+      var $section06_h1 = $(".section06 h1");
+      var $section06_item = $(".section06 .item-container > .item");
+      $section06_h1.addClass("animate__fadeInUp");
+      $section06_item.addClass("animate__fadeInUp");
+
+    }
+  });
   });
 </script>

@@ -867,7 +867,7 @@
   <!-- 약관 팝업 : s -->
   <div class="popup" id="agreement">
     <div class="inner">
-      <button class="closeBtn" onclick="btmInfoClosePopup()"></button>
+      <button class="closeBtn"></button>
       <h1>이용약관</h1>
       <div class="contents">
         <p>
@@ -1131,7 +1131,7 @@
   <!-- 개인정보 팝업 : s -->
   <div class="popup" id="privacy">
     <div class="inner">
-      <button class="closeBtn" onclick="btmInfoClosePopup()"></button>
+      <button class="closeBtn"></button>
       <h1>개인정보</h1>
       <div class="contents">
         <p>
@@ -1344,3 +1344,40 @@
 </body>
 
 </html>
+
+<script>
+  jQuery(document).ready(function(){
+    $(window).on("scroll", function () {
+    var height = $(document).scrollTop();
+  var _scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    var $portfolio_section02 = $("#portfolio .section02");
+    var $portfolio_section04 = $("#portfolio .section04.pc");
+
+    var _portfolio_section02 = $("#portfolio .section02").offset().top;
+    var _portfolio_section04 = $("#portfolio .section04.pc").offset().top;
+    var _portfolio_section04_inner01 = $portfolio_section04
+      .children(".inner01")
+      .offset().top;
+    var _portfolio_section04_inner02 = $portfolio_section04
+      .children(".inner02")
+      .offset().top;
+
+    if (_scrollTop > _portfolio_section02 - 350) {
+      var $section02_inner_item_text = $(
+        " #portfolio .section02 .inner-item > * "
+      );
+      $section02_inner_item_text.addClass("animate__fadeInUp");
+    }
+
+    if (_scrollTop > _portfolio_section04_inner01 - 350) {
+      var $inner01_arrow = $(".inner01 .arrow");
+      $inner01_arrow.addClass("on");
+    }
+    if (_scrollTop > _portfolio_section04_inner02 - 350) {
+      var $inner01_arrow = $(".inner02 .arrow");
+      $inner01_arrow.addClass("on");
+    }
+  });
+  });
+</script>

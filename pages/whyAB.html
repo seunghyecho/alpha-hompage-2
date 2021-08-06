@@ -714,3 +714,45 @@
 </body>
 
 </html>
+
+<script>
+  jQuery(document).ready(function(){
+    $(window).on("scroll", function () {
+    var height = $(document).scrollTop();
+    var _scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    var _whyAb_section02 = $("#whyAb .section02").offset().top;
+    console.log(_whyAb_section02)
+
+    var _whyAb_section03 = $("#whyAb .section03").offset().top;
+    var _whyAb_section04 = $("#whyAb .section04").offset().top;
+    var _whyAb_section05 = $("#whyAb .section05").offset().top;
+    var _whyAb_section06 = $("#whyAb .section06").offset().top;
+    var _whyAb_section07 = $("#whyAb .section07").offset().top;
+
+    if (_scrollTop > _whyAb_section02 - 350) {
+      var $section02_sectionInfo = $(".section02 .sectionInfo");
+      $section02_sectionInfo.addClass("animate__fadeInUp");
+    }
+    if (_scrollTop > _whyAb_section03 - 700) {
+      var $section03_sectionInfo = $(".section03 .sectionInfo");
+      $section03_sectionInfo.addClass("animate__fadeInUp");
+    }
+
+    if (_scrollTop > _whyAb_section04 - 700) {
+      var $section04_animate = $(".section04 .animate__animated");
+      $section04_animate.addClass("animate__fadeInUp");
+    }
+
+    if (_scrollTop > _whyAb_section05 - 700) {
+      var $section05_animate = $(".section05 .animate__animated");
+      $section05_animate.addClass("animate__fadeInUp");
+    }
+
+    if (_scrollTop > _whyAb_section06 - 700) {
+      var $section06_h2 = $(".section06 h2");
+      $section06_h2.addClass("animate__fadeInUp");
+    }
+  });
+  });
+</script>

@@ -12,7 +12,6 @@
   background-image: url(../assets/icon/icon_scroll.svg);
 }
 
-
 #whyAb section {
   padding: 100px 0;
   height: 100vh;
@@ -70,7 +69,7 @@
   position: relative;
   width: 100%;
   height: 760px;
-    max-height: 760px;
+  max-height: 760px;
   background-size: cover;
   background-position: center;
   background-image: url(../assets/WhyAB/img_p04_mainBG.png);
@@ -188,7 +187,7 @@
   font-weight: 900;
   font-size: 175px;
   line-height: 80px;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.1);
 }
 
 @keyframes animation {
@@ -362,7 +361,7 @@
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.03em;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.03);
   transition: all 0.5s;
 }
 
@@ -371,8 +370,11 @@
 }
 
 #whyAb .section06 .imgWrap .hoverWrap .item:hover {
-  color: #fff;
+  color: rgba(255, 255, 255, 1);
 }
+/* #whyAb .section06 .imgWrap .hoverWrap li:not(:hover){
+  color: rgba(255, 255, 255, 0.03);
+} */
 
 #whyAb .section06 .imgWrap .hoverWrap .item:hover::before {
   content: "";
@@ -389,7 +391,6 @@
   display: block;
   transition: all 0.5s;
 }
-
 #whyAb .section06 .imgWrap .hoverWrap .item:hover:nth-of-type(1)::before {
   background-image: url(../assets/WhyAB/png_p03_Ideation_BG.png);
 }
@@ -512,7 +513,7 @@
   }
 
   /* section02 */
-  #whyAb .section02::before{
+  #whyAb .section02::before {
     display: none;
   }
   #whyAb .section02 .inner {
@@ -532,9 +533,17 @@
     height: 320px;
   }
 
+  #whyAb .section02 .inner .sectionInfo {
+    opacity: 1;
+  }
+  #whyAb .section02 .inner .sectionInfo.animate__fadeInUp {
+    animation: unset;
+  }
+
   /* section03 */
-  .bg_text_ani{
+  .bg_text_ani {
     top: 44px;
+    animation: animation 10s linear infinite;
   }
   .bg_text_ani span {
     font-size: 90px;
@@ -548,6 +557,7 @@
 
   #whyAb .section03 .sectionInfo {
     flex-direction: column;
+    opacity: 1;
   }
 
   #whyAb .section03 .sectionInfo h2 {
@@ -564,14 +574,17 @@
     width: 100%;
     height: 320px;
   }
+  #whyAb .section03 .sectionInfo.animate__fadeInUp {
+    animation: unset;
+  }
 
   /* section04 */
-  #whyAb .section04{
+  #whyAb .section04 {
     padding: 100px 0;
     margin: 50px 0;
     overflow-x: hidden;
   }
-  #whyAb .section04::before{
+  #whyAb .section04::before {
     top: -92px;
     width: 100%;
     right: -55px;
@@ -581,14 +594,20 @@
     padding: 0 20px;
     box-sizing: border-box;
   }
+  #whyAb .section04 .animate__animated {
+    opacity: 1;
+  }
+  #whyAb .section04 .animate__fadeInUp {
+    animation: unset;
+  }
 
   /* section05 */
-  #whyAb .section05{
+  #whyAb .section05 {
     padding: 100px 0;
     margin: 50px 0 0;
     position: relative;
   }
-  #whyAb .section05::before{
+  #whyAb .section05::before {
     content: "";
     display: inline-block;
     position: absolute;
@@ -614,6 +633,12 @@
     margin: 20px 0;
     background-image: url(../assets/WhyAB/img_section05_m.svg);
   }
+  #whyAb .section05 .animate__animated {
+    opacity: 1;
+  }
+  #whyAb .section05 .animate__fadeInUp {
+    animation: unset;
+  }
 
   /* section06 */
   #whyAb .section06 .inner h2 {
@@ -621,6 +646,11 @@
     padding: 0 20px;
     margin: 0 auto 20px;
     width: 100%;
+    opacity: 1;
+  }
+
+  #whyAb .section06 .inner h2.animate__fadeInUp {
+    animation: unset;
   }
 
   #whyAb .section06 .imgWrap {
@@ -641,11 +671,11 @@
   #whyAb .section06 .imgWrap .hoverWrap .item:hover:nth-of-type(1)::before {
     background-image: url(../assets/WhyAB/png_p03_Ideation_BG_m.png);
   }
-  
+
   #whyAb .section06 .imgWrap .hoverWrap .item:hover:nth-of-type(2)::before {
     background-image: url(../assets/WhyAB/png_p03_development_BG_m.png);
   }
-  
+
   #whyAb .section06 .imgWrap .hoverWrap .item:hover:nth-of-type(3)::before {
     background-image: url(../assets/WhyAB/png_p03_MarketEntry_BG_m.png);
   }

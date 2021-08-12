@@ -1,13 +1,23 @@
 jQuery(document).ready(function () {
   console.log("hihi");
 
-  
-
   // 마우스커서---------------------------------------------------
-  const cursor = $(".cursor");
+  var cursor = document.querySelector("#cursor");
   document.addEventListener("mousemove", function (e) {
-    cursor.css("cursor", "url(../assets/cursor/cursor_Hover.svg)");
+
+    cursor.setAttribute(
+      "style",
+      "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px; background-image: url(../assets/cursor/cursor_Basic.svg);"
+    );
   });
+
+  document.addEventListener("mouseover", function (e) {
+    cursor.setAttribute(
+      "style",
+      "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px; background-image: url(../assets/cursor/cursor_Hover.svg);"
+    );
+  });
+ 
 
   //약관, 개인정보, 모바일메뉴 팝업------------------------------
   const popup = $(".popup");
@@ -90,11 +100,19 @@ jQuery(document).ready(function () {
 
   
 
-  // 모바일 헤더 스크롤-------------------------------------------
+  // 헤더 스크롤-------------------------------------------
 
   $(window).scroll(function () {
     var height = $(document).scrollTop();
 
+    // pc header
+    if (height > 100) {
+      $('header').addClass("fixed");
+    } else {
+      $('header').removeClass("fixed");
+    }
+
+    // mobile header
     if (height > $("header").height()) {
       $("header").addClass("fixed");
       $(".mb-main").css({

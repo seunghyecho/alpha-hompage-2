@@ -1018,91 +1018,84 @@
 </html>
 
 <script>
- 
-
-  jQuery(document).ready(function(){
-
+  jQuery(document).ready(function () {
     $(".section05-slider").slick({
-    arrows: false,
-    dots: false,
-    infinite: false,
-    speed: 300,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    variableWidth: false,
-  });
+      arrows: false,
+      dots: false,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      variableWidth: false,
+    });
 
-  $(".section06-slider").slick({
-    arrows: false,
-    dots: false,
-    infinite: false,
-    speed: 300,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    variableWidth: false,
-  });
-
+    $(".section06-slider").slick({
+      arrows: false,
+      dots: false,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      variableWidth: false,
+    });
 
     $(window).on("scroll", function () {
-    var height = $(document).scrollTop();
-  var _scrollTop = window.scrollY || document.documentElement.scrollTop;
+      
+      var height = $(document).scrollTop();
+      var _scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var _abGround_section02 = $("#abGround .section02").offset().top;
+      var _abGround_section05 = $("#abGround .section05").offset().top;
+      var _abGround_section06 = $("#abGround .section06").offset().top;
 
-    var _abGround_section02 = $("#abGround .section02").offset().top;
-    console.log(_abGround_section02)
-    var _abGround_section05 = $("#abGround .section05").offset().top;
-    var _abGround_section06 = $("#abGround .section06").offset().top;
+      if (_scrollTop > _abGround_section02 - 350) {
+        var $arrow = $("#abGround .arrow");
+        $arrow.addClass("on");
+      }
+      if (_scrollTop > _abGround_section05 - 350) {
+        var textAni01 = $(".textAni01");
+        var textAni02 = $(".textAni02");
+        var textAni03 = $(".textAni03");
+        var textAni04 = $(".textAni04");
 
-    if (_scrollTop > _abGround_section02 - 350) {
-      var $arrow = $("#abGround .arrow");
-      $arrow.addClass("on");
-    }
-    if (_scrollTop > _abGround_section05 - 350) {
-      var textAni01 = $(".textAni01");
-      var textAni02 = $(".textAni02");
-      var textAni03 = $(".textAni03");
-      var textAni04 = $(".textAni04");
+        textAni02.animate({ opacity: "1" }, 500);
+        textAni01.animate(
+          {
+            opacity: "0",
+            top: "-20px",
+          },
+          500,
+          function () {
+            textAni02.animate(
+              {
+                left: $(".textAni03").width(),
+              },
+              500,
+              function () {
+                textAni03.animate(
+                  {
+                    opacity: "1",
+                  },
+                  500
+                );
+                textAni04.animate(
+                  {
+                    opacity: "1",
+                    marginTop: "0",
+                  },
+                  500
+                );
+              }
+            );
+          }
+        );
+      }
 
-      textAni02.animate({ opacity: "1" }, 500);
-      textAni01.animate(
-        {
-          opacity: "0",
-          top: "-20px",
-        },
-        500,
-        function () {
-          textAni02.animate(
-            {
-              left: $(".textAni03").width(),
-            },
-            500,
-            function () {
-              textAni03.animate(
-                {
-                  opacity: "1",
-                },
-                500
-              );
-              textAni04.animate(
-                {
-                  opacity: "1",
-                  marginTop: "0",
-                },
-                500
-              );
-            }
-          );
-        }
-      );
-    }
-
-    if (_scrollTop > _abGround_section06 - 350) {
-
-      var $section06_h1 = $(".section06 h1");
-      var $section06_item = $(".section06 .item-container > .item");
-      $section06_h1.addClass("animate__fadeInUp");
-      $section06_item.addClass("animate__fadeInUp");
-
-    }
-  });
+      if (_scrollTop > _abGround_section06 - 350) {
+        var $section06_h1 = $(".section06 h1");
+        var $section06_item = $(".section06 .item-container > .item");
+        $section06_h1.addClass("animate__fadeInUp");
+        $section06_item.addClass("animate__fadeInUp");
+      }
+    });
   });
 </script>

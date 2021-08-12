@@ -1,24 +1,6 @@
 jQuery(document).ready(function () {
   console.log("hihi");
 
-  // 마우스커서---------------------------------------------------
-  var cursor = document.querySelector("#cursor");
-  document.addEventListener("mousemove", function (e) {
-
-    cursor.setAttribute(
-      "style",
-      "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px; background-image: url(../assets/cursor/cursor_Basic.svg);"
-    );
-  });
-
-  document.addEventListener("mouseover", function (e) {
-    cursor.setAttribute(
-      "style",
-      "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px; background-image: url(../assets/cursor/cursor_Hover.svg);"
-    );
-  });
- 
-
   //약관, 개인정보, 모바일메뉴 팝업------------------------------
   const popup = $(".popup");
   popup.hide();

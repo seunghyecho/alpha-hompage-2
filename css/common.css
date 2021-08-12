@@ -216,7 +216,9 @@ footer .inner .btmInfo ul li a:hover {
   .pc {
     display: none;
   }
-
+  html{
+    scroll-behavior: smooth;
+  }
   body {
     font-size: 14px;
     overflow-x: hidden;

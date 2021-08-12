@@ -28,9 +28,7 @@
     min-width: 100%;
     min-height: 639px;
     width: auto;
-    height: 639px;
     z-index: -2;
-
     position: fixed;
   }
   /* mb-main */
@@ -38,8 +36,7 @@
     transition: all 0.5s;
   }
   .mb-main .section01 {
-    height: 900px;
-
+    height: 639px;
     position: relative;
   }
   .mb-main .section01 .inner {

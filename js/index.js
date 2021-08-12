@@ -26,7 +26,8 @@ jQuery(document).ready(function () {
     privacyPopup.fadeIn();
   });
   gnbBtn.on("click", function () {
-    gnbPopup.fadeIn();
+    $('#nav-icon3').addClass('open');
+    gnbPopup.fadeIn(500);
 
     // 모바일 메뉴 animate
     gnb_menu01.stop().animate(
@@ -71,7 +72,8 @@ jQuery(document).ready(function () {
   closeBtn.on("click", function () {
     $("#agreement").fadeOut();
     $("#privacy").fadeOut();
-    $("#gnb").fadeOut();
+    $("#gnb").fadeOut(500);
+    $('#nav-icon3').removeClass('open');
 
     // 모바일 메뉴 animate reset
     gnb_menu01.removeAttr("style");

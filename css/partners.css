@@ -18,8 +18,8 @@
 }
 
 #partners section h1 {
-  font-size: 122px;
-  line-height: 120px;
+  font-size: 100px;
+  line-height: 1;
   font-weight: 800;
   color: #fff;
 }
@@ -129,7 +129,9 @@
   color: #fff;
   transition: all 0.5s;
 }
-
+#partners .section02 .inner .group ul li a .info {
+  width: 50%;
+}
 #partners .section02 .inner .group p {
   font-size: 20px;
   font-weight: 400;
@@ -170,6 +172,7 @@
 }
 
 #partners .section02 .inner .group ul li a .logo {
+  width: 30%;
   padding: 0 20px;
   box-sizing: border-box;
   background-position: center;
@@ -178,39 +181,39 @@
 }
 
 #partners .section02 .inner .group ul li a .logo01 {
-  width: 165px;
   height: 127px;
   background-image: url(../assets/Partners/vector_p05_logo01_off.svg);
+  background-size: 165px 127px;
 }
 
 #partners .section02 .inner .group ul li a .logo02 {
-  width: 200px;
   height: 200px;
   background-image: url(../assets/Partners/vector_p05_logo02_off.svg);
+  background-size: 200px 200px;
 }
 
 #partners .section02 .inner .group ul li a .logo03 {
-  width: 312px;
   height: 82px;
   background-image: url(../assets/Partners/vector_p05_logo03_off.svg);
+  background-size: 312px 82px;
 }
 
 #partners .section02 .inner .group ul li a .logo04 {
-  width: 182px;
   height: 128px;
   background-image: url(../assets/Partners/vector_p05_logo04_off.svg);
+  background-size: 182px 128px;
 }
 
 #partners .section02 .inner .group ul li a .logo05 {
-  width: 298px;
   height: 78px;
-  background-image: url(../assets/Partners/vector_p05_logo05_off.png);
+  background-image: url(../assets/Partners/vector_p05_logo05_off.svg);
+  background-size: 298px 78px;
 }
 
 #partners .section02 .inner .group ul li a .logo06 {
-  width: 199px;
   height: 62px;
-  background-image: url(../assets/Partners/vector_p05_logo06_off.png);
+  background-image: url(../assets/Partners/vector_p05_logo06_off.svg);
+  background-size: 199px 62px;
 }
 
 #partners .section02 .inner .group ul li:hover a .logo01 {
@@ -230,17 +233,26 @@
 }
 
 #partners .section02 .inner .group ul li:hover a .logo05 {
-  background-image: url(../assets/Partners/vector_p05_logo05_on.png);
+  background-image: url(../assets/Partners/vector_p05_logo05_on.svg);
 }
 
 #partners .section02 .inner .group ul li:hover a .logo06 {
-  background-image: url(../assets/Partners/vector_p05_logo06_on.png);
+  background-image: url(../assets/Partners/vector_p05_logo06_on.svg);
 }
 
 @media (max-width: 1280px) {
+  .scrollBtn{
+    width: 17px;
+    height: 24px;
+    background-size: 17px 24px;
+    bottom: -60px;
+  }
   #partners section h1 {
     font-size: 54px;
     line-height: 1;
+  }
+  #partners .section01 h1{
+    margin-bottom: 0;
   }
 
   .section01 .inner p {
@@ -276,7 +288,7 @@
   /* section02 */
   #partners .section02 .inner {
     width: 100%;
-    padding: 0 20px;
+    padding: 25px 20px 0;
     box-sizing: border-box;
   }
 
@@ -311,43 +323,43 @@
   }
 
   #partners .section02 .inner .group ul li a .logo {
-    background-size: contain;
+    width: 45%;
   }
 
   #partners .section02 .inner .group ul li a .logo01 {
-    width: 85px;
     height: 65px;
+    background-size: 85px 65px;
   }
 
   #partners .section02 .inner .group ul li a .logo02 {
-    width: 84px;
     height: 84px;
+    background-size: 84px 84px;
   }
 
   #partners .section02 .inner .group ul li a .logo03 {
-    width: 83px;
     height: 104px;
+    background-size: 83px 104px;
     background-image: url(../assets/Partners/vector_p05_logo03_off_m.svg);
   }
 
   #partners .section02 .inner .group ul li a .logo04 {
-    width: 101px;
     height: 71px;
+    background-size: 101px 71px;
   }
 
   #partners .section02 .inner .group ul li a .logo05 {
-    width: 135px;
     height: 35px;
+    background-size: 135px 35px;
   }
 
   #partners .section02 .inner .group ul li a .logo06 {
-    width: 135px;
     height: 43px;
+    background-size: 135px 43px;
   }
 
   #partners .section02 .inner .group ul li:hover a .logo03 {
-    width: 83px;
     height: 104px;
+    background-size: 83px 104px;
     background-image: url(../assets/Partners/vector_p05_logo03_on_m.svg);
   }
 }

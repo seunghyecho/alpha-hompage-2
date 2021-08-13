@@ -26,7 +26,7 @@
 
 .section05 p .text_bg {
   position: relative;
-  color: #000;
+  color: #fff;
   font-weight: 600;
   z-index: 1;
 }
@@ -40,7 +40,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: rgba(253,173,21,0.6);
   z-index: -1;
 }
 
@@ -95,7 +95,7 @@ section {
 .section01.highlight .inner {
   /* header 영역과 h1 밑에 텍스트의 높이를 고려하여 height 조절 */
   height: 920px;
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0px auto;
   background: #fff;
 }
@@ -172,26 +172,16 @@ section {
   content: "";
   display: block;
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 870px;
-  height: 82px;
+  bottom: 45px;
+  left: -190px;
+  width: 289px;
+  height: 269px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(../assets/ABGround/icon_p02_arrow.svg);
   z-index: -1;
-  opacity: 0;
-}
-
-.section02 .inner h2.arrow.on::before {
-  left: -64px;
   opacity: 1;
-  transition: all 0.5s;
-}
-
-.section02 .inner h2.on {
-  color: #010101;
 }
 
 .section02 .inner .item .item-info {
@@ -207,6 +197,10 @@ section {
 
 .section02 .inner .item .item-info .downBtn {
   margin-top: 30px;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+
   width: 80%;
   height: 80px;
   border: none;
@@ -214,7 +208,6 @@ section {
   border-bottom: 1px solid #fff;
   font-weight: 600;
   font-size: 20px;
-  line-height: 24px;
   letter-spacing: 0.03em;
 
   color: #ffffff;
@@ -299,7 +292,6 @@ section {
 
 .video-overlay.open {
   position: relative;
-  z-index: 1000;
   opacity: 1;
 }
 
@@ -413,7 +405,6 @@ section {
   font-weight: 900;
   font-size: 73px;
   line-height: 78px;
-  letter-spacing: -0.05em;
   color: rgba(255, 255, 255, 0.2);
 }
 
@@ -436,7 +427,7 @@ section {
   font-size: 73px;
   color: #fff;
   width: auto;
-  transition: 0.5s;
+  transition: all 1s;
 }
 
 .section05 .des > * {
@@ -490,8 +481,13 @@ section {
   width: 1280px;
   margin: 0 auto;
   height: auto;
+ 
 }
+.section05 .imgArea.pc{
+  opacity: 0;
 
+  transition: all 0.5s;
+}
 .section05 .imgArea.pc > * {
   width: 50%;
 }
@@ -537,7 +533,7 @@ section {
   left: 50%;
   text-align: center;
   transform: translate(-50%, -50%);
-  transition: all 0.5s;
+  transition: all 0.8s ease-in-out;
   z-index: 2;
 }
 
@@ -746,7 +742,7 @@ section {
     line-height: 33px;
     letter-spacing: -0.01em;
   }
-  .section02 .inner h2.on{
+  .section02 .inner h2.on {
     color: #fff;
   }
   .section02 .inner h2.arrow::before {
@@ -889,8 +885,8 @@ section {
     margin-top: 0;
     display: block;
   }
- 
-  .section05 .imgArea.mb .item-container .item{
+
+  .section05 .imgArea.mb .item-container .item {
     /* width: 320px !important; */
     height: 100%;
     opacity: 1;
@@ -899,7 +895,7 @@ section {
     margin-bottom: 0;
     margin-top: 0;
   }
-  .section05-slider{
+  .section05-slider {
     display: flex;
     flex-wrap: wrap;
   }
@@ -923,7 +919,6 @@ section {
   .section05 .imgArea .item-container .item:nth-of-type(3) .imgWrap {
     background-image: url(../assets/ABGround/img_p02_Section05_Online03_x1_m.png);
   }
-  
 
   .section05 .imgArea .item .hoverText {
     margin-top: 10px;
@@ -976,7 +971,6 @@ section {
     margin-right: 0;
     margin-bottom: 0;
     margin-top: 0;
-
   }
 
   .section06 .item-container .item .imgWrap {

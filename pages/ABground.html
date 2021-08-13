@@ -161,7 +161,7 @@
                   AB 그라운드 위에서 함께 건설해나가는 사업고도화형 컴퍼니
                   빌더입니다.
                 </p>
-                <button class="downBtn">회사소개서 다운받기</button>
+                <a href="../assets/linkFile/CompanyInfo.pdf" download class="downBtn">회사소개서 다운받기</a>
               </div>
             </div>
             <div class="item img"></div>
@@ -187,7 +187,7 @@
             e.preventDefault();
             $("#video-overlay").addClass("open");
             $("#video-overlay").append(
-              ' <video class="video" src="../assets/video/pc_01_1920-1080.mp4" autoplay muted playsinline width="100%" poster="../assets/ABGround/video_poster.svg">'
+              ' <video class="video" src="../assets/video/pc_02_1920-1080.mp4" autoplay playsinline width="100%" poster="../assets/ABGround/PC_vid02_thumbnail.svg">'
             );
           });
         });
@@ -1056,14 +1056,15 @@
         var textAni02 = $(".textAni02");
         var textAni03 = $(".textAni03");
         var textAni04 = $(".textAni04");
+        var imgArea = $(".section05 .imgArea.pc");
 
-        textAni02.animate({ opacity: "1" }, 500);
+        textAni02.animate({ opacity: "1" }, 1000);
         textAni01.animate(
           {
             opacity: "0",
             top: "-20px",
           },
-          500,
+          1000,
           function () {
             textAni02.animate(
               {
@@ -1082,7 +1083,15 @@
                     opacity: "1",
                     marginTop: "0",
                   },
-                  500
+                  500,
+                  function(){
+                    imgArea.animate(
+                      {
+                        opacity: "1",
+                      },
+                      500
+                    )
+                  }
                 );
               }
             );

@@ -436,10 +436,12 @@ section {
   letter-spacing: 0.03em;
   margin-bottom: 23px;
 }
-
-.section05 .des.textAni04 {
+.section05 .des.textAni04.pc {
+  margin-top: 0;
   opacity: 0;
-  margin-top: 60px;
+}
+.section05 .des.textAni04.mb {
+  opacity: 1;
 }
 
 .section05 .des a {
@@ -672,6 +674,38 @@ section {
 
 .section06 .item-container .item:hover:nth-of-type(6) .imgWrap {
   background-image: url(../assets/ABGround/img_p02_Section06_06.png);
+}
+
+.peopleList ul {
+  margin-top: 80px;
+  width: 100%;
+}
+.peopleList ul li {
+  padding: 0 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 90px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+.peopleList ul li a.tit {
+  width: 20%;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+}
+.peopleList ul li a.tit span {
+  font-weight: 600;
+  font-size: 25px;
+}
+.peopleList ul li .des p {
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
 }
 
 @media (max-width: 1280px) {
@@ -1005,7 +1039,7 @@ section {
     font-size: 16px;
   }
 
-  .section06 .slick-track{
+  .section06 .slick-track {
     margin: 0 0 0 -15px;
   }
   .section06 .slick-list {
@@ -1016,5 +1050,57 @@ section {
   }
   .section06 .slick-slide {
     margin: 0 15px;
+  }
+
+  .peopleList ul li {
+    padding: 20px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .peopleList ul li a.tit {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    font-size: 14px;
+  }
+  .peopleList ul li a button {
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../assets/icon/icon_plus.svg);
+    transform: rotate(0deg);
+  }
+  .peopleList ul li a button.on{
+    transform: rotate(45deg);
+  }
+  .peopleList ul li a.tit span {
+    margin-right: 5px;
+    font-size: 16px;
+  }
+  .peopleList ul li .des {
+    display: none;
+    padding: 10px 0;
+    width: 100%;
+    transition: all 0.5s;
+  }
+  .peopleList ul li .des.on{
+    display: block;
+  }
+  .peopleList ul li .des p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .peopleList ul li .des p span {
+    display: block;
   }
 }

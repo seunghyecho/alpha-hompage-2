@@ -161,7 +161,12 @@
                   AB 그라운드 위에서 함께 건설해나가는 사업고도화형 컴퍼니
                   빌더입니다.
                 </p>
-                <a href="../assets/linkFile/CompanyInfo.pdf" download class="downBtn">회사소개서 다운받기</a>
+                <a
+                  href="../assets/linkFile/CompanyInfo.pdf"
+                  download
+                  class="downBtn"
+                  >회사소개서 다운받기</a
+                >
               </div>
             </div>
             <div class="item img"></div>
@@ -183,8 +188,10 @@
       </section>
       <script>
         $(document).ready(function () {
+          $("#play-video").css({ display: "block" });
           $("#play-video").on("click", function (e) {
             e.preventDefault();
+            $(this).css({ display: "none" });
             $("#video-overlay").addClass("open");
             $("#video-overlay").append(
               ' <video class="video" src="../assets/video/pc_02_1920-1080.mp4" autoplay playsinline width="100%" poster="../assets/ABGround/PC_vid02_thumbnail.svg">'
@@ -202,11 +209,12 @@
                   CHANGING WAY
                 </h1>
                 <p>
-                  알파브라더스는 CHANGING WAY라는 미션 하에<br class="pc" />
-                  사람들의 패러다임, 라이프스타일, 그리고 더 나아가<br
-                    class="pc"
-                  />
-                  비즈니스 세계의 판도를 변화시키고자 합니다.
+                  알파브라더스는 CHANGING WAY라는<br class="mb" />
+                  미션 하에<br class="pc" />
+                  사람들의 패러다임, 라이프스타일,<br class="mb" />
+                  그리고 더 나아가<br class="pc" />
+                  비즈니스 세계의 판도를<br class="mb" />
+                  변화시키고자 합니다.
                 </p>
               </div>
             </div>
@@ -251,10 +259,10 @@
       </section>
       <section class="section05">
         <div class="inner">
-          <h1>
+          <h1 class="pc">
             아이디어라는 점을<br />
             고객과 연결해주는
-            <div class="textArea">
+            <div class="textArea pc">
               <p class="textAni textAni01">
                 <span class="text">선</span>
               </p>
@@ -266,7 +274,15 @@
               </p>
             </div>
           </h1>
-
+          <h1 class="mb">
+            아이디어라는 점을<br />
+            고객과 연결해주는 선
+            <div class="textArea mb">
+              <p class="textAni">
+                <span class="text">ON-LINE</span>
+              </p>
+            </div>
+          </h1>
           <div class="des textAni04 pc">
             <p>
               알파브라더스는 CHANGING WAY라는 미션에 부합하는 기업들 중에서도
@@ -288,16 +304,12 @@
           </div>
           <div class="des textAni04 mb">
             <p>
-              알파브라더스는 CHANGING WAY라는 미션에 부합하는 기업들
-              중에서도온라인을 통해서 서비스 혹은 제품을 판매할 고객사 들을
-              위주로 ACTIVE 엑셀러레이팅을 진행하고 있습니다.
+              알파브라더스는 CHANGING WAY 미션에 부합하며<br />온라인을 통해서
+              서비스 혹은 제품을 판매할 고객사들을<br />
+              위주로 ACTIVE 엑셀러레이팅을 진행합니다.
             </p>
-            <a href="#"
-              ><span>AB그라운드에서의 온라인 사업들 더 보러 가기</span></a
-            >
           </div>
         </div>
-
         <div class="imgArea pc">
           <div class="left">
             <div class="item">
@@ -322,7 +334,6 @@
             </div>
           </div>
         </div>
-
         <div class="imgArea mb">
           <div class="item-container section05-slider">
             <div class="item">
@@ -1040,7 +1051,6 @@
     });
 
     $(window).on("scroll", function () {
-      
       var height = $(document).scrollTop();
       var _scrollTop = window.scrollY || document.documentElement.scrollTop;
       var _abGround_section02 = $("#abGround .section02").offset().top;
@@ -1052,10 +1062,10 @@
         $arrow.addClass("on");
       }
       if (_scrollTop > _abGround_section05 - 350) {
-        var textAni01 = $(".textAni01");
-        var textAni02 = $(".textAni02");
-        var textAni03 = $(".textAni03");
-        var textAni04 = $(".textAni04");
+        var textAni01 = $(".section05 .imgArea.pc .textAni01");
+        var textAni02 = $(".section05 .imgArea.pc .textAni02");
+        var textAni03 = $(".section05 .imgArea.pc .textAni03");
+        var textAni04 = $(".section05 .imgArea.pc .textAni04");
         var imgArea = $(".section05 .imgArea.pc");
 
         textAni02.animate({ opacity: "1" }, 1000);
@@ -1084,13 +1094,13 @@
                     marginTop: "0",
                   },
                   500,
-                  function(){
+                  function () {
                     imgArea.animate(
                       {
                         opacity: "1",
                       },
                       500
-                    )
+                    );
                   }
                 );
               }

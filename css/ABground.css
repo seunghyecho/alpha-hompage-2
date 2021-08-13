@@ -40,7 +40,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(253,173,21,0.6);
+  background-color: rgba(253, 173, 21, 0.6);
   z-index: -1;
 }
 
@@ -250,7 +250,6 @@ section {
   display: block;
   width: 32px;
   height: 44px;
-  /* background: #fa183d; */
   border-radius: 50%;
   padding: 18px 20px 18px 28px;
 }
@@ -379,7 +378,7 @@ section {
   letter-spacing: 0.03em;
   color: #ffffff;
 }
-
+/* section05 */
 .section05 {
   padding: 100px 0 0;
 }
@@ -481,9 +480,8 @@ section {
   width: 1280px;
   margin: 0 auto;
   height: auto;
- 
 }
-.section05 .imgArea.pc{
+.section05 .imgArea.pc {
   opacity: 0;
 
   transition: all 0.5s;
@@ -725,7 +723,7 @@ section {
 
   .section02 {
     margin: 50px 0;
-    padding: 0 20px;
+    padding: 100px 20px;
   }
 
   .section02 .inner {
@@ -753,6 +751,8 @@ section {
     width: 100%;
     height: 160px;
     top: 0;
+    background-position: 50% 83%;
+    background-image: url(../assets/ABGround/img_p02_boardFinger_m.png);
   }
 
   .section02 .inner .item .item-info {
@@ -771,12 +771,12 @@ section {
 
   .section02 .inner .item .item-info .downBtn {
     margin-top: 10px;
-    padding: 0 40px;
-    width: auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    width: max-content;
     height: 30px;
     border: 1px solid #fff;
     font-size: 14px;
-    line-height: 1;
   }
 
   .section03 {
@@ -834,6 +834,7 @@ section {
 
   .section04 .inner p {
     font-size: 14px;
+    font-weight: 400;
     line-height: 20px;
   }
 
@@ -862,12 +863,18 @@ section {
     font-size: 32px;
     line-height: 33px;
     letter-spacing: -0.01em;
+    color: #fff;
   }
 
   .section05 .textArea .des > * {
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 20px;
+  }
+
+  .section05 .des.textAni04 {
+    margin-top: 10px;
+    opacity: 1;
   }
 
   .section05 .des > * {
@@ -891,7 +898,7 @@ section {
     height: 100%;
     opacity: 1;
 
-    margin-right: -20px;
+    margin-right: -15px;
     margin-bottom: 0;
     margin-top: 0;
   }
@@ -944,6 +951,15 @@ section {
   .section05 .des.textAni04 {
     width: 100%;
   }
+  .section05 .imgArea .item:hover::after {
+    display: none;
+  }
+  .section05 .slick-list {
+    margin: 0 -15px;
+  }
+  .section05 .slick-slide {
+    margin: 0 15px;
+  }
 
   /* section06 */
   .section06 {
@@ -989,18 +1005,16 @@ section {
     font-size: 16px;
   }
 
-  .section05 .slick-list,
+  .section06 .slick-track{
+    margin: 0 0 0 -15px;
+  }
   .section06 .slick-list {
-    margin: 0 -10px;
+    margin: 0 -15px;
   }
-
-  .section05 .slick-list:first-of-type,
   .section06 .slick-list:first-of-type {
-    margin: 0 -10px 0 0px;
+    margin: 0 -15px 0 0px;
   }
-
-  .section05 .slick-slide,
   .section06 .slick-slide {
-    margin: 0 10px;
+    margin: 0 15px;
   }
 }

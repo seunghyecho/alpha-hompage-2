@@ -21,6 +21,10 @@
   background: #555;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 a {
   color: #000;
 }
@@ -216,9 +220,6 @@ footer .inner .btmInfo ul li a:hover {
 
   .pc {
     display: none;
-  }
-  html{
-    scroll-behavior: smooth;
   }
   body {
     font-size: 14px;

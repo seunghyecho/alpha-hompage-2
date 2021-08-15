@@ -361,7 +361,8 @@
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.03em;
-  color: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.2);
+
   transition: all 0.5s;
 }
 
@@ -370,7 +371,8 @@
 }
 
 #whyAb .section06 .imgWrap .hoverWrap .item:hover {
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1) !important;
+  
 }
 /* #whyAb .section06 .imgWrap .hoverWrap li:not(:hover){
   color: rgba(255, 255, 255, 0.03);
@@ -390,6 +392,7 @@
   z-index: -1;
   display: block;
   transition: all 0.5s;
+
 }
 #whyAb .section06 .imgWrap .hoverWrap .item:hover:nth-of-type(1)::before {
   background-image: url(../assets/WhyAB/png_p03_Ideation_BG.png);
@@ -403,12 +406,20 @@
   background-image: url(../assets/WhyAB/png_p03_MarketEntry_BG.png);
 }
 
+#whyAb .section06 .imgWrap .hoverWrap .item::after{
+  transform: scale(1);
+
+}
 #whyAb .section06 .imgWrap .hoverWrap .item:hover::after {
   content: "";
   display: block;
+  /* position: absolute; */
   font-size: 30px;
   font-weight: 400;
   letter-spacing: 0.03em;
+
+  transform: scale(1.2);
+  transition: all 0.5s;
 }
 
 #whyAb .section06 .imgWrap .hoverWrap .item:hover:nth-of-type(1)::after {

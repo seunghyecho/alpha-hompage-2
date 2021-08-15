@@ -117,6 +117,9 @@
         <div class="historyWrap">
           <div class="history history01">
             <div class="t-text">
+              <p><b>1개 기업 창업</b></p>
+            </div>
+            <div class="t-text-hover">
               <p><b>창업</b></p>
               <p>알파브라더스</p>
             </div>
@@ -127,6 +130,9 @@
           </div>
           <div class="history history02">
             <div class="t-text">
+              <p><b>2개 기업 투자</b></p>
+            </div>
+            <div class="t-text-hover">
               <p><b>투자</b></p>
               <p>GCS<br />라이노브파트너스</p>
             </div>
@@ -136,7 +142,11 @@
             </div>
           </div>
           <div class="history history03">
-            <div class="t-text d-flex">
+            <div class="t-text">
+              <p><b>6개 기업 투자</b></p>
+              <p><b>3개 기업 창업</b></p>
+            </div>
+            <div class="t-text-hover d-flex">
               <div class="t-text-left">
                 <p><b>투자</b></p>
                 <p>
@@ -1348,6 +1358,9 @@
 
 <script>
   jQuery(document).ready(function(){
+
+    var $portfolio_section03_history_text = $('.section03 .history .t-text');
+
     $(window).on("scroll", function () {
     var height = $(document).scrollTop();
   var _scrollTop = window.scrollY || document.documentElement.scrollTop;

@@ -126,6 +126,10 @@ header .inner .gnb ul li:hover a {
   color: #4c4c4c;
   font-weight: 900;
 }
+header .inner .gnb ul li a.active {
+  color: #4c4c4c;
+  font-weight: 900;
+}
 
 footer {
   background-color: #fff;

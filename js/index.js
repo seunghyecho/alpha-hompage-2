@@ -1,23 +1,39 @@
 jQuery(document).ready(function () {
   console.log("hihi");
 
+  var url = window.location.pathname,
+
+    urlRegExp = new RegExp(url.replace(/\/$/, '') + "");
+
+  $('header .gnb ul li a').each(function () {
+
+
+    if (urlRegExp.test(this.href.replace(/\/$/, ''))) {
+
+      $(this).addClass('active');
+
+    }
+    console.log(url, urlRegExp, urlRegExp.test(this.href.replace(/\/$/, '')))
+
+  });
+
   //약관, 개인정보, 모바일메뉴 팝업------------------------------
-  const popup = $(".popup");
+  var popup = $(".popup");
   popup.hide();
 
   // BTN - open
-  const agreementBtn = $(".agreementBtn");
-  const privacyBtn = $(".privacyBtn");
-  const gnbBtn = $(".gnbBtn");
-  const gnb_menu01 = $("#gnb .inner ul li #menu01");
-  const gnb_menu02 = $("#gnb .inner ul li #menu02");
-  const gnb_menu03 = $("#gnb .inner ul li #menu03");
-  const gnb_menu04 = $("#gnb .inner ul li #menu04");
+  var agreementBtn = $(".agreementBtn");
+  var privacyBtn = $(".privacyBtn");
+  var gnbBtn = $(".gnbBtn");
+  var gnb_menu01 = $("#gnb .inner ul li #menu01");
+  var gnb_menu02 = $("#gnb .inner ul li #menu02");
+  var gnb_menu03 = $("#gnb .inner ul li #menu03");
+  var gnb_menu04 = $("#gnb .inner ul li #menu04");
 
   // popup
-  const agreementPopup = $("#agreement");
-  const privacyPopup = $("#privacy");
-  const gnbPopup = $("#gnb");
+  var agreementPopup = $("#agreement");
+  var privacyPopup = $("#privacy");
+  var gnbPopup = $("#gnb");
 
   agreementBtn.on("click", function () {
     agreementPopup.fadeIn();
@@ -67,7 +83,7 @@ jQuery(document).ready(function () {
   });
 
   // BTN - close
-  const closeBtn = $(".popup .closeBtn");
+  var closeBtn = $(".popup .closeBtn");
 
   closeBtn.on("click", function () {
     $("#agreement").fadeOut();
@@ -82,7 +98,7 @@ jQuery(document).ready(function () {
     gnb_menu04.removeAttr("style");
   });
 
-  
+
 
   // 헤더 스크롤-------------------------------------------
 

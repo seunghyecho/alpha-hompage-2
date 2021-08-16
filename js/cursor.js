@@ -3,19 +3,17 @@ jQuery(document).ready(function () {
 
   $(document)
     .mousemove(function (e) {
-      $('.cursor')
-        .eq(0)
-        .css({
+      var $cursor = $('.cursor').eq(0)
+      $cursor.css({
           left: e.clientX,
           top: e.clientY
-        });
-      setTimeout(function () {
-        $('.cursor')
-          .eq(1)
-          .css({
-            left: e.clientX,
-            top: e.clientY
-          });
-      }, 100);
+        })
+        if(e.target.nodeName === 'A' || e.target.nodeName === 'BUTTON') {
+          $cursor.addClass('on')
+        }else {
+          $cursor.removeClass('on');
+        }
     })
+
+    // a,button 에 위치하면 스타일 변경
 });

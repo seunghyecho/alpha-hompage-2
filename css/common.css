@@ -54,9 +54,9 @@ body {
   background-image: url(../assets/cursor/cursor_Basic.svg);
 }
 
-/* #cursor.on{
+#cursor.on{
   background-image: url(../assets/cursor/cursor_Hover.svg);
-} */
+}
 
 /* 마우스로 드래그하여 선택된 부분의 색상 변경 */
 ::-moz-selection {

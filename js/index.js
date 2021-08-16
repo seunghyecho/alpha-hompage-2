@@ -3,17 +3,16 @@ jQuery(document).ready(function () {
 
   var url = window.location.pathname,
 
-    urlRegExp = new RegExp(url.replace(/\/$/, '') + "");
+    urlRegExp = new RegExp(url.replace(/\/$/, ''));
 
   $('header .gnb ul li a').each(function () {
 
 
-    if (urlRegExp.test(this.href.replace(/\/$/, ''))) {
+    if (urlRegExp.test(this.href)) {
 
       $(this).addClass('active');
 
     }
-    console.log(url, urlRegExp, urlRegExp.test(this.href.replace(/\/$/, '')))
 
   });
 

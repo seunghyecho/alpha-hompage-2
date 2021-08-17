@@ -114,14 +114,10 @@ jQuery(document).ready(function () {
     // mobile header
     if (height > $("header").height()) {
       $("header").addClass("fixed");
-      $(".mb-main").css({
-        position: "relative",
-      });
+      $(".mb-main").css({position: "relative", });
     } else {
       $("header").removeClass("fixed");
-      $(".mb-main").css({
-        position: "relative",
-      });
+      $(".mb-main").css({ position: "relative", });
     }
   });
 

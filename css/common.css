@@ -21,7 +21,7 @@
   background: #555;
 }
 
-html {
+html{
   scroll-behavior: smooth;
 }
 
@@ -29,7 +29,7 @@ a {
   color: #000;
   cursor: none;
 }
-button {
+button{
   cursor: none;
 }
 
@@ -40,11 +40,11 @@ body {
   font-family: Pretendard;
   font-weight: 300;
   color: #fff;
-  cursor: none;
   overflow-x: hidden;
+  /* cursor: none; */
 }
 
-#cursor {
+.cursor {
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: -1;
@@ -56,9 +56,10 @@ body {
   background-position: center;
   /* background-color: orange; */
   background-image: url(../assets/cursor/cursor_Basic.svg);
+  cursor: none;
 }
 
-#cursor.on {
+.cursor.on{
   background-image: url(../assets/cursor/cursor_Hover.svg);
 }
 
@@ -84,7 +85,7 @@ body {
 
 /* header */
 header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 header.fixed {
   position: sticky;
@@ -92,7 +93,7 @@ header.fixed {
   width: 100%;
   top: 0;
   background: #000;
-  z-index: 999;
+  z-index: 10;
 
   transition: all 0.5s;
 }
@@ -249,7 +250,7 @@ footer .inner .btmInfo ul li a:hover {
   }
 
   header.fixed {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
     z-index: 9;
     width: 100%;
     top: 0;
@@ -283,7 +284,7 @@ footer .inner .btmInfo ul li a:hover {
     /* background-image: url(../assets/gnb/icn_GNB_bar.png); */
   }
 
-  #nav-icon3 {
+  #nav-icon3{
     width: 17px;
     height: 12px;
     position: relative;
@@ -291,10 +292,10 @@ footer .inner .btmInfo ul li a:hover {
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
     cursor: pointer;
   }
   #nav-icon3 span {
@@ -309,10 +310,10 @@ footer .inner .btmInfo ul li a:hover {
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: 0.25s ease-in-out;
-    -moz-transition: 0.25s ease-in-out;
-    -o-transition: 0.25s ease-in-out;
-    transition: 0.25s ease-in-out;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
   }
   /* Icon 3 */
 
@@ -320,8 +321,7 @@ footer .inner .btmInfo ul li a:hover {
     top: 0px;
   }
 
-  #nav-icon3 span:nth-child(2),
-  #nav-icon3 span:nth-child(3) {
+  #nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
     top: 6px;
   }
 
@@ -354,6 +354,8 @@ footer .inner .btmInfo ul li a:hover {
     width: 0%;
     left: 50%;
   }
+
+
 
   footer.f-fixed {
     position: fixed;

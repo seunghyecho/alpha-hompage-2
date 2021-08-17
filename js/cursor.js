@@ -3,7 +3,7 @@ jQuery(document).ready(function () {
 
   $(document)
     .mousemove(function (e) {
-      var $cursor = $('.cursor').eq(0)
+      var $cursor = $('.cursor').eq(0);
       $cursor.css({
           left: e.clientX,
           top: e.clientY

@@ -27,10 +27,12 @@ html{
 
 a {
   color: #000;
-  cursor: none;
+  /* cursor: none; */
+  cursor: url(../assets/cursor/cursor_Hover.svg), auto;
 }
 button{
-  cursor: none;
+  /* cursor: none; */
+  cursor: url(../assets/cursor/cursor_Hover.svg), auto;
 }
 
 /* ----------------------------- COMMON ------------------------------- */
@@ -41,10 +43,13 @@ body {
   font-weight: 300;
   color: #fff;
   overflow-x: hidden;
-  /* cursor: none; */
+  cursor: url(../assets/cursor/cursor_Basic.svg), auto;
+}
+body.on{
+  cursor: url(../assets/cursor/cursor_Hover.svg), auto;
 }
 
-.cursor {
+/* .cursor {
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: -1;
@@ -54,14 +59,14 @@ body {
   background-repeat: no-repeat;
   background-size: 20px 20px;
   background-position: center;
-  /* background-color: orange; */
+  background-color: orange;
   background-image: url(../assets/cursor/cursor_Basic.svg);
   cursor: none;
-}
+} */
 
-.cursor.on{
+/* .cursor.on{
   background-image: url(../assets/cursor/cursor_Hover.svg);
-}
+} */
 
 /* 마우스로 드래그하여 선택된 부분의 색상 변경 */
 ::-moz-selection {

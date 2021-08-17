@@ -388,6 +388,17 @@ section {
   top: 50%;
   transform: translateY(-50%);
 }
+.section04 .inner .scrollItem .center::before{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 69px;
+  width: 553px;
+  height: 553px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../assets/ABGround/vector_p02_section04_arrow.svg);
+}
 
 .section04 .inner h1 {
   font-weight: 800;

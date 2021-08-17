@@ -114,6 +114,7 @@
 
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/index.js"></script>
+    <script src="../js/vertical.js"></script>
 
     <script
       type="text/javascript"
@@ -298,12 +299,12 @@
           $(".pauseBtn").removeClass("on");
 
           video.addEventListener("pause", (event) => {
-              $(".pauseBtn").addClass("on");
+            $(".pauseBtn").addClass("on");
           });
 
           video.addEventListener("play", (event) => {
             $(".pauseBtn").removeClass("on");
-          })
+          });
         });
       </script>
       <section class="section03">
@@ -332,57 +333,68 @@
         <!-- slick scroll vertival, progress 적용 예정 -->
         <div class="sticky">
           <div class="inner">
-            <div class="scrollItem scrollItem01">
-              <div class="center">
-                <h1>
-                  AB MISSION<br />
-                  CHANGING WAY
-                </h1>
-                <p>
-                  알파브라더스는 CHANGING WAY라는<br class="mb" />
-                  미션 하에<br class="pc" />
-                  사람들의 패러다임, 라이프스타일,<br class="mb" />
-                  그리고 더 나아가<br class="pc" />
-                  비즈니스 세계의 판도를<br class="mb" />
-                  변화시키고자 합니다.
-                </p>
+            <div class="scroll-slider">
+              <div class="scrollItem scrollItem01">
+                <div class="center">
+                  <h1>
+                    AB MISSION<br />
+                    CHANGING WAY
+                  </h1>
+                  <p>
+                    알파브라더스는 CHANGING WAY라는<br class="mb" />
+                    미션 하에<br class="pc" />
+                    사람들의 패러다임, 라이프스타일,<br class="mb" />
+                    그리고 더 나아가<br class="pc" />
+                    비즈니스 세계의 판도를<br class="mb" />
+                    변화시키고자 합니다.
+                  </p>
+                </div>
+              </div>
+              <div class="scrollItem scrollItem02">
+                <div class="center">
+                  <h1>
+                    PARADIGM<br />
+                    <span class="textStroke">CHANGING</span>
+                  </h1>
+                  <p>
+                    세상을 바라보는 새로운 관점과 가치를
+                    <br class="mb" />창출할 스타트업을 찾습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="scrollItem scrollItem03">
+                <div class="center">
+                  <h1>
+                    LIFESTYLE<br />
+                    <span class="textStroke">CHANGING</span>
+                  </h1>
+                  <p>
+                    우리의 삶을 변화시킬 아이디어를 구현할
+                    <br class="mb" />스타트업을 찾습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="scrollItem scrollItem04">
+                <div class="center">
+                  <h1>
+                    MARKET<br />
+                    <span class="textStroke">CHANGING</span>
+                  </h1>
+                  <p>
+                    새로운 가치로 비즈니스 세계의 판도를 바꿀
+                    <br class="mb" />스타트업을 찾습니다.
+                  </p>
+                </div>
               </div>
             </div>
-            <div class="scrollItem scrollItem02">
-              <div class="center">
-                <h1>
-                  PARADIGM<br />
-                  <span class="textStroke">CHANGING</span>
-                </h1>
-                <p>
-                  세상을 바라보는 새로운 관점과 가치를
-                  <br class="mb" />창출할 스타트업을 찾습니다.
-                </p>
-              </div>
-            </div>
-            <div class="scrollItem scrollItem03">
-              <div class="center">
-                <h1>
-                  LIFESTYLE<br />
-                  <span class="textStroke">CHANGING</span>
-                </h1>
-                <p>
-                  우리의 삶을 변화시킬 아이디어를 구현할
-                  <br class="mb" />스타트업을 찾습니다.
-                </p>
-              </div>
-            </div>
-            <div class="scrollItem scrollItem04">
-              <div class="center">
-                <h1>
-                  MARKET<br />
-                  <span class="textStroke">CHANGING</span>
-                </h1>
-                <p>
-                  새로운 가치로 비즈니스 세계의 판도를 바꿀
-                  <br class="mb" />스타트업을 찾습니다.
-                </p>
-              </div>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="25"
+            >
+              <span class="slider__label sr-only"></span>
             </div>
           </div>
         </div>

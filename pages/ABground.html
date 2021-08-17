@@ -122,7 +122,6 @@
 
     <!-- html5 기반 video player -->
     <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
-    <script src="https://vjs.zencdn.net/7.14.3/videojs-stop-button.min.js"></script>
   </head>
   <script text="javascript">
     function getParam(sname) {
@@ -274,26 +273,6 @@
           </div>
         </div>
       </section>
-      <section class="section03">
-        <div class="inner" style="display: none">
-          <a id="play-video" class="video-play-button" href="#">
-            <span></span>
-          </a>
-          <div id="video-overlay" class="video-overlay">
-            <!-- <a class="video-overlay-close">&times;</a> -->
-          </div>
-          <!-- <video class="video" src="../assets/video/pc_01_1920-1080.mp4" controls muted playsinline width="100%" poster="">
-        </video> -->
-        </div>
-        <div class="inner">
-          <video
-            id="myPlayer"
-            class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid"
-            height="720"
-            webkit-playsinline
-          ></video>
-        </div>
-      </section>
       <script>
         $(document).ready(function () {
           var player = videojs("myPlayer", {
@@ -313,18 +292,42 @@
             },
           });
 
+          // video play & pause
+          const video = document.querySelector("video");
 
-          $("#play-video").css({ display: "block" });
-          $("#play-video").on("click", function (e) {
-            e.preventDefault();
-            $(this).css({ display: "none" });
-            $("#video-overlay").addClass("open");
-            $("#video-overlay").append(
-              ' <video class="video" src="../assets/ABGround/PC_vid02_thumbnail.svg" autoplay playsinline width="100%" poster="../assets/ABGround/PC_vid02_thumbnail.svg">'
-            );
+          $(".pauseBtn").removeClass("on");
+
+          video.addEventListener("pause", (event) => {
+              $(".pauseBtn").addClass("on");
           });
+
+          video.addEventListener("play", (event) => {
+            $(".pauseBtn").removeClass("on");
+          })
         });
       </script>
+      <section class="section03">
+        <div class="inner" style="display: none">
+          <a id="play-video" class="video-play-button" href="#">
+            <span></span>
+          </a>
+          <div id="video-overlay" class="video-overlay">
+            <!-- <a class="video-overlay-close">&times;</a> -->
+          </div>
+          <!-- <video class="video" src="../assets/video/pc_01_1920-1080.mp4" controls muted playsinline width="100%" poster="">
+        </video> -->
+        </div>
+        <div class="inner">
+          <button class="pauseBtn"></button>
+          <video
+            id="myPlayer"
+            class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid"
+            height="720"
+            webkit-playsinline
+          ></video>
+        </div>
+      </section>
+
       <section class="section04">
         <!-- slick scroll vertival, progress 적용 예정 -->
         <div class="sticky">
@@ -1234,7 +1237,6 @@
       </div>
     </div>
     <!-- 모바일메뉴 팝업 : e -->
-    
   </body>
 </html>
 <script src="../js/cursor.js"></script>

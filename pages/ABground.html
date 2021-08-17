@@ -23,6 +23,13 @@
       href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
 
+    <link
+      href="https://unpkg.com/video.js@7/dist/video-js.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/index.js"></script>
 
@@ -30,6 +37,10 @@
       type="text/javascript"
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
+
+    <!-- html5 기반 video player -->
+    <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
+    <script src="https://vjs.zencdn.net/7.14.3/videojs-stop-button.min.js"></script>
   </head>
   <script text="javascript">
     function getParam(sname) {
@@ -174,27 +185,52 @@
         </div>
       </section>
       <section class="section03">
-        <div class="inner">
+        <div class="inner" style="display: none">
           <a id="play-video" class="video-play-button" href="#">
             <span></span>
           </a>
-
           <div id="video-overlay" class="video-overlay">
             <!-- <a class="video-overlay-close">&times;</a> -->
           </div>
           <!-- <video class="video" src="../assets/video/pc_01_1920-1080.mp4" controls muted playsinline width="100%" poster="">
         </video> -->
         </div>
+        <div class="inner">
+          <video
+            id="myPlayer"
+            class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid"
+            height="720"
+            webkit-playsinline
+          ></video>
+        </div>
       </section>
       <script>
         $(document).ready(function () {
+          var player = videojs("myPlayer", {
+            sources: [
+              { src: "../assets/video/pc_02_1920-1080.mp4", type: "video/mp4" },
+            ],
+            poster: "../assets/video/pc_02_1920-1080_thumbnail.png",
+            controls: true,
+            playsinline: true,
+            muted: false,
+            preload: "metadata",
+            controlBar: {
+              playToggle: true,
+              pictureInPictureToggle: false,
+              remainingTimeDisplay: false,
+              progressControl: false,
+            },
+          });
+
+
           $("#play-video").css({ display: "block" });
           $("#play-video").on("click", function (e) {
             e.preventDefault();
             $(this).css({ display: "none" });
             $("#video-overlay").addClass("open");
             $("#video-overlay").append(
-              ' <video class="video" src="../assets/video/pc_02_1920-1080.mp4" autoplay playsinline width="100%" poster="../assets/ABGround/PC_vid02_thumbnail.svg">'
+              ' <video class="video" src="../assets/ABGround/PC_vid02_thumbnail.svg" autoplay playsinline width="100%" poster="../assets/ABGround/PC_vid02_thumbnail.svg">'
             );
           });
         });
@@ -1166,7 +1202,7 @@
         var $arrow = $("#abGround .arrow");
         $arrow.addClass("on");
       }
-      if (_scrollTop > _abGround_section05 - 350) {
+      if (_scrollTop > _abGround_section05 - 0) {
         var textAni01 = $(".section05 .pc .textArea .textAni01");
         var textAni02 = $(".section05 .pc .textArea .textAni02");
         var textAni03 = $(".section05 .pc .textArea .textAni03");

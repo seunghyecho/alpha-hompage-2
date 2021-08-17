@@ -231,6 +231,11 @@ section {
 }
 
 /* video : s */
+/* .video-js .vjs-big-play-button {
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+} */
 .section03 {
   margin: 0 auto;
   width: 1280px;
@@ -426,7 +431,7 @@ section {
   font-size: 73px;
   color: #fff;
   width: auto;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 .section05 .des > * {
@@ -1080,7 +1085,7 @@ section {
     background-image: url(../assets/icon/icon_plus.svg);
     transform: rotate(0deg);
   }
-  .peopleList ul li a button.on{
+  .peopleList ul li a button.on {
     transform: rotate(45deg);
   }
   .peopleList ul li a.tit span {
@@ -1093,7 +1098,7 @@ section {
     width: 100%;
     transition: all 0.5s;
   }
-  .peopleList ul li .des.on{
+  .peopleList ul li .des.on {
     display: block;
   }
   .peopleList ul li .des p {

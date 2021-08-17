@@ -6,8 +6,9 @@ $(document).ready(function () {
   $slider.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
     var calc = 25 + (nextSlide / slick.slideCount) * 100;
 
-    $progressBar.css("height", calc + "%").attr("aria-valuenow", calc);
-
+    $progressBar.css("height", calc*540*0.01);
+    console.log($progressBar)
+    
     $progressBarLabel.text(calc + "% completed");
   });
 

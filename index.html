@@ -106,10 +106,9 @@
     <!-- jQuery file -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/index.js"></script>
-    
+
     <!-- html5 기반 video player -->
     <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
-
   </head>
 
   <body class="bodyFix">
@@ -152,35 +151,31 @@
     </div>
     <div class="mb-main mb">
       <section class="section01">
-        <video
-          class="video"
-          src="assets/video/mb_01_2.mp4"
-          muted
-          autoplay
-          loop
-          playsinline
-          width="100%"
-          poster="assets/video/MOBILE_vid01_2_thumbnail.png"
-        ></video>
-        <div class="sticky">
-          <div class="inner">
-            <div class="textWrap">
-              <div class="text mainText01">
-                <h1>
-                  투자에만 머물던<br />
-                  엑셀러레이팅의<br />
-                  ACTIVE한 진화
-                </h1>
-              </div>
+        <div class="inner">
+          <video
+            class="video"
+            src="assets/video/mb_01_2.mp4"
+            muted
+            autoplay
+            loop
+            playsinline
+            width="100%"
+            poster="assets/video/MOBILE_vid01_2_thumbnail.png"
+          ></video>
+          <div class="textWrap">
+            <div class="text mainText01">
+              <h1>
+                투자에만 머물던<br />
+                엑셀러레이팅의<br />
+                ACTIVE한 진화
+              </h1>
             </div>
-            <div class="textWrap">
-              <div class="text mainText02">
-                <h1>
-                  ALPHA<br />
-                  BROTHERS X<br />
-                  ACCELERATOR
-                </h1>
-              </div>
+            <div class="text mainText02">
+              <h1>
+                ALPHA<br />
+                BROTHERS X<br />
+                ACCELERATOR
+              </h1>
             </div>
           </div>
           <a class="scrollBtn" href="#section02"></a>
@@ -744,4 +739,31 @@
   </body>
 </html>
 <script src="js/cursor.js"></script>
+<script>
+  jQuery(document).ready(function () {
+    var $mb_main_section01_mainText01 = $(".mb-main .section01 .mainText01");
+    var $mb_main_section01_mainText02 = $(".mb-main .section01 .mainText02");
 
+    $mb_main_section01_mainText01.css({ opacity: "1" });
+    $mb_main_section01_mainText02.css({ opacity: "0" });
+
+    // 모바일 메인 스크롤-------------------------------------------
+
+    $(window).scroll(function () {
+      $(".mb-main .section01 .textWrap").bind("touchstart", (e) => {
+        console.log(e);
+        $(".section01").css({ overflow: "hidden" });
+        $mb_main_section01_mainText01.animate(
+          { opacity: "0", margin: "-50px 0 0 0" },
+          500,
+          function () {
+            $mb_main_section01_mainText02.animate(
+              { opacity: "1", margin: "-50px 0 0 0" },
+              500
+            );
+          }
+        );
+      });
+    });
+  });
+</script>

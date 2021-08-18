@@ -2,18 +2,12 @@ jQuery(document).ready(function () {
   console.log("hihi");
 
   var url = window.location.pathname,
+    urlRegExp = new RegExp(url.replace(/\/$/, ""));
 
-    urlRegExp = new RegExp(url.replace(/\/$/, ''));
-
-  $('header .gnb ul li a').each(function () {
-
-
+  $("header .gnb ul li a").each(function () {
     if (urlRegExp.test(this.href)) {
-
-      $(this).addClass('active');
-
+      $(this).addClass("active");
     }
-
   });
 
   //약관, 개인정보, 모바일메뉴 팝업------------------------------
@@ -41,7 +35,7 @@ jQuery(document).ready(function () {
     privacyPopup.fadeIn();
   });
   gnbBtn.on("click", function () {
-    $('#nav-icon3').addClass('open');
+    $("#nav-icon3").addClass("open");
     gnbPopup.fadeIn(500);
 
     // 모바일 메뉴 animate
@@ -88,7 +82,7 @@ jQuery(document).ready(function () {
     $("#agreement").fadeOut();
     $("#privacy").fadeOut();
     $("#gnb").fadeOut(500);
-    $('#nav-icon3').removeClass('open');
+    $("#nav-icon3").removeClass("open");
 
     // 모바일 메뉴 animate reset
     gnb_menu01.removeAttr("style");
@@ -97,39 +91,25 @@ jQuery(document).ready(function () {
     gnb_menu04.removeAttr("style");
   });
 
-
-
   // 헤더 스크롤-------------------------------------------
 
   $(window).scroll(function () {
     var height = $(document).scrollTop();
-    
+
     // pc header
     if (height > 100) {
-      $('header').addClass("fixed");
+      $("header").addClass("fixed");
     } else {
-      $('header').removeClass("fixed");
+      $("header").removeClass("fixed");
     }
 
     // mobile header
     if (height > $("header").height()) {
       $("header").addClass("fixed");
-      $(".mb-main").css({position: "relative", });
+      $(".mb-main").css({ position: "relative" });
     } else {
       $("header").removeClass("fixed");
-      $(".mb-main").css({ position: "relative", });
+      $(".mb-main").css({ position: "relative" });
     }
   });
-
-  // 모바일 메인 스크롤-------------------------------------------
-  var $mb_main_section01_mainText01 = $(".mb-main .section01 .mainText01");
-  var $mb_main_section01_mainText02 = $(".mb-main .section01 .mainText02");
-
-  $(window).scroll(function () {
-    $mb_main_section01_mainText01.animate({ opacity: "0" }, 500, function () {
-      $mb_main_section01_mainText02.animate({ opacity: "1" }, 500);
-    });
-  });
-
-
 });

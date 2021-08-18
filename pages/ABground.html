@@ -197,6 +197,40 @@
     });
   </script>
 
+  <script>
+    $(document).ready(function () {
+      var player = videojs("myPlayer", {
+        sources: [
+          { src: "../assets/video/pc_02_1920-1080.mp4", type: "video/mp4" },
+        ],
+        poster: "../assets/video/pc_02_1920-1080_thumbnail.png",
+        controls: true,
+        playsinline: true,
+        muted: false,
+        preload: "metadata",
+        controlBar: {
+          playToggle: true,
+          pictureInPictureToggle: true,
+          remainingTimeDisplay: true,
+          progressControl: true,
+        },
+      });
+
+      // video play & pause
+      const video = document.querySelector("video");
+
+      $(".pauseBtn").css({ opacity: "0" });
+
+      video.addEventListener("pause", (event) => {
+        $(".pauseBtn").css({ opacity: "1" });
+      });
+
+      video.addEventListener("play", (event) => {
+        $(".pauseBtn").css({ opacity: "0" });
+      });
+    });
+  </script>
+
   <body>
     <!-- <div id="cursor" class="cursor"></div> -->
     <header class="header">
@@ -274,39 +308,6 @@
           </div>
         </div>
       </section>
-      <script>
-        $(document).ready(function () {
-          var player = videojs("myPlayer", {
-            sources: [
-              { src: "../assets/video/pc_02_1920-1080.mp4", type: "video/mp4" },
-            ],
-            poster: "../assets/video/pc_02_1920-1080_thumbnail.png",
-            controls: true,
-            playsinline: true,
-            muted: false,
-            preload: "metadata",
-            controlBar: {
-              playToggle: true,
-              pictureInPictureToggle: true,
-              remainingTimeDisplay: true,
-              progressControl: true,
-            },
-          });
-
-          // video play & pause
-          const video = document.querySelector("video");
-
-          $(".pauseBtn").css({'opacity': "0"});
-
-          video.addEventListener("pause", (event) => {
-            $(".pauseBtn").css({'opacity': "1"});
-          });
-
-          video.addEventListener("play", (event) => {
-            $(".pauseBtn").css({'opacity': "0"});
-          });
-        });
-      </script>
       <section class="section03">
         <div class="inner" style="display: none">
           <a id="play-video" class="video-play-button" href="#">
@@ -331,7 +332,7 @@
 
       <section class="section04">
         <!-- slick scroll vertival, progress 적용 예정 -->
-        <div class="sticky">
+        <div class="">
           <div class="pc">
             <div class="inner">
               <div class="scroll-slider">
@@ -568,7 +569,7 @@
           <div class="peopleList">
             <ul>
               <li>
-                <a class="tit" href="#"
+                <a class="tit" href="javascript:void(0);"
                   ><span>채중규</span> 대표이사<button
                     class="mb openBtn"
                   ></button
@@ -582,7 +583,7 @@
                 </div>
               </li>
               <li>
-                <a class="tit" href="#"
+                <a class="tit" href="javascript:void(0);"
                   ><span>서평강</span> 변리사<button class="mb openBtn"></button
                 ></a>
                 <div class="des">
@@ -594,7 +595,7 @@
                 </div>
               </li>
               <li>
-                <a class="tit" href="#"
+                <a class="tit" href="javascript:void(0);"
                   ><span>조승현</span> 변리사<button class="mb openBtn"></button
                 ></a>
                 <div class="des">
@@ -606,7 +607,7 @@
                 </div>
               </li>
               <li>
-                <a class="tit" href="#"
+                <a class="tit" href="javascript:void(0);"
                   ><span>이철우</span> 박사<button class="mb openBtn"></button
                 ></a>
                 <div class="des">
@@ -618,7 +619,7 @@
                 </div>
               </li>
               <li>
-                <a class="tit" href="#"
+                <a class="tit" href="javascript:void(0);"
                   ><span>김승환</span> 교수<button class="mb openBtn"></button
                 ></a>
                 <div class="des">
@@ -630,7 +631,7 @@
                 </div>
               </li>
               <li>
-                <a class="tit" href="#"
+                <a class="tit" href="javascript:void(0);"
                   ><span>문예진</span> 전문위원<button
                     class="mb openBtn"
                   ></button

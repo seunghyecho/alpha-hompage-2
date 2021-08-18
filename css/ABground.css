@@ -1227,7 +1227,7 @@ section {
     display: none;
     padding: 10px 0;
     width: 100%;
-    transition: all 0.5s;
+    /* transition: all 0.5s; */
   }
   .peopleList ul li .des.on {
     display: block;

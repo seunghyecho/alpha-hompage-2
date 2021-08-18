@@ -26,6 +26,8 @@
     position: sticky;
     top: 50px;
     overflow: hidden;
+
+    transition: all 0.5s;
   }
   /* mb-main */
   .mb-main {
@@ -36,6 +38,7 @@
   }
   .mb-main .section01 .inner {
     width: 100%;
+    height: 639px;
     position: relative;
   }
   .mb-main .section01 .inner .textWrap {
@@ -50,8 +53,8 @@
 
   .mb-main .section01 .inner .textWrap .text {
     position: absolute;
-    top: 40%;
-    transform: translateY(-40%);
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .mb-main .section01 .inner .textWrap .text h1 {
@@ -62,7 +65,7 @@
 
   .mb-main .section01 .scrollBtn {
     position: absolute;
-    bottom: 15px;
+    bottom: 75px;
     left: 50%;
     transform: translateX(-50%);
     width: 37px;

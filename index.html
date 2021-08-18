@@ -748,8 +748,16 @@
     $mb_main_section01_mainText02.css({ opacity: "0" });
 
     // 모바일 메인 스크롤-------------------------------------------
+    $(".section01").addClass("sticky");
 
     $(window).scroll(function () {
+      var height = $(document).scrollTop();
+      if (height > 0 && height < 50) {
+        $(".section01").addClass("sticky");
+      } else if (height > 50) {
+        $(".section01").removeClass("sticky");
+      }
+
       $(".mb-main .section01 .textWrap").bind("touchstart", (e) => {
         console.log(e);
         $(".section01").css({ overflow: "hidden" });

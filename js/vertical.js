@@ -1,24 +1,44 @@
 $(document).ready(function () {
-  var $slider = $(".section04 .scroll-slider");
-  var $progressBar = $(".section04 .progress");
-  var $progressBarLabel = $(".section04 .slider__label");
+  var $slider_pc = $(".section04 .pc .scroll-slider");
+  var $progressBar = $(".section04 .pc .progress");
+  var $progressBarLabel = $(".section04 .pc .slider__label");
 
-  $slider.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+  $slider_pc.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
     var calc = 25 + (nextSlide / slick.slideCount) * 100;
 
-    $progressBar.css("height", calc*540*0.01);
-    console.log($progressBar)
-    
+    $progressBar.css("height", calc * 540 * 0.01);
+
     $progressBarLabel.text(calc + "% completed");
   });
 
-  $slider.slick({
+  $slider_pc.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     speed: 400,
     vertical: true,
     verticalSwiping: true,
-    arrows:false,
-    cssEase: 'linear',
+    arrows: false,
+    cssEase: "linear",
+  });
+  var $slider_mb = $(".section04 .mb .scroll-slider");
+  var $progressBar = $(".section04 .mb .progress");
+  var $progressBarLabel = $(".section04 .mb .slider__label");
+
+  $slider_mb.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+    var calc = 25 + (nextSlide / slick.slideCount) * 100;
+
+    $progressBar.css("height", calc * 200 * 0.01);
+
+    $progressBarLabel.text(calc + "% completed");
+  });
+
+  $slider_mb.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    speed: 400,
+    vertical: true,
+    verticalSwiping: true,
+    arrows: false,
+    cssEase: "linear",
   });
 });

@@ -864,7 +864,7 @@ section {
 
   .section02 {
     margin: 50px 0;
-    padding: 100px 20px;
+    padding: 100px 20px 0;
   }
 
   .section02 .inner {
@@ -919,7 +919,7 @@ section {
     border: 1px solid #fff;
     font-size: 14px;
   }
-
+  /* section03 */
   .section03 {
     margin: 0 auto;
     width: 100%;
@@ -931,7 +931,18 @@ section {
     width: 36px;
     height: 36px;
   }
-
+  .video-js .vjs-big-play-button{
+    width: 36px !important;
+    height: 36px !important;
+    transform: translate(-50%,-50%) !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+  }
+  .pauseBtn{
+    width: 36px;
+    height: 36px;
+  }
+  /* section04 */
   .section04 {
     margin: 100px auto;
     width: 100%;
@@ -944,6 +955,7 @@ section {
   }
   .section04 .inner .scrollItem {
     position: relative;
+    height: 469px;
   }
   .section04 .inner .scrollItem::after {
     content: "";
@@ -977,6 +989,23 @@ section {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+  }
+  .section04 .inner .scrollItem .center::before{
+    display: none;
+  }
+  .section04 .progress{
+    top: 235px;
+    right: unset;
+    bottom: 0;
+    left: 30px;
+    height: 67px;
+    max-height: 200px;
+    width: 5px;
+  }
+  .section04 .sr-only{
+    height: 200px;
+    width: 5px;
+    top: 0;
   }
 
   /* section05 */

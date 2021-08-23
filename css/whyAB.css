@@ -97,15 +97,12 @@
   position: relative;
   padding: 180px 0 100px;
 }
-
-#whyAb .section02::before {
+#whyAb .section02 .inner::before {
   content: "";
   display: inline-block;
   position: absolute;
-  margin-left: 315px;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 38%;
+  right: 98%;
   width: 537px;
   height: 578px;
   background-repeat: no-repeat;
@@ -113,7 +110,6 @@
   background-position: center;
   background-image: url(../assets/WhyAB/vector_p03_BG_arrow.svg);
 }
-
 #whyAb .section02 .inner {
   width: 1280px;
   margin: 0 auto;
@@ -124,7 +120,6 @@
   display: flex;
   justify-content: space-between;
 }
-
 #whyAb .section02 p {
   margin-bottom: 20px;
 }
@@ -151,6 +146,7 @@
 #whyAb .section02 .inner .sectionInfo {
   padding: 20px 0;
   opacity: 0;
+  position: relative;
 }
 
 #whyAb .section02 .inner .sectionInfo.animate__fadeInUp {

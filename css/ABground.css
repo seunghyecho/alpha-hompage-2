@@ -1012,15 +1012,16 @@ section {
 
   /* section05 */
   .section05 {
-    padding: 0 20px;
+    padding: 0;
     box-sizing: border-box;
     margin: 100px auto;
     width: 100%;
-    overflow: hidden;
   }
   .section05 .inner {
     width: 100%;
-    padding: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    overflow: hidden;
     margin: 0;
     flex-direction: column;
   }
@@ -1062,25 +1063,31 @@ section {
     width: 100%;
     margin-right: 0;
     margin-top: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
     display: block;
   }
 
   .section05 .imgArea.mb .item-container .item {
-    /* width: 320px !important; */
+    padding: 0 15px 0 0;
     height: 100%;
     opacity: 1;
-
-    margin-right: -15px;
-    margin-bottom: 0;
-    margin-top: 0;
   }
+
   .section05-slider {
     display: flex;
     flex-wrap: wrap;
   }
+  .section05 .slick-list {
+    margin: 0 -10px;
+  }
+  .section05 .slick-slide {
+    width: 100%;
+    min-width: 320px;
+  }
   .section05 .imgArea .item-container .item .imgWrap {
-    width: 320px;
-    height: 210px;
+    width: 100%;
+    height: 201px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1125,12 +1132,6 @@ section {
   }
   .section05 .imgArea .item:hover::after {
     display: none;
-  }
-  .section05 .slick-list {
-    margin: 0 -15px;
-  }
-  .section05 .slick-slide {
-    margin: 0 15px;
   }
 
   /* section06 */
@@ -1217,6 +1218,8 @@ section {
     background-position: center;
     background-image: url(../assets/icon/icon_plus.svg);
     transform: rotate(0deg);
+
+    transition: transform 0.5s;
   }
   .peopleList ul li a button.on {
     transform: rotate(45deg);

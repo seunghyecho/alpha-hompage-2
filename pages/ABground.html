@@ -1387,34 +1387,34 @@
         var textAni04 = $(".section05 .textAni04.pc");
         var imgArea = $(".section05 .imgArea.pc");
 
-        textAni02.animate({ opacity: "1" }, 1000);
-        textAni01.animate(
+        textAni02.stop().animate({ opacity: "1" }, 1000);
+        textAni01.stop().animate(
           {
             opacity: "0",
             top: "-20px",
           },
           1000,
           function () {
-            textAni02.animate(
+            textAni02.stop().animate(
               {
                 left: $(".textAni03").width(),
               },
               500,
               function () {
-                textAni03.animate(
+                textAni03.stop().animate(
                   {
                     opacity: "1",
                   },
                   500
                 );
-                textAni04.animate(
+                textAni04.stop().animate(
                   {
                     opacity: "1",
                     marginTop: "0",
                   },
                   500,
                   function () {
-                    imgArea.animate(
+                    imgArea.stop().animate(
                       {
                         opacity: "1",
                         marginTop: "-100",

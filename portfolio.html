@@ -10,88 +10,90 @@
     <meta name="msapplication-navbutton-color" content="#2a2a2a" />
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#2a2a2a" />
-    <title>ABground</title>
+    <title>portfolio</title>
+
+    <link rel="stylesheet" href="css/slick-theme.css" />
 
     <!-- favicon link -->
     <link
       rel="apple-touch-icon"
       sizes="57x57"
-      href="../assets/favicon/apple-icon-57x57.png"
+      href="assets/favicon/apple-icon-57x57.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="60x60"
-      href="../assets/favicon/apple-icon-60x60.png"
+      href="assets/favicon/apple-icon-60x60.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="72x72"
-      href="../assets/favicon/apple-icon-72x72.png"
+      href="assets/favicon/apple-icon-72x72.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="76x76"
-      href="../assets/favicon/apple-icon-76x76.png"
+      href="assets/favicon/apple-icon-76x76.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="114x114"
-      href="../assets/favicon/apple-icon-114x114.png"
+      href="assets/favicon/apple-icon-114x114.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="120x120"
-      href="../assets/favicon/apple-icon-120x120.png"
+      href="assets/favicon/apple-icon-120x120.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="144x144"
-      href="../assets/favicon/apple-icon-144x144.png"
+      href="assets/favicon/apple-icon-144x144.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="152x152"
-      href="../assets/favicon/apple-icon-152x152.png"
+      href="assets/favicon/apple-icon-152x152.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="../assets/favicon/apple-icon-180x180.png"
+      href="assets/favicon/apple-icon-180x180.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="../assets/favicon/android-icon-192x192.png"
+      href="assets/favicon/android-icon-192x192.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../assets/favicon/favicon-32x32.png"
+      href="assets/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="96x96"
-      href="../assets/favicon/favicon-96x96.png"
+      href="assets/favicon/favicon-96x96.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../assets/favicon/favicon-16x16.png"
+      href="assets/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="../assets/favicon/manifest.json" />
+    <link rel="manifest" href="assets/favicon/manifest.json" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
 
-    <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/common.css" />
-    <link rel="stylesheet" href="../css/animate.css" />
-    <link rel="stylesheet" href="../css/ABground.css" />
-    <link rel="stylesheet" href="../css/popup.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/portfolio.css" />
+    <link rel="stylesheet" href="css/popup.css" />
 
     <link
       rel="stylesheet"
@@ -105,715 +107,820 @@
       href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
 
-    <link
-      href="https://unpkg.com/video.js@7/dist/video-js.min.css"
-      rel="stylesheet"
-    />
-
-    <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
-
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script src="../js/index.js"></script>
-    <script src="../js/vertical.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="static/js/includeHTML.js"></script>
 
     <script
       type="text/javascript"
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
-
-    <!-- html5 기반 video player -->
-    <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
-  </head>
-  <script text="javascript">
-    function getParam(sname) {
-      var params = location.search.substr(location.search.indexOf("?") + 1);
-      var sval = "";
-      params = params.split("&");
-      for (var i = 0; i < params.length; i++) {
-        temp = params[i].split("=");
-        if ([temp[0]] == sname) {
-          sval = temp[1];
-        }
-      }
-      return sval;
-    }
-    console.log(getParam("type"));
-    $(document).ready(function () {
-      //ABground 외에 다른 페이지에서 접속했을 때
-      if (getParam("type") == 1) {
-        //header menu 숨김 처리
-        $("header .inner").css("display", "none");
-        //기존에 section1 숨김 처리
-        $(".section01.normal").css("display", "none");
-
-        //animation 처리
-        //폰트 bottom-up 0.5s, 하얀색 -> 검정색 animation 0.5s
-        setTimeout(function () {
-          $(".section01.highlight .inner h1").animate(
-            { marginTop: "0px", color: "#222" },
-            500
-          );
-          $(".section01.highlight .inner h1").css({
-            color: "#222",
-            transition: "color 0.5s",
-          });
-        }, 300);
-
-        //배경 bottome-up : 0.5s
-
-        setTimeout(function () {
-          //0.5초 후에 슬라이드업하는 class 추가
-          $(".section01.highlight .inner").addClass("bottom-top");
-        }, 1000);
-
-        //폰트 검정색 -> 하얀색 : 1.2초 후 ( bottom-up 애니메이션 중간에 추가하기 )
-        setTimeout(function () {
-          $(".section01.highlight .inner h1").css({
-            color: "#fff",
-            transition: "color 0.5s",
-          });
-        }, 1200);
-
-        //현재 섹션 숨김 처리 : 2.5초 후
-        setTimeout(function () {
-          //기존의 section01 노출하기
-          $(".section01.normal").fadeIn("slow");
-          //header menu 메뉴 노출 처리
-          $("header .inner").css("display", "flex");
-          $(".section01.highlight").css("display", "none");
-        }, 2500);
-      } else {
-        //현재 페이지에서 새로고침했을 때
-        $(".section01.highlight").css("display", "none");
-      }
-
-      $(".normal-image-bg div").mouseenter(function () {
-        var image = $(this).data("bg");
-        $(".normal-image-bg").css(
-          "background-image",
-          "url(../assets/ABGround/abground_bg_" + image + ".png)"
-        );
+    <script>
+      $(document).ready(function () {
+        $(".historyWrap-mb").slick({
+          slickPrev: true,
+          slickNext: true,
+          infinite: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          cssEase: "ease-in-out",
+        });
+        $(".portfolio-slider").slick({
+          slickPrev: true,
+          slickNext: true,
+          infinite: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true,
+        });
       });
-    });
-  </script>
+    </script>
+  </head>
 
   <body>
-    <!-- <div id="cursor" class="cursor"></div> -->
-    <header class="header">
-      <div class="inner">
-        <div class="logo"><a href="../index.html"></a></div>
-        <button class="gnbBtn mb">
-          <div id="nav-icon3">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
-        <div class="gnb pc">
-          <ul>
-            <li><a href="ABground.html?type=2">AB GROUND</a></li>
-            <li><a href="whyAB.html">WHY AB</a></li>
-            <li><a href="portfolio.html">PORTFOLIO</a></li>
-            <li><a href="partners.html">PARTNERS</a></li>
-          </ul>
+    <!-- header include check -->
+    <header include-html="static/html/header.html"></header>
+    <div id="portfolio">
+      <section class="section01">
+        <div class="inner pc">
+          <h1 class="textStroke">THE CHANGING WAY</h1>
+          <h1>
+            AB 미션을 이끄는<br />
+            투자와 창업 포트폴리오
+          </h1>
+          <p>
+            알파브라더스는 THE CHANGING WAY라는 AB 미션을<br
+              class="pc"
+            />온라인으로 구현하는 기업에 투자한 이력과<br />직접 창업한 경험이
+            풍부합니다.
+          </p>
+          <a class="scrollBtn" href="#section02"></a>
         </div>
-      </div>
-    </header>
-    <div id="abGround">
-      <section class="section01 highlight">
-        <div class="inner">
-          <h1>AB GROUND</h1>
-        </div>
-      </section>
-      <section class="section01 normal">
-        <div class="inner">
-          <h1>AB GROUND</h1>
-          <p>ACTIVE 엑셀러레이팅이 이루어지는 장 AB GROUND</p>
-          <div class="normal-image-bg">
-            <div class="top1" data-bg="top1">&nbsp;</div>
-            <div class="top2" data-bg="top2">&nbsp;</div>
-            <div class="top3" data-bg="top3">&nbsp;</div>
-            <div class="top4" data-bg="top4">&nbsp;</div>
-            <div class="bottom1" data-bg="bottom1">&nbsp;</div>
-            <div class="bottom2" data-bg="bottom2">&nbsp;</div>
-            <div class="bottom3" data-bg="bottom3">&nbsp;</div>
-            <div class="bottom4" data-bg="bottom4">&nbsp;</div>
-          </div>
+        <div class="inner mb">
+          <h1 class="textStroke">알파브라더스</h1>
+          <h1>
+            투자와 창업<br />
+            포트폴리오
+          </h1>
+          <p>
+            알파브라더스는 THE CHANGING WAY라는 AB 미션을<br />온라인으로
+            구현하는 기업에 투자한 이력과<br />직접 창업한 경험이 풍부합니다.
+          </p>
           <a class="scrollBtn" href="#section02"></a>
         </div>
       </section>
       <section class="section02" id="section02">
         <div class="inner">
-          <h2 class="pc">ALPHA BROTHERS</h2>
-          <h2 class="arrow">
-            ACTIVE<br class="mb" />
-            ACCELERATOR
-          </h2>
-          <div class="item-container">
-            <div class="item">
-              <div class="item-info">
-                <p><b>ACTIVE 엑셀러레이터란?</b></p>
-                <p>
-                  무한한 가능성을 가진 아이디어에 생명력을 불어 넣는
-                  알파브라더스,<br class="pc" />
-                  단순 자금지원을 넘어서 인력지원까지 제공하여 고객사의
-                  사업을<br class="pc" />
-                  AB 그라운드 위에서 함께 건설해나가는 사업고도화형 컴퍼니
-                  빌더입니다.
-                </p>
-                <a
-                  href="../assets/linkFile/CompanyInfo.pdf"
-                  download
-                  class="downBtn"
-                  >회사소개서 다운받기</a
-                >
-              </div>
+          <div class="inner-item">
+            <div class="animate__animated">
+              <span>투자 기업 수</span>
+              <h2>8개의 기업</h2>
             </div>
-            <div class="item img"></div>
+          </div>
+          <div class="inner-item">
+            <div class="animate__animated">
+              <span>누적 투자액</span>
+              <h2>12.7억원</h2>
+            </div>
+          </div>
+          <div class="inner-item">
+            <div class="animate__animated">
+              <span>자금유치 컨설팅</span>
+              <h2>2,037건</h2>
+            </div>
           </div>
         </div>
       </section>
       <section class="section03">
-        <div class="inner" style="display: none">
-          <a id="play-video" class="video-play-button" href="#">
-            <span></span>
-          </a>
-          <div id="video-overlay" class="video-overlay">
-            <!-- <a class="video-overlay-close">&times;</a> -->
-          </div>
-          <!-- <video class="video" src="../assets/video/pc_01_1920-1080.mp4" controls muted playsinline width="100%" poster="">
-        </video> -->
-        </div>
-        <div class="inner">
-          <button class="pauseBtn"></button>
-          <video
-            id="myPlayer"
-            class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid"
-            height="720"
-            webkit-playsinline
-          ></video>
-          <!-- <video src="../assets/video/pc_02_1920-1080.mp4" controls playsinline width="100%" poster="../assets/video/pc_02_1920-1080_thumbnail.png"></video> -->
-        </div>
-      </section>
-      <script>
-        $(document).ready(function () {
-          var player = videojs("myPlayer", {
-            sources: [
-              { src: "../assets/video/pc_02_1920-1080.mp4", type: "video/mp4" },
-            ],
-            poster: "../assets/video/pc_02_1920-1080_thumbnail.png",
-            controls: true,
-            playsinline: true,
-            muted: false,
-            preload: "metadata",
-            controlBar: {
-              playToggle: true,
-              pictureInPictureToggle: true,
-              remainingTimeDisplay: true,
-              progressControl: true,
-            },
-          });
-
-          // video play & pause
-          const video = document.querySelector("video");
-
-          $(".pauseBtn").css({ opacity: "0" });
-
-          $(".pauseBtn").click(() => {
-            if (player.paused()) {
-              video.play();
-              $(".pauseBtn").css({ opacity: "0" });
-            } else {
-              video.pause();
-              $(".pauseBtn").css({ opacity: "1" });
-            }
-          });
-
-          video.addEventListener("touchstart", (e) => {
-            console.log(e);
-            if (e.target.nodeName === "VIDEO") {
-              if (player.paused()) {
-                console.log(player);
-                video.play();
-                $(".pauseBtn").css({ opacity: "0" });
-              } else {
-                video.pause();
-                $(".pauseBtn").css({ opacity: "1" });
-              }
-            }
-          });
-        });
-      </script>
-
-      <section class="section04">
-        <!-- slick scroll vertival, progress 적용 예정 -->
-        <div class="pc">
-          <div class="inner">
-            <div class="scroll-slider">
-              <div class="scrollItem scrollItem01">
-                <div class="center">
-                  <h1>
-                    AB MISSION<br />
-                    CHANGING WAY
-                  </h1>
+        <div class="inner pc">
+          <h2>투자 및 창업 히스토리</h2>
+          <div class="historyWrap">
+            <div class="history history01">
+              <div class="t-text">
+                <p><b>1개 기업 창업</b></p>
+              </div>
+              <div class="t-text-hover">
+                <p><b>창업</b></p>
+                <p>알파브라더스</p>
+              </div>
+              <div class="m-dot"></div>
+              <div class="b-year">
+                <p>2018년</p>
+              </div>
+            </div>
+            <div class="history history02">
+              <div class="t-text">
+                <p><b>2개 기업 투자</b></p>
+              </div>
+              <div class="t-text-hover">
+                <p><b>투자</b></p>
+                <p>GCS<br />라이노브파트너스</p>
+              </div>
+              <div class="m-dot"></div>
+              <div class="b-year">
+                <p>2019년</p>
+              </div>
+            </div>
+            <div class="history history03">
+              <div class="t-text">
+                <p><b>6개 기업 투자</b></p>
+                <p><b>3개 기업 창업</b></p>
+              </div>
+              <div class="t-text-hover d-flex">
+                <div class="t-text-left">
+                  <p><b>투자</b></p>
                   <p>
-                    알파브라더스는 CHANGING WAY라는<br class="mb" />
-                    미션 하에<br class="pc" />
-                    사람들의 패러다임, 라이프스타일,<br class="mb" />
-                    그리고 더 나아가<br class="pc" />
-                    비즈니스 세계의 판도를<br class="mb" />
-                    변화시키고자 합니다.
+                    (주) 프리코 <br />진짜 맛있는 과일<br />
+                    (주) 플루토<br />
+                    아이트립<br />
+                    아이딕션
+                  </p>
+                </div>
+                <div class="t-text-right">
+                  <p><b>창업</b></p>
+                  <p>
+                    12PM 스튜디오<br />
+                    아이렙트<br />
+                    더피트
                   </p>
                 </div>
               </div>
-              <div class="scrollItem scrollItem02">
-                <div class="center">
-                  <h1>
-                    PARADIGM<br />
-                    <span class="textStroke">CHANGING</span>
-                  </h1>
-                  <p>
-                    세상을 바라보는 새로운 관점과 가치를
-                    <br class="mb" />창출할 스타트업을 찾습니다.
-                  </p>
-                </div>
-              </div>
-              <div class="scrollItem scrollItem03">
-                <div class="center">
-                  <h1>
-                    LIFESTYLE<br />
-                    <span class="textStroke">CHANGING</span>
-                  </h1>
-                  <p>
-                    우리의 삶을 변화시킬 아이디어를 구현할
-                    <br class="mb" />스타트업을 찾습니다.
-                  </p>
-                </div>
-              </div>
-              <div class="scrollItem scrollItem04">
-                <div class="center">
-                  <h1>
-                    MARKET<br />
-                    <span class="textStroke">CHANGING</span>
-                  </h1>
-                  <p>
-                    새로운 가치로 비즈니스 세계의 판도를 바꿀
-                    <br class="mb" />스타트업을 찾습니다.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="progress" role="progressbar">
-              <span class="slider__label sr-only"></span>
-            </div>
-          </div>
-        </div>
-        <div class="mb">
-          <div class="inner">
-            <div class="scroll-slider">
-              <div class="scrollItem scrollItem01">
-                <div class="center">
-                  <h1>
-                    AB MISSION<br />
-                    CHANGING WAY
-                  </h1>
-                  <p>
-                    알파브라더스는 CHANGING WAY라는<br class="mb" />
-                    미션 하에<br class="pc" />
-                    사람들의 패러다임, 라이프스타일,<br class="mb" />
-                    그리고 더 나아가<br class="pc" />
-                    비즈니스 세계의 판도를<br class="mb" />
-                    변화시키고자 합니다.
-                  </p>
-                </div>
-              </div>
-              <div class="scrollItem scrollItem02">
-                <div class="center">
-                  <h1>
-                    PARADIGM<br />
-                    <span class="textStroke">CHANGING</span>
-                  </h1>
-                  <p>
-                    세상을 바라보는 새로운 관점과 가치를
-                    <br class="mb" />창출할 스타트업을 찾습니다.
-                  </p>
-                </div>
-              </div>
-              <div class="scrollItem scrollItem03">
-                <div class="center">
-                  <h1>
-                    LIFESTYLE<br />
-                    <span class="textStroke">CHANGING</span>
-                  </h1>
-                  <p>
-                    우리의 삶을 변화시킬 아이디어를 구현할
-                    <br class="mb" />스타트업을 찾습니다.
-                  </p>
-                </div>
-              </div>
-              <div class="scrollItem scrollItem04">
-                <div class="center">
-                  <h1>
-                    MARKET<br />
-                    <span class="textStroke">CHANGING</span>
-                  </h1>
-                  <p>
-                    새로운 가치로 비즈니스 세계의 판도를 바꿀
-                    <br class="mb" />스타트업을 찾습니다.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="progress" role="progressbar">
-              <span class="slider__label sr-only"></span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="section05">
-        <div class="inner">
-          <h1 class="pc">
-            아이디어라는 점을<br />
-            고객과 연결해주는
-            <div class="textArea pc">
-              <p class="textAni textAni01">
-                <span class="text">선</span>
-              </p>
-              <p class="textAni textAni02">
-                <span class="text">LINE</span>
-              </p>
-              <p class="textAni textAni03">
-                <span class="text">ON</span>
-              </p>
-            </div>
-          </h1>
-          <h1 class="mb">
-            아이디어라는 점을<br />
-            고객과 연결해주는 선
-            <div class="textArea mb">
-              <p class="textAni">
-                <span class="text">ON-LINE</span>
-              </p>
-            </div>
-          </h1>
-          <div class="des textAni04 pc">
-            <p>
-              알파브라더스는 CHANGING WAY라는 미션에 부합하는 기업들 중에서도
-              <br class="pc" /><span class="text_bg"
-                >온라인을 통해서 서비스 혹은 제품을 판매할 고객사</span
-              >
-              들을 위주로
-              <br class="pc" />
-              ACTIVE 엑셀러레이팅을 진행하고 있습니다.
-            </p>
-            <p class="pc">
-              본 고객사들은 온라인을
-              <br />통해 보다 넓은 범위의 사람들에게, 심지어 글로벌 단위의
-              고객에게 닿아 <br />세상을 변화시킬 가능성을 보입니다.
-            </p>
-            <a href="portfolio.html"
-              ><span>AB그라운드에서의 온라인 사업들 더 보러 가기</span></a
-            >
-          </div>
-          <div class="des textAni04 mb">
-            <p>
-              알파브라더스는 CHANGING WAY 미션에 부합하며<br />온라인을 통해서
-              서비스 혹은 제품을 판매할 고객사들을<br />
-              위주로 ACTIVE 엑셀러레이팅을 진행합니다.
-            </p>
-          </div>
-        </div>
-        <div class="imgArea pc">
-          <div class="left">
-            <div class="item">
-              <div class="hoverText">
-                <h2>ONLINE SERVICES</h2>
-                <p>온라인을 통해 새로운 서비스를<br />런칭하고자 하는 기업</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="hoverText">
-                <h2>ONLINE PRODUCTS</h2>
-                <p>온라인을 통해 제품을<br />판매하고자 하는 기업</p>
-              </div>
-            </div>
-          </div>
-          <div class="right">
-            <div class="item">
-              <div class="hoverText">
-                <h2>ONLINE TO GLOBAL</h2>
-                <p>사업모델에 대한 글로벌 확장성을<br />가지고 있는 기업</p>
+              <div class="m-dot"></div>
+              <div class="b-year">
+                <p>2020년</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="imgArea mb">
-          <div class="item-container section05-slider">
-            <div class="item">
-              <div class="imgWrap"></div>
-              <div class="hoverText">
-                <h2>ONLINE SERVICES</h2>
-                <p>온라인을 통해 새로운 서비스를 런칭하고자 하는 기업</p>
+        <div class="inner mb">
+          <h2>투자 및 창업 히스토리</h2>
+          <div class="mb historyLine"></div>
+          <div class="historyWrap historyWrap-mb">
+            <div class="history history01">
+              <div class="t-text">
+                <p><b>창업</b></p>
+                <p>알파브라더스</p>
+              </div>
+              <div class="m-dot"></div>
+              <div class="b-year">
+                <p>2018년</p>
               </div>
             </div>
-            <div class="item">
-              <div class="imgWrap"></div>
-              <div class="hoverText">
-                <h2>ONLINE PRODUCTS</h2>
-                <p>온라인을 통해 제품을 판매하고자 하는 기업</p>
+            <div class="history history02">
+              <div class="t-text">
+                <p><b>투자</b></p>
+                <p>GCS<br />라이노브파트너스</p>
+              </div>
+              <div class="m-dot"></div>
+              <div class="b-year">
+                <p>2019년</p>
               </div>
             </div>
-            <div class="item">
-              <div class="imgWrap"></div>
-              <div class="hoverText">
-                <h2>ONLINE TO GLOBAL</h2>
-                <p>사업모델에 대한 글로벌 확장성을 가지고 있는 기업</p>
+            <div class="history history03">
+              <div class="t-text d-flex">
+                <div class="t-text-left">
+                  <p><b>투자</b></p>
+                  <p>
+                    (주) 프리코 <br />진짜 맛있는 과일<br />
+                    (주) 플루토<br />
+                    아이트립<br />
+                    아이딕션
+                  </p>
+                </div>
+                <div class="t-text-right">
+                  <p><b>창업</b></p>
+                  <p>
+                    12PM 스튜디오<br />
+                    아이렙트<br />
+                    더피트
+                  </p>
+                </div>
+              </div>
+              <div class="m-dot"></div>
+              <div class="b-year">
+                <p>2020년</p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="section06">
-        <div class="inner">
-          <h1 class="animate__animated">
-            PEOPLE OF<br />
-            ALPHA BROTHERS
-          </h1>
-          <div class="peopleList">
-            <ul>
-              <li>
-                <a class="tit" href="javascript:void(0);"
-                  ><span>채중규</span> 대표이사<button
-                    class="mb openBtn"
-                  ></button
-                ></a>
-                <div class="des">
-                  <p>
-                    <span>중소벤처기업부 전문엔젤투자자</span>
-                    <span>LG전자 해외마케팅 8년</span>
-                    <span>AMA 미국마케팅협회 정회원</span>
-                  </p>
-                </div>
-              </li>
-              <li>
-                <a class="tit" href="javascript:void(0);"
-                  ><span>서평강</span> 변리사<button class="mb openBtn"></button
-                ></a>
-                <div class="des">
-                  <p>
-                    <span>중소벤처기업부 전문엔젤투자자</span>
-                    <span>상상특허법률사무소 대표변리사</span>
-                    <span>특허청 심사관 대상 특허법교육 전문교수</span>
-                  </p>
-                </div>
-              </li>
-              <li>
-                <a class="tit" href="javascript:void(0);"
-                  ><span>조승현</span> 변리사<button class="mb openBtn"></button
-                ></a>
-                <div class="des">
-                  <p>
-                    <span>연세대학교 전기전자공학 </span>
-                    <span>前. 삼성전자 DMC 연구소 전담 변리사 </span>
-                    <span>특허법인 리앤목 변리사 </span>
-                  </p>
-                </div>
-              </li>
-              <li>
-                <a class="tit" href="javascript:void(0);"
-                  ><span>이철우</span> 박사<button class="mb openBtn"></button
-                ></a>
-                <div class="des">
-                  <p>
-                    <span>건국대학교 경영공학 박사 </span>
-                    <span>신용보증기금 경영컨설턴트 </span>
-                    <span>경영지도사 </span>
-                  </p>
-                </div>
-              </li>
-              <li>
-                <a class="tit" href="javascript:void(0);"
-                  ><span>김승환</span> 교수<button class="mb openBtn"></button
-                ></a>
-                <div class="des">
-                  <p>
-                    <span>평택대학교 피어선칼리지 교수 </span>
-                    <span>Encounter Company 대표 </span>
-                    <span>前. 평택대학교 창업보육센터장 </span>
-                  </p>
-                </div>
-              </li>
-              <li>
-                <a class="tit" href="javascript:void(0);"
-                  ><span>문예진</span> 전문위원<button
-                    class="mb openBtn"
-                  ></button
-                ></a>
-                <div class="des">
-                  <p>
-                    <span>법무부 천안개방교도소 취창업 전문강사 </span>
-                    <span>코스타트업 교육분과 운영위원 </span>
-                    <span>청소년창업네트워크 프리즘유스 사무국장 </span>
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div style="display: none">
-            <div class="pc">
-              <div class="item-container">
-                <div class="item animate__animated">
-                  <div class="imgWrap"></div>
-                  <div class="text">
-                    <p><span>홍길동</span> 대표이사</p>
+      <section class="section04 pc">
+        <div class="inner inner01">
+          <h2 class="arrow">투자 포트폴리오</h2>
+          <div class="portfolio portfolio01">
+            <div class="d-flex">
+              <div class="info">
+                <h3>
+                  진맛과<br />
+                  진짜 맛있는 과일
+                </h3>
+                <ul>
+                  <li>
+                    <p><b>창업연도</b></p>
+                    <p>2019년</p>
+                  </li>
+                  <li>
+                    <p><b>서비스 분야</b></p>
+                    <p>명인 과일 프리미엄 브랜드</p>
+                  </li>
+                  <li>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      항상 신선한 과일을 배송받을 수 있는<br />방법에 대한
+                      고민을 시작으로 대한민국<br />
+                      1% 명인이 직접 생산한 프리미엄 과일을<br />
+                      배송하는 기업입니다.
                     </p>
-                  </div>
-                </div>
-                <div class="item animate__animated">
-                  <div class="imgWrap"></div>
-                  <div class="text">
-                    <p><span>홍길동</span> 대표이사</p>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                  </div>
-                </div>
-                <div class="item animate__animated">
-                  <div class="imgWrap"></div>
-                  <div class="text">
-                    <p><span>홍길동</span> 대표이사</p>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                  </div>
-                </div>
-                <div class="item animate__animated">
-                  <div class="imgWrap"></div>
-                  <div class="text">
-                    <p><span>홍길동</span> 대표이사</p>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                  </div>
-                </div>
-                <div class="item animate__animated">
-                  <div class="imgWrap"></div>
-                  <div class="text">
-                    <p><span>홍길동</span> 대표이사</p>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                  </div>
-                </div>
-                <div class="item animate__animated">
-                  <div class="imgWrap"></div>
-                  <div class="text">
-                    <p><span>홍길동</span> 대표이사</p>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                  </div>
-                </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="infoImg">
+                <ul>
+                  <li>
+                    <div class="img img01"></div>
+                    <p><b>진맛과 홈페이지</b></p>
+                  </li>
+                  <li>
+                    <div class="img img02"></div>
+                    <p><b>진맛과 ‘갓딴’ 제품</b></p>
+                  </li>
+                  <li>
+                    <div class="img img03"></div>
+                    <p><b>진맛과 ‘펀딩과일’ 제품</b></p>
+                  </li>
+                  <li>
+                    <div class="img img04"></div>
+                    <p><b>진맛과 과일 정기배송 서비스</b></p>
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="mb">
-              <div class="item-container section06-slider">
-                <div class="item animate__animated">
-                  <div class="imgWrap"></div>
-                  <div class="text">
-                    <p><span>홍길동</span> 대표이사</p>
+          </div>
+          <div class="portfolio portfolio02">
+            <div class="d-flex">
+              <div class="info">
+                <h3>
+                  GCS<br />
+                  지씨에스
+                </h3>
+                <ul>
+                  <li>
+                    <p><b>창업연도</b></p>
+                    <p>2011년</p>
+                  </li>
+                  <li>
+                    <p><b>서비스 분야</b></p>
+                    <p>토탈 뷰티 솔루션</p>
+                  </li>
+                  <li>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      피부 미용 전문 의료기기를 개발/ 제조/<br />
+                      판매하는 기술력 그대로 담아 토탈 뷰티<br />
+                      솔루션을 개발하는 기업입니다.
                     </p>
-                  </div>
-                </div>
-                <div class="item animate__animated">
-                  <div class="imgWrap"></div>
-                  <div class="text">
-                    <p><span>홍길동</span> 대표이사</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="infoImg">
+                <ul>
+                  <li>
+                    <div class="img img01"></div>
+                    <p><b>GCS 홈페이지</b></p>
+                  </li>
+                  <li class="t-100">
+                    <div class="img img02"></div>
+                    <p><b>GCS 제품</b></p>
+                  </li>
+                  <li>
+                    <div class="img img03"></div>
+                    <p><b>GCS 제품</b></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio portfolio03">
+            <div class="d-flex">
+              <div class="info">
+                <h3>
+                  Itrip<br />
+                  아이트립
+                </h3>
+                <ul>
+                  <li>
+                    <p><b>창업연도</b></p>
+                    <p>2018년</p>
+                  </li>
+                  <li>
+                    <p><b>서비스 분야</b></p>
+                    <p>관광 플랫폼 서비스</p>
+                  </li>
+                  <li>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      ㈜아이트립은 공항철도와의 공동사업의<br />
+                      일환으로, 여행에 필요한 모든것을<br />
+                      One-stop서비스로 제공하는 관광<br />플랫폼 서비스
+                      기업입니다.
                     </p>
-                  </div>
-                </div>
-                <div class="item animate__animated">
-                  <div class="imgWrap"></div>
-                  <div class="text">
-                    <p><span>홍길동</span> 대표이사</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="infoImg">
+                <ul>
+                  <li>
+                    <div class="img img01"></div>
+                    <p><b>Itrip 홈페이지</b></p>
+                  </li>
+                  <li>
+                    <div class="img img02"></div>
+                    <p><b>Safex 서비스</b></p>
+                  </li>
+                  <li>
+                    <div class="img img03"></div>
+                    <p><b>Mr.Coatroom 서비스</b></p>
+                  </li>
+                  <li>
+                    <div class="img img04"></div>
+                    <p><b>JustRent 서비스</b></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio portfolio04">
+            <div class="d-flex">
+              <div class="info">
+                <h3>
+                  Idiction<br />
+                  아이딕션
+                </h3>
+                <ul>
+                  <li>
+                    <p><b>창업연도</b></p>
+                    <p>2013년</p>
+                  </li>
+                  <li>
+                    <p><b>서비스 분야</b></p>
+                    <p>관광 플랫폼 서비스</p>
+                  </li>
+                  <li>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      ㈜아이딕션은 벤처기업으로, 패션과 IT<br />를 융합한
+                      패션테크 스타트업으로서<br />
+                      SIZE IT 은 세상에서 가장 스마트한<br />비대면 사이즈 측정
+                      서비스 입니다.
                     </p>
-                  </div>
-                </div>
-                <div class="item animate__animated">
-                  <div class="imgWrap"></div>
-                  <div class="text">
-                    <p><span>홍길동</span> 대표이사</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="infoImg">
+                <ul>
+                  <li>
+                    <div class="img img01"></div>
+                    <p><b>Idiction 홈페이지</b></p>
+                  </li>
+                  <li class="t-100">
+                    <div class="img img02"></div>
+                    <p><b>SizeIt 어플리케이션</b></p>
+                  </li>
+                  <li>
+                    <div class="img img03"></div>
+                    <p><b>SizeIt 서비스 화면</b></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="inner inner02">
+          <h2 class="arrow">창업 포트폴리오</h2>
+          <div class="portfolio found01">
+            <div class="d-flex">
+              <div class="info">
+                <h3>
+                  I-Rept<br />
+                  아이렙트
+                </h3>
+                <ul>
+                  <li>
+                    <p><b>창업연도</b></p>
+                    <p>2020년</p>
+                  </li>
+                  <li>
+                    <p><b>서비스 분야</b></p>
+                    <p>글로벌 희귀동물 커뮤니티</p>
+                  </li>
+                  <li>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      오랜 시간 곁을 지켜주는 희귀동물, 이 신비롭고 특별한
+                      친구들을 보다 쉽게 만날 수는 없을까? 이런 고민을 해결하기
+                      위해 아이렙트는 시작되었습니다. 국내를 넘어 미국, 유럽까지
+                      그 범위를 넓혀 함께 교류하고 소통할 수 있는 공간을 만들고
+                      싶습니다.
                     </p>
-                  </div>
-                </div>
-                <div class="item animate__animated">
-                  <div class="imgWrap"></div>
-                  <div class="text">
-                    <p><span>홍길동</span> 대표이사</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="infoImg">
+                <ul>
+                  <li>
+                    <div class="img img01"></div>
+                    <p><b>I-Rept 어플리케이션</b></p>
+                  </li>
+                  <li>
+                    <div class="img img02"></div>
+                    <p><b>I-rept CI</b></p>
+                  </li>
+                  <li>
+                    <div class="img img03"></div>
+                    <p><b>SNS 마케팅</b></p>
+                  </li>
+                  <li>
+                    <div class="img img04"></div>
+                    <p><b>I-Rept 웹</b></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio found02">
+            <div class="d-flex">
+              <div class="info">
+                <h3>
+                  12PM STUDIO<br />
+                  자연광 스튜디오
+                </h3>
+                <ul>
+                  <li>
+                    <p><b>창업연도</b></p>
+                    <p>2020년</p>
+                  </li>
+                  <li>
+                    <p><b>서비스 분야</b></p>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      스튜디오 렌탈, 촬영 대행(사진, 영상), 공간대여 창업 컨설팅
                     </p>
-                  </div>
-                </div>
-                <div class="item animate__animated">
-                  <div class="imgWrap"></div>
-                  <div class="text">
-                    <p><span>홍길동</span> 대표이사</p>
+                  </li>
+                  <li>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      12PM 렌탈스튜디오는 브랜드의 성장을 이룰 수 있는
+                      크리에이트 스페이스입니다. 브랜드가 가장 빛나게 성장할 수
+                      있도록 공간을 만들고 연구합니다. 우리는 잘 갖춰진 스튜디오
+                      운영방침을 통해 최상의 서비스가 이루어 질 수 있도록
+                      관리합니다. 나아가 제품의 가치를 높이는 촬영부터 노하우를
+                      기반으로 한 컨설팅까지 올인원 서비스를 제공합니다.
                     </p>
-                  </div>
-                </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="infoImg">
+                <ul>
+                  <li>
+                    <div class="img img01"></div>
+                    <p><b>12PM 스튜디오 오픈</b></p>
+                  </li>
+                  <li>
+                    <div class="img img02"></div>
+                    <p><b>Studio Space</b></p>
+                  </li>
+                  <li>
+                    <div class="img img03"></div>
+                    <p><b>공간대여 창업 컨설팅</b></p>
+                  </li>
+                  <li>
+                    <div class="img img04"></div>
+                    <p><b>촬영 대행</b></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio found03">
+            <div class="d-flex">
+              <div class="info">
+                <h3>
+                  THE PIT<br />
+                  더피트
+                </h3>
+                <ul>
+                  <li>
+                    <p><b>창업연도</b></p>
+                    <p>2020년</p>
+                  </li>
+                  <li>
+                    <p><b>서비스 분야</b></p>
+                    <p>사업계획 컨설팅</p>
+                  </li>
+                  <li>
+                    <p>
+                      더피트는 9년 연속 정부지원사업 합격자를 배출한
+                      사업계획컨설팅 회사로서 다양한 정부지원과제 및 투자유치를
+                      위한사업계획서 위주로 상담을 진행합니다.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="infoImg">
+                <ul>
+                  <li>
+                    <div class="img img01"></div>
+                    <p><b>The Pit 크몽 서비스</b></p>
+                  </li>
+                  <li>
+                    <div class="img img02"></div>
+                    <p><b>The Pit CI</b></p>
+                  </li>
+                  <li>
+                    <div class="img img03"></div>
+                    <p><b>The Pit 배포 소책자</b></p>
+                  </li>
+                  <li>
+                    <div class="img img04"></div>
+                    <p><b>The Pit 블로그</b></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section04 mb">
+        <div class="inner">
+          <h2><span>투자 포트폴리오</span></h2>
+          <div class="portfolio portfolio01">
+            <div class="d-flex">
+              <div class="info">
+                <h3>
+                  진맛과<br />
+                  진짜 맛있는 과일
+                </h3>
+                <ul>
+                  <li>
+                    <p>
+                      항상 신선한 과일을 배송받을 수 있는 방법에 대한 고민을
+                      시작으로 대한민국 1% 명인이 직접 생산한 프리미엄 과일을
+                      배송하는 기업입니다.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="infoImg">
+                <ul class="portfolio-slider">
+                  <li>
+                    <div class="img img01"></div>
+                    <p><b>진맛과 홈페이지</b></p>
+                  </li>
+                  <li>
+                    <div class="img img02"></div>
+                    <p><b>진맛과 ‘갓딴’ 제품</b></p>
+                  </li>
+                  <li>
+                    <div class="img img03"></div>
+                    <p><b>진맛과 ‘펀딩과일’ 제품</b></p>
+                  </li>
+                  <li>
+                    <div class="img img04"></div>
+                    <p><b>진맛과 과일 정기배송 서비스</b></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio portfolio02">
+            <div class="d-flex">
+              <div class="info">
+                <h3>
+                  GCS<br />
+                  지씨에스
+                </h3>
+                <ul>
+                  <li>
+                    <p>
+                      피부 미용 전문 의료기기를 개발/ 제조/<br class="pc" />
+                      판매하는 기술력 그대로 담아 토탈 뷰티<br class="pc" />
+                      솔루션을 개발하는 기업입니다.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="infoImg">
+                <ul class="portfolio-slider">
+                  <li>
+                    <div class="img img01"></div>
+                    <p><b>GCS 홈페이지</b></p>
+                  </li>
+                  <li class="t-100">
+                    <div class="img img02"></div>
+                    <p><b>GCS 제품</b></p>
+                  </li>
+                  <li>
+                    <div class="img img03"></div>
+                    <p><b>GCS 제품</b></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio portfolio03">
+            <div class="d-flex">
+              <div class="info">
+                <h3>
+                  Itrip<br />
+                  아이트립
+                </h3>
+                <ul>
+                  <li>
+                    <p>
+                      ㈜아이트립은 공항철도와의 공동사업의 일환으로, 여행에
+                      필요한 모든것을 One-stop서비스로 제공하는 관광 플랫폼
+                      서비스 기업입니다.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="infoImg">
+                <ul class="portfolio-slider">
+                  <li>
+                    <div class="img img01"></div>
+                    <p><b>Itrip 홈페이지</b></p>
+                  </li>
+                  <li>
+                    <div class="img img02"></div>
+                    <p><b>Safex 서비스</b></p>
+                  </li>
+                  <li>
+                    <div class="img img03"></div>
+                    <p><b>Mr.Coatroom 서비스</b></p>
+                  </li>
+                  <li>
+                    <div class="img img04"></div>
+                    <p><b>JustRent 서비스</b></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio portfolio04">
+            <div class="d-flex">
+              <div class="info">
+                <h3>
+                  Idiction<br />
+                  아이딕션
+                </h3>
+                <ul>
+                  <li>
+                    <p>
+                      ㈜아이딕션은 벤처기업으로, 패션과 IT 를 융합한 패션테크
+                      스타트업으로서 SIZE IT 은 세상에서 가장 스마트한 비대면
+                      사이즈 측정 서비스 입니다.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="infoImg">
+                <ul class="portfolio-slider">
+                  <li>
+                    <div class="img img01"></div>
+                    <p><b>Idiction 홈페이지</b></p>
+                  </li>
+                  <li class="t-100">
+                    <div class="img img02"></div>
+                    <p><b>SizeIt 어플리케이션</b></p>
+                  </li>
+                  <li>
+                    <div class="img img03"></div>
+                    <p><b>SizeIt 서비스 화면</b></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="inner">
+          <h2><span>창업 포트폴리오</span></h2>
+          <div class="portfolio found01">
+            <div class="d-flex">
+              <div class="info">
+                <h3>
+                  I-Rept<br />
+                  아이렙트
+                </h3>
+                <ul>
+                  <li>
+                    <p>
+                      오랜 시간 곁을 지켜주는 희귀동물, 이 신비롭고 특별한
+                      친구들을 보다 쉽게 만날 수는 없을까? 이런 고민을 해결하기
+                      위해 아이렙트는 시작되었습니다. 국내를 넘어 미국, 유럽까지
+                      그 범위를 넓혀 함께 교류하고 소통할 수 있는 공간을 만들고
+                      싶습니다.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="infoImg">
+                <ul class="portfolio-slider">
+                  <li>
+                    <div class="img img01"></div>
+                    <p><b>I-Rept 어플리케이션</b></p>
+                  </li>
+                  <li>
+                    <div class="img img02"></div>
+                    <p><b>I-rept CI</b></p>
+                  </li>
+                  <li>
+                    <div class="img img03"></div>
+                    <p><b>SNS 마케팅</b></p>
+                  </li>
+                  <li>
+                    <div class="img img04"></div>
+                    <p><b>I-Rept 웹</b></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio found02">
+            <div class="d-flex">
+              <div class="info">
+                <h3>
+                  12PM STUDIO<br />
+                  자연광 스튜디오
+                </h3>
+                <ul>
+                  <li>
+                    <p>
+                      12PM 렌탈스튜디오는 브랜드의 성장을 이룰 수 있는
+                      크리에이트 스페이스입니다. 브랜드가 가장 빛나게 성장할 수
+                      있도록 공간을 만들고 연구합니다.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="infoImg">
+                <ul class="portfolio-slider">
+                  <li>
+                    <div class="img img01"></div>
+                    <p><b>12PM 스튜디오 오픈</b></p>
+                  </li>
+                  <li>
+                    <div class="img img02"></div>
+                    <p><b>Studio Space</b></p>
+                  </li>
+                  <li>
+                    <div class="img img03"></div>
+                    <p><b>공간대여 창업 컨설팅</b></p>
+                  </li>
+                  <li>
+                    <div class="img img04"></div>
+                    <p><b>촬영 대행</b></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio found03">
+            <div class="d-flex">
+              <div class="info">
+                <h3>
+                  THE PIT<br />
+                  더피트
+                </h3>
+                <ul>
+                  <li>
+                    <p>
+                      더피트는 9년 연속 정부지원사업 합격자를 배출한
+                      사업계획컨설팅 회사로서 다양한 정부지원과제 및 투자유치를
+                      위한사업계획서 위주로 상담을 진행합니다.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="infoImg">
+                <ul class="portfolio-slider">
+                  <li>
+                    <div class="img img01"></div>
+                    <p><b>The Pit 크몽 서비스</b></p>
+                  </li>
+                  <li>
+                    <div class="img img02"></div>
+                    <p><b>The Pit CI</b></p>
+                  </li>
+                  <li>
+                    <div class="img img03"></div>
+                    <p><b>The Pit 배포 소책자</b></p>
+                  </li>
+                  <li>
+                    <div class="img img04"></div>
+                    <p><b>The Pit 블로그</b></p>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
     </div>
-
-    <footer>
-      <div class="inner">
-        <a class="logo">
-          <h1>Alpha Brothers</h1>
-        </a>
-        <p class="company">ⓒ 2020 Alpha Brothers</p>
-        <div class="info">
-          <dl>
-            <dt>Tel.</dt>
-            <dd>02-6953-2166</dd>
-          </dl>
-          <dl>
-            <dt>Fax.</dt>
-            <dd>02-6989-9166</dd>
-          </dl>
-          <dl>
-            <dt>Email.</dt>
-            <dd>alphabrothers@naver.com</dd>
-          </dl>
-          <dl>
-            <dt>Address.</dt>
-            <dd>서울특별시 강서구 마곡동 757 두산더랜드파크 A동 605호</dd>
-          </dl>
-        </div>
-        <div class="btmInfo">
-          <ul>
-            <li><a class="privacyBtn">Privacy</a></li>
-            <li><a class="agreementBtn">Agreement</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+    <!-- footer include check -->
+    <footer include-html="static/html/footer.html"></footer>
     <!-- 약관 팝업 : s -->
     <div class="popup" id="agreement">
       <div class="inner">
@@ -1281,7 +1388,7 @@
     <div class="popup" id="gnb">
       <div class="inner">
         <div class="top">
-          <a href="../index.html" class="t-logo"></a>
+          <a href="index.html" class="t-logo"></a>
           <button class="closeBtn"></button>
         </div>
         <ul>
@@ -1323,116 +1430,43 @@
     <!-- 모바일메뉴 팝업 : e -->
   </body>
 </html>
-<script src="../js/cursor.js"></script>
+
 <script>
   jQuery(document).ready(function () {
-    var allPanels = $(".section06 .des");
-    var openBtn = $(".section06 .openBtn");
+    includeHTML();
 
-    openBtn.on("click", function (e) {
-      e.preventDefault();
-      allPanels.slideUp();
-
-      $(this).toggleClass("on");
-
-      if ($(this).hasClass("on")) {
-        $(this).parent().next().slideDown();
-        $(this)
-          .parent()
-          .parent()
-          .siblings()
-          .find("a > button")
-          .removeClass("on");
-      }
-      return false;
-    });
-
-    $(".section05-slider").slick({
-      arrows: false,
-      dots: false,
-      infinite: false,
-      speed: 300,
-      slidesToShow: 1,
-      variableWidth: false,
-      centerPadding: "5px",
-      centerMode: true,
-    });
-
-    $(".section06-slider").slick({
-      arrows: false,
-      dots: false,
-      infinite: false,
-      speed: 300,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      variableWidth: false,
-    });
+    var $portfolio_section03_history_text = $(".section03 .history .t-text");
 
     $(window).on("scroll", function () {
       var height = $(document).scrollTop();
       var _scrollTop = window.scrollY || document.documentElement.scrollTop;
-      var _abGround_section02 = $("#abGround .section02").offset().top;
-      var _abGround_section05 = $("#abGround .section05").offset().top;
-      var _abGround_section06 = $("#abGround .section06").offset().top;
 
-      if (_scrollTop > _abGround_section02 - 350) {
-        var $arrow = $("#abGround .arrow");
-        $arrow.addClass("on");
-      }
-      if (_scrollTop > _abGround_section05 - 0) {
-        var textAni01 = $(".section05 .pc .textArea .textAni01");
-        var textAni02 = $(".section05 .pc .textArea .textAni02");
-        var textAni03 = $(".section05 .pc .textArea .textAni03");
-        var textAni04 = $(".section05 .textAni04.pc");
-        var imgArea = $(".section05 .imgArea.pc");
+      var $portfolio_section02 = $("#portfolio .section02");
+      var $portfolio_section04 = $("#portfolio .section04.pc");
 
-        textAni02.stop().animate({ opacity: "1" }, 1000);
-        textAni01.stop().animate(
-          {
-            opacity: "0",
-            top: "-20px",
-          },
-          1000,
-          function () {
-            textAni02.stop().animate(
-              {
-                left: $(".textAni03").width(),
-              },
-              500,
-              function () {
-                textAni03.stop().animate(
-                  {
-                    opacity: "1",
-                  },
-                  500
-                );
-                textAni04.stop().animate(
-                  {
-                    opacity: "1",
-                    marginTop: "0",
-                  },
-                  500,
-                  function () {
-                    imgArea.stop().animate(
-                      {
-                        opacity: "1",
-                        marginTop: "-100",
-                      },
-                      500
-                    );
-                  }
-                );
-              }
-            );
-          }
+      var _portfolio_section02 = $("#portfolio .section02").offset().top;
+      var _portfolio_section04 = $("#portfolio .section04.pc").offset().top;
+      var _portfolio_section04_inner01 = $portfolio_section04
+        .children(".inner01")
+        .offset().top;
+      var _portfolio_section04_inner02 = $portfolio_section04
+        .children(".inner02")
+        .offset().top;
+
+      if (_scrollTop > _portfolio_section02 - 350) {
+        var $section02_inner_item_text = $(
+          " #portfolio .section02 .inner-item > * "
         );
+        $section02_inner_item_text.addClass("animate__fadeInUp");
       }
 
-      if (_scrollTop > _abGround_section06 - 350) {
-        var $section06_h1 = $(".section06 h1");
-        var $section06_item = $(".section06 .item-container > .item");
-        $section06_h1.addClass("animate__fadeInUp");
-        $section06_item.addClass("animate__fadeInUp");
+      if (_scrollTop > _portfolio_section04_inner01 - 350) {
+        var $inner01_arrow = $(".inner01 .arrow");
+        $inner01_arrow.addClass("on");
+      }
+      if (_scrollTop > _portfolio_section04_inner02 - 350) {
+        var $inner01_arrow = $(".inner02 .arrow");
+        $inner01_arrow.addClass("on");
       }
     });
   });

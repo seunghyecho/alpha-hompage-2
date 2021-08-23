@@ -106,6 +106,7 @@
     <!-- jQuery file -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="static/js/includeHTML.js"></script>
 
     <!-- html5 기반 video player -->
     <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
@@ -113,27 +114,7 @@
 
   <body class="bodyFix">
     <!-- header include check -->
-    <header>
-      <div class="inner">
-        <div class="logo"><a href="index.html"></a></div>
-        <button class="gnbBtn mb">
-          <div id="nav-icon3">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
-        <div class="gnb pc">
-          <ul>
-            <li><a href="pages/ABground.html?type=1">AB GROUND</a></li>
-            <li><a href="pages/whyAB.html">WHY AB</a></li>
-            <li><a href="pages/portfolio.html">PORTFOLIO</a></li>
-            <li><a href="pages/partners.html">PARTNERS</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
+    <header include-html="static/html/header.html"></header>
     <div class="pc-main pc">
       <section class="section01">
         <div class="inner">
@@ -195,39 +176,8 @@
         </div>
       </section>
     </div>
-    <footer class="mb">
-      <div class="inner">
-        <a class="logo"><h1>Alpha Brothers</h1></a>
-        <p class="company">ⓒ 2020 Alpha Brothers</p>
-        <div class="info">
-          <dl>
-            <dt>Tel.</dt>
-            <dd>02-6953-2166</dd>
-          </dl>
-          <dl>
-            <dt>Fax.</dt>
-            <dd>02-6989-9166</dd>
-          </dl>
-          <dl>
-            <dt>Email.</dt>
-            <dd>alphabrothers@naver.com</dd>
-          </dl>
-          <dl>
-            <dt>Address.</dt>
-            <dd>
-              서울특별시 강서구 마곡동 757<br class="mb" />
-              두산더랜드파크 A동 605호
-            </dd>
-          </dl>
-        </div>
-        <div class="btmInfo">
-          <ul>
-            <li><a class="privacyBtn">Privacy</a></li>
-            <li><a class="agreementBtn">Agreement</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+    <!-- footer include check -->
+    <!-- <footer include-html="static/html/footer.html"></footer> -->
     <!-- 약관 팝업 : s -->
     <div class="popup" id="agreement">
       <div class="inner">
@@ -735,12 +685,12 @@
       </div>
     </div>
     <!-- 모바일메뉴 팝업 : e -->
-    <div id="cursor" class="cursor"></div>
   </body>
 </html>
-<script src="js/cursor.js"></script>
 <script>
   jQuery(document).ready(function () {
+    includeHTML();
+
     var $mb_main_section01_mainText01 = $(".mb-main .section01 .mainText01");
     var $mb_main_section01_mainText02 = $(".mb-main .section01 .mainText02");
 

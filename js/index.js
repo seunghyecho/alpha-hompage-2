@@ -4,6 +4,8 @@ jQuery(document).ready(function () {
   var url = window.location.pathname,
     urlRegExp = new RegExp(url.replace(/\/$/, ""));
 
+  console.log(url, urlRegExp);
+
   $("header .gnb ul li a").each(function () {
     if (urlRegExp.test(this.href)) {
       $(this).addClass("active");

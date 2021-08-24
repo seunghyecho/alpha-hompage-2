@@ -739,6 +739,7 @@
 </html>
 <script>
   jQuery(document).ready(function () {
+    $("header").addClass("fixed");
     var $mb_main_section01_mainText01 = $(".mb-main .section01 .mainText01");
     var $mb_main_section01_mainText02 = $(".mb-main .section01 .mainText02");
 
@@ -746,30 +747,41 @@
     $mb_main_section01_mainText02.css({ opacity: "0" });
 
     // 모바일 메인 스크롤-------------------------------------------
-    $(".section01").addClass("sticky");
+    // $(".section01").addClass("sticky");
 
     $(window).scroll(function () {
+      // console.log($mb_main_section01_mainText02.css("opacity"));
+      //mainText02 가 나타나기 전에는 스크롤 처리 안되도록 추가
+      if ($mb_main_section01_mainText02.css("opacity") == 0) {
+        $(".mb-main").on("scroll touchmove mousewheel", function (e) {
+          //scroll event 전파 막기
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+        //mobile main text event 처리
+        mobile_main_txt_event();
+      } else {
+        $(".mb-main").off("scroll touchmove mousewheel");
+      }
+
       var height = $(document).scrollTop();
       if (height > 0 && height < 50) {
         $(".section01").addClass("sticky");
       } else if (height > 50) {
         $(".section01").removeClass("sticky");
       }
-
-      $(".mb-main .section01 .textWrap").bind("touchstart", (e) => {
-        console.log(e);
-        $(".section01").css({ overflow: "hidden" });
-        $mb_main_section01_mainText01.animate(
-          { opacity: "0", margin: "-50px 0 0 0" },
-          500,
-          function () {
-            $mb_main_section01_mainText02.animate(
-              { opacity: "1", margin: "-50px 0 0 0" },
-              500
-            );
-          }
-        );
-      });
     });
+
+    function mobile_main_txt_event() {
+      $(".section01").css({ overflow: "hidden" });
+      $mb_main_section01_mainText01
+        .stop()
+        .animate({ opacity: "0", margin: "-50px 0 0 0" }, 500, function () {
+          $mb_main_section01_mainText02
+            .stop()
+            .animate({ opacity: "1", margin: "-50px 0 0 0" }, 500);
+        });
+    }
   });
 </script>

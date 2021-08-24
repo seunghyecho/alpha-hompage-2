@@ -4,11 +4,7 @@ jQuery(document).ready(function () {
   var url = window.location.pathname,
     urlRegExp = new RegExp(url.replace(/\/$/, ""));
 
-  console.log(url, urlRegExp);
-
   $("header .gnb ul li a").each(function () {
-    console.log("~~~~~~~~~~~~");
-
     if (urlRegExp.test(this.href)) {
       $(this).addClass("active");
     }
@@ -108,12 +104,28 @@ jQuery(document).ready(function () {
     }
 
     // mobile header
-    if (height > $("header").height()) {
-      $("header").addClass("fixed");
-      $(".mb-main").css({ position: "relative" });
-    } else {
-      $("header").removeClass("fixed");
-      $(".mb-main").css({ position: "relative" });
-    }
+    // if (height > $("header").height()) {
+    //   $("header").addClass("fixed");
+    //   $(".mb-main").css({ position: "relative" });
+    // } else {
+    //   $("header").removeClass("fixed");
+    //   $(".mb-main").css({ position: "relative" });
+    // }
+  });
+
+  // scrollBtn 각 페이지 아래 화살표 버튼
+  $(".scrollBtn").on("click", function (e) {
+    var height = $(document).scrollTop();
+    var $section02 = $("#section02").offset().top;
+
+    e.preventDefault();
+
+    $("body, html").stop().animate(
+      {
+        scrollTop: $section02,
+      },
+      "fast"
+    );
+    return false;
   });
 });

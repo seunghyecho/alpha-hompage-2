@@ -10,6 +10,8 @@
   background-size: 25px 34px;
   background-position: center;
   background-image: url(../assets/icon/icon_scroll.svg);
+  scroll-behavior: smooth;
+  transition: scroll-behavior 0.5s;
 }
 
 .textStroke {
@@ -1063,15 +1065,17 @@ section {
     width: 100%;
     margin-right: 0;
     margin-top: 0;
-    padding: 0 20px;
     box-sizing: border-box;
     display: block;
   }
 
   .section05 .imgArea.mb .item-container .item {
-    padding: 0 15px 0 0;
+    box-sizing: border-box;
     height: 100%;
     opacity: 1;
+  }
+  .section05 .imgArea.mb .item-container .item:nth-of-type(1) {
+    margin-left: 20px;
   }
 
   .section05-slider {
@@ -1079,11 +1083,13 @@ section {
     flex-wrap: wrap;
   }
   .section05 .slick-list {
-    margin: 0 -10px;
+    /* margin-left: 10px; */
+    box-sizing: border-box;
   }
   .section05 .slick-slide {
     width: 100%;
     min-width: 320px;
+    margin-left: 10px;
   }
   .section05 .imgArea .item-container .item .imgWrap {
     width: 100%;

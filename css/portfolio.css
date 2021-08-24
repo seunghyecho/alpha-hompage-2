@@ -11,6 +11,7 @@
   background-position: center;
   background-image: url(../assets/icon/icon_scroll.svg);
   scroll-behavior: smooth;
+  transition: scroll-behavior 0.5s;
 }
 
 #portfolio {

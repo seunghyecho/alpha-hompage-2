@@ -10,6 +10,8 @@
   background-size: 25px 34px;
   background-position: center;
   background-image: url(../assets/icon/icon_scroll.svg);
+  scroll-behavior: smooth;
+  transition: scroll-behavior 0.5s;
 }
 
 #whyAb section {
@@ -736,8 +738,11 @@
   #whyAb .section06 .imgWrap .hoverWrap .item:hover:nth-of-type(3) span::after {
     top: -12px;
   }
+  #whyAb .section06 .imgWrap .hoverWrap .item span {
+    letter-spacing: -0.06em;
+  }
   #whyAb .section06 .imgWrap .hoverWrap .item:hover span {
-    letter-spacing: -0.05em;
+    letter-spacing: -0.06em;
   }
   #whyAb .section06 .imgWrap .hoverWrap .item:hover span::after {
     font-size: 14px;

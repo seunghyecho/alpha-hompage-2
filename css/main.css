@@ -23,11 +23,11 @@
     position: relative;
   }
   .mb-main .sticky {
-    position: sticky;
+    /* position: sticky;
     top: 50px;
     overflow: hidden;
 
-    transition: all 0.5s;
+    transition: all 0.5s; */
   }
   /* mb-main */
   .mb-main {
@@ -74,6 +74,8 @@
     background-size: 25px 34px;
     background-position: center;
     background-image: url(../assets/icon/icon_scroll.svg);
+    scroll-behavior: smooth;
+    transition: scroll-behavior 0.5s;
   }
 
   .mb-main .section02 {

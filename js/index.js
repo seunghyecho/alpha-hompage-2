@@ -7,6 +7,8 @@ jQuery(document).ready(function () {
   console.log(url, urlRegExp);
 
   $("header .gnb ul li a").each(function () {
+    console.log("~~~~~~~~~~~~");
+
     if (urlRegExp.test(this.href)) {
       $(this).addClass("active");
     }

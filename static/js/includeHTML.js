@@ -1,5 +1,6 @@
-function includeHTML(callback) {
+function includeHTML() {
   var z, i, elmnt, file, xhr;
+  console.log("includeHTML");
   /*loop through a collection of all HTML elements:*/
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
@@ -20,7 +21,7 @@ function includeHTML(callback) {
           }
           /*remove the attribute, and call this function once more:*/
           elmnt.removeAttribute("include-html");
-          includeHTML(callback);
+          includeHTML();
         }
       };
       xhr.open("GET", file, true);

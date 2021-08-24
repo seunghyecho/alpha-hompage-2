@@ -16,82 +16,82 @@
     <link
       rel="apple-touch-icon"
       sizes="57x57"
-      href="assets/favicon/apple-icon-57x57.png"
+      href="../assets/favicon/apple-icon-57x57.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="60x60"
-      href="assets/favicon/apple-icon-60x60.png"
+      href="../assets/favicon/apple-icon-60x60.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="72x72"
-      href="assets/favicon/apple-icon-72x72.png"
+      href="../assets/favicon/apple-icon-72x72.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="76x76"
-      href="assets/favicon/apple-icon-76x76.png"
+      href="../assets/favicon/apple-icon-76x76.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="114x114"
-      href="assets/favicon/apple-icon-114x114.png"
+      href="../assets/favicon/apple-icon-114x114.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="120x120"
-      href="assets/favicon/apple-icon-120x120.png"
+      href="../assets/favicon/apple-icon-120x120.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="144x144"
-      href="assets/favicon/apple-icon-144x144.png"
+      href="../assets/favicon/apple-icon-144x144.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="152x152"
-      href="assets/favicon/apple-icon-152x152.png"
+      href="../assets/favicon/apple-icon-152x152.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="assets/favicon/apple-icon-180x180.png"
+      href="../assets/favicon/apple-icon-180x180.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="assets/favicon/android-icon-192x192.png"
+      href="../assets/favicon/android-icon-192x192.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="assets/favicon/favicon-32x32.png"
+      href="../assets/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="96x96"
-      href="assets/favicon/favicon-96x96.png"
+      href="../assets/favicon/favicon-96x96.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="assets/favicon/favicon-16x16.png"
+      href="../assets/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="assets/favicon/manifest.json" />
+    <link rel="manifest" href="../assets/favicon/manifest.json" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/animate.css" />
-    <link rel="stylesheet" href="css/ABground.css" />
-    <link rel="stylesheet" href="css/popup.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/animate.css" />
+    <link rel="stylesheet" href="../css/ABground.css" />
+    <link rel="stylesheet" href="../css/popup.css" />
 
     <link
       rel="stylesheet"
@@ -112,10 +112,9 @@
 
     <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
 
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/vertical.js"></script>
-    <script src="static/js/includeHTML.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/vertical.js"></script>
 
     <script
       type="text/javascript"
@@ -192,11 +191,12 @@
         var image = $(this).data("bg");
         $(".normal-image-bg").css(
           "background-image",
-          "url(assets/ABGround/abground_bg_" + image + ".png)"
+          "url(../assets/ABGround/abground_bg_" + image + ".png)"
         );
       });
     });
   </script>
+
   <body>
     <header class="header">
       <div class="inner">
@@ -262,7 +262,7 @@
                   빌더입니다.
                 </p>
                 <a
-                  href="assets/linkFile/CompanyInfo.pdf"
+                  href="../assets/linkFile/CompanyInfo.pdf"
                   download
                   class="downBtn"
                   >회사소개서 다운받기</a
@@ -281,7 +281,7 @@
           <div id="video-overlay" class="video-overlay">
             <!-- <a class="video-overlay-close">&times;</a> -->
           </div>
-          <!-- <video class="video" src="assets/video/pc_01_1920-1080.mp4" controls muted playsinline width="100%" poster="">
+          <!-- <video class="video" src="../assets/video/pc_01_1920-1080.mp4" controls muted playsinline width="100%" poster="">
         </video> -->
         </div>
         <div class="inner">
@@ -292,16 +292,16 @@
             height="720"
             webkit-playsinline
           ></video>
-          <!-- <video src="assets/video/pc_02_1920-1080.mp4" controls playsinline width="100%" poster="assets/video/pc_02_1920-1080_thumbnail.png"></video> -->
+          <!-- <video src="../assets/video/pc_02_1920-1080.mp4" controls playsinline width="100%" poster="../assets/video/pc_02_1920-1080_thumbnail.png"></video> -->
         </div>
       </section>
       <script>
         $(document).ready(function () {
           var player = videojs("myPlayer", {
             sources: [
-              { src: "assets/video/pc_02_1920-1080.mp4", type: "video/mp4" },
+              { src: "../assets/video/pc_02_1920-1080.mp4", type: "video/mp4" },
             ],
-            poster: "assets/video/pc_02_1920-1080_thumbnail.png",
+            poster: "../assets/video/pc_02_1920-1080_thumbnail.png",
             controls: true,
             playsinline: true,
             muted: false,
@@ -780,8 +780,39 @@
         </div>
       </section>
     </div>
-    <!-- footer include check -->
-    <footer include-html="static/html/footer.html"></footer>
+
+    <footer>
+      <div class="inner">
+        <a class="logo">
+          <h1>Alpha Brothers</h1>
+        </a>
+        <p class="company">ⓒ 2020 Alpha Brothers</p>
+        <div class="info">
+          <dl>
+            <dt>Tel.</dt>
+            <dd>02-6953-2166</dd>
+          </dl>
+          <dl>
+            <dt>Fax.</dt>
+            <dd>02-6989-9166</dd>
+          </dl>
+          <dl>
+            <dt>Email.</dt>
+            <dd>alphabrothers@naver.com</dd>
+          </dl>
+          <dl>
+            <dt>Address.</dt>
+            <dd>서울특별시 강서구 마곡동 757 두산더랜드파크 A동 605호</dd>
+          </dl>
+        </div>
+        <div class="btmInfo">
+          <ul>
+            <li><a class="privacyBtn">Privacy</a></li>
+            <li><a class="agreementBtn">Agreement</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
     <!-- 약관 팝업 : s -->
     <div class="popup" id="agreement">
       <div class="inner">
@@ -1249,7 +1280,7 @@
     <div class="popup" id="gnb">
       <div class="inner">
         <div class="top">
-          <a href="index.html" class="t-logo"></a>
+          <a href="../index.html" class="t-logo"></a>
           <button class="closeBtn"></button>
         </div>
         <ul>
@@ -1291,10 +1322,9 @@
     <!-- 모바일메뉴 팝업 : e -->
   </body>
 </html>
+<script src="../js/cursor.js"></script>
 <script>
   jQuery(document).ready(function () {
-    includeHTML();
-
     var allPanels = $(".section06 .des");
     var openBtn = $(".section06 .openBtn");
 

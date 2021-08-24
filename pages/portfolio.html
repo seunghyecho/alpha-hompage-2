@@ -12,88 +12,88 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#2a2a2a" />
     <title>portfolio</title>
 
-    <link rel="stylesheet" href="css/slick-theme.css" />
+    <link rel="stylesheet" href="../css/slick-theme.css" />
 
     <!-- favicon link -->
     <link
       rel="apple-touch-icon"
       sizes="57x57"
-      href="assets/favicon/apple-icon-57x57.png"
+      href="../assets/favicon/apple-icon-57x57.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="60x60"
-      href="assets/favicon/apple-icon-60x60.png"
+      href="../assets/favicon/apple-icon-60x60.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="72x72"
-      href="assets/favicon/apple-icon-72x72.png"
+      href="../assets/favicon/apple-icon-72x72.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="76x76"
-      href="assets/favicon/apple-icon-76x76.png"
+      href="../assets/favicon/apple-icon-76x76.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="114x114"
-      href="assets/favicon/apple-icon-114x114.png"
+      href="../assets/favicon/apple-icon-114x114.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="120x120"
-      href="assets/favicon/apple-icon-120x120.png"
+      href="../assets/favicon/apple-icon-120x120.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="144x144"
-      href="assets/favicon/apple-icon-144x144.png"
+      href="../assets/favicon/apple-icon-144x144.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="152x152"
-      href="assets/favicon/apple-icon-152x152.png"
+      href="../assets/favicon/apple-icon-152x152.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="assets/favicon/apple-icon-180x180.png"
+      href="../assets/favicon/apple-icon-180x180.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="assets/favicon/android-icon-192x192.png"
+      href="../assets/favicon/android-icon-192x192.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="assets/favicon/favicon-32x32.png"
+      href="../assets/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="96x96"
-      href="assets/favicon/favicon-96x96.png"
+      href="../assets/favicon/favicon-96x96.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="assets/favicon/favicon-16x16.png"
+      href="../assets/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="assets/favicon/manifest.json" />
+    <link rel="manifest" href="../assets/favicon/manifest.json" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/animate.css" />
-    <link rel="stylesheet" href="css/portfolio.css" />
-    <link rel="stylesheet" href="css/popup.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/animate.css" />
+    <link rel="stylesheet" href="../css/portfolio.css" />
+    <link rel="stylesheet" href="../css/popup.css" />
 
     <link
       rel="stylesheet"
@@ -107,9 +107,8 @@
       href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
 
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/index.js"></script>
-    <script src="static/js/includeHTML.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/index.js"></script>
 
     <script
       type="text/javascript"
@@ -138,8 +137,27 @@
   </head>
 
   <body>
-    <!-- header include check -->
-    <header include-html="static/html/header.html"></header>
+    <header>
+      <div class="inner">
+        <div class="logo"><a href="../index.html"></a></div>
+        <button class="gnbBtn mb">
+          <div id="nav-icon3">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <div class="gnb pc">
+          <ul>
+            <li><a href="ABground.html?type=1">AB GROUND</a></li>
+            <li><a href="whyAB.html">WHY AB</a></li>
+            <li><a href="portfolio.html">PORTFOLIO</a></li>
+            <li><a href="partners.html">PARTNERS</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
     <div id="portfolio">
       <section class="section01">
         <div class="inner pc">
@@ -919,8 +937,41 @@
         </div>
       </section>
     </div>
-    <!-- footer include check -->
-    <footer include-html="static/html/footer.html"></footer>
+    <footer>
+      <div class="inner">
+        <a class="logo">
+          <h1>Alpha Brothers</h1>
+        </a>
+        <p class="company">ⓒ 2020 Alpha Brothers</p>
+        <div class="info">
+          <dl>
+            <dt>Tel.</dt>
+            <dd>02-6953-2166</dd>
+          </dl>
+          <dl>
+            <dt>Fax.</dt>
+            <dd>02-6989-9166</dd>
+          </dl>
+          <dl>
+            <dt>Email.</dt>
+            <dd>alphabrothers@naver.com</dd>
+          </dl>
+          <dl>
+            <dt>Address.</dt>
+            <dd>
+              서울특별시 강서구 마곡동 757<br class="mb" />
+              두산더랜드파크 A동 605호
+            </dd>
+          </dl>
+        </div>
+        <div class="btmInfo">
+          <ul>
+            <li><a class="privacyBtn">Privacy</a></li>
+            <li><a class="agreementBtn">Agreement</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
     <!-- 약관 팝업 : s -->
     <div class="popup" id="agreement">
       <div class="inner">
@@ -1388,7 +1439,7 @@
     <div class="popup" id="gnb">
       <div class="inner">
         <div class="top">
-          <a href="index.html" class="t-logo"></a>
+          <a href="../index.html" class="t-logo"></a>
           <button class="closeBtn"></button>
         </div>
         <ul>
@@ -1428,12 +1479,12 @@
       </div>
     </div>
     <!-- 모바일메뉴 팝업 : e -->
+    <div id="cursor" class="cursor"></div>
   </body>
 </html>
+<script src="../js/cursor.js"></script>
 
 <script>
-  includeHTML();
-
   jQuery(document).ready(function () {
     var $portfolio_section03_history_text = $(".section03 .history .t-text");
 

@@ -106,7 +106,6 @@
     <!-- jQuery file -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/index.js"></script>
-    <script src="static/js/includeHTML.js"></script>
 
     <!-- html5 기반 video player -->
     <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
@@ -114,7 +113,27 @@
 
   <body class="bodyFix">
     <!-- header include check -->
-    <header include-html="static/html/header.html"></header>
+    <header>
+      <div class="inner">
+        <div class="logo"><a href="index.html"></a></div>
+        <button class="gnbBtn mb">
+          <div id="nav-icon3">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <div class="gnb pc">
+          <ul>
+            <li><a href="pages/ABground.html?type=1">AB GROUND</a></li>
+            <li><a href="pages/whyAB.html">WHY AB</a></li>
+            <li><a href="pages/portfolio.html">PORTFOLIO</a></li>
+            <li><a href="pages/partners.html">PARTNERS</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
     <div class="pc-main pc">
       <section class="section01">
         <div class="inner">
@@ -176,8 +195,39 @@
         </div>
       </section>
     </div>
-    <!-- footer include check -->
-    <footer class="mb" include-html="static/html/footer.html"></footer>
+    <footer class="mb">
+      <div class="inner">
+        <a class="logo"><h1>Alpha Brothers</h1></a>
+        <p class="company">ⓒ 2020 Alpha Brothers</p>
+        <div class="info">
+          <dl>
+            <dt>Tel.</dt>
+            <dd>02-6953-2166</dd>
+          </dl>
+          <dl>
+            <dt>Fax.</dt>
+            <dd>02-6989-9166</dd>
+          </dl>
+          <dl>
+            <dt>Email.</dt>
+            <dd>alphabrothers@naver.com</dd>
+          </dl>
+          <dl>
+            <dt>Address.</dt>
+            <dd>
+              서울특별시 강서구 마곡동 757<br class="mb" />
+              두산더랜드파크 A동 605호
+            </dd>
+          </dl>
+        </div>
+        <div class="btmInfo">
+          <ul>
+            <li><a class="privacyBtn">Privacy</a></li>
+            <li><a class="agreementBtn">Agreement</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
     <!-- 약관 팝업 : s -->
     <div class="popup" id="agreement">
       <div class="inner">
@@ -532,14 +582,14 @@
             회사는 다음의 개인정보 항목을 처리하고 있습니다.
             <br /><br />
             1. 홈페이지 회원 가입 및 관리<br />
-            필수항목 : <예) 성명, 생년월일, 아이디, 비밀번호, 주소, 전화번호,
-            성별, 이메일주소, 아이핀번호><br />
-            선택항목 : <예) 결혼 여부, 관심 분야>
+            필수항목 : 예) 성명, 생년월일, 아이디, 비밀번호, 주소, 전화번호,
+            성별, 이메일주소, 아이핀번호<br />
+            선택항목 : 예) 결혼 여부, 관심 분야
             <br /><br />
             2. 재화 또는 서비스 제공<br />
-            필수항목 : <예) 성명, 생년월일, 아이디, 비밀번호, 주소, 전화번호,
-            이메일주소, 아이핀번호, 신용카드번호, 은행계좌정보 등 결제정보><br />
-            선택항목 : <관심분야, 과거 구매내역>
+            필수항목 : 예) 성명, 생년월일, 아이디, 비밀번호, 주소, 전화번호,
+            이메일주소, 아이핀번호, 신용카드번호, 은행계좌정보 등 결제정보<br />
+            선택항목 : 관심분야, 과거 구매내역
             <br /><br />
             3. 인터넷 서비스 이용과정에서 아래 개인정보 항목이 자동으로 생성되어
             수집될 수 있습니다.<br />
@@ -689,8 +739,6 @@
 </html>
 <script>
   jQuery(document).ready(function () {
-    includeHTML();
-
     var $mb_main_section01_mainText01 = $(".mb-main .section01 .mainText01");
     var $mb_main_section01_mainText02 = $(".mb-main .section01 .mainText02");
 

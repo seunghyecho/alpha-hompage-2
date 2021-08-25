@@ -612,7 +612,7 @@
   #whyAb .section03 .sectionImg {
     margin-top: 20px;
     width: 100%;
-    height: 320px;
+    /* height: 320px; */
   }
 
   #whyAb .section03 .sectionInfo.animate__fadeInUp {

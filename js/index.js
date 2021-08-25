@@ -95,7 +95,6 @@ jQuery(document).ready(function () {
 
   $(window).scroll(function () {
     var height = $(document).scrollTop();
-
     // pc header
     if (height > 100) {
       $("header").addClass("fixed");

@@ -819,6 +819,9 @@ section {
 }
 
 @media (max-width: 1280px) {
+  .section01.normal .normal-image-bg {
+    display: none;
+  }
   .section01 {
     position: relative;
   }

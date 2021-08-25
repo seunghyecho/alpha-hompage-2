@@ -739,7 +739,9 @@
 </html>
 <script>
   jQuery(document).ready(function () {
-    $("header").addClass("fixed");
+    if ($(window).width() < 1200) {
+      $("header").addClass("fixed");
+    }
     var $mb_main_section01_mainText01 = $(".mb-main .section01 .mainText01");
     var $mb_main_section01_mainText02 = $(".mb-main .section01 .mainText02");
 

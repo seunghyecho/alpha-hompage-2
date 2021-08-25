@@ -1,4 +1,9 @@
+// pc progressbar 높이 540
 $(document).ready(function () {
+  var $slider_pc = $(".section04 .pc .scroll-slider");
+  var $progressBar = $(".section04 .pc .progress");
+  var $progressBarLabel = $(".section04 .pc .slider__label");
+
   if ($(window).width() > 1200) {
     //scroll 위치가 section4 에 있고 slide 가 마지막 일 때만 스크롤이 작동되도록
     $(window).scroll(function (event) {
@@ -38,14 +43,14 @@ $(document).ready(function () {
               console.log("scroll going down");
               $slider_pc.slick("slickNext");
               change_slide_index = $(".slick-current").data("slick-index");
-              console.log("change_slide_index : " + change_slide_index);
+              // console.log("change_slide_index : " + change_slide_index);
               if (change_slide_index == 3) {
                 //mouser wheel event 다시 살리기
                 console.log("mouser wheel event 다시 살리기");
                 $("#abGround").off("scroll touchmove mousewheel");
               }
             } else {
-              console.log("scroll going up");
+              // console.log("scroll going up");
               $slider_pc.slick("slickPrev");
               change_slide_index = $(".slick-current").data("slick-index");
               if (change_slide_index == 0) {
@@ -60,13 +65,6 @@ $(document).ready(function () {
       }
     });
   }
-});
-
-// pc progressbar 높이 540
-$(document).ready(function () {
-  var $slider_pc = $(".section04 .pc .scroll-slider");
-  var $progressBar = $(".section04 .pc .progress");
-  var $progressBarLabel = $(".section04 .pc .slider__label");
 
   $slider_pc.on(
     "beforeChange",
@@ -76,7 +74,6 @@ $(document).ready(function () {
       var calc = 25 + (nextSlide / slick.slideCount) * 100;
 
       $progressBar.css("height", calc * 540 * 0.01);
-      console.log($progressBar);
       $progressBarLabel.text(calc + "% completed");
     }
   );

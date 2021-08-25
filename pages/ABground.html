@@ -137,7 +137,6 @@
       }
       return sval;
     }
-    console.log(getParam("type"));
     $(document).ready(function () {
       //ABground 외에 다른 페이지에서 접속했을 때
       if (getParam("type") == 1) {
@@ -274,16 +273,6 @@
         </div>
       </section>
       <section class="section03">
-        <div class="inner" style="display: none">
-          <a id="play-video" class="video-play-button" href="#">
-            <span></span>
-          </a>
-          <div id="video-overlay" class="video-overlay">
-            <!-- <a class="video-overlay-close">&times;</a> -->
-          </div>
-          <!-- <video class="video" src="../assets/video/pc_01_1920-1080.mp4" controls muted playsinline width="100%" poster="">
-        </video> -->
-        </div>
         <div class="inner">
           <button class="pauseBtn"></button>
           <video
@@ -292,61 +281,9 @@
             height="720"
             webkit-playsinline
           ></video>
-          <!-- <video src="../assets/video/pc_02_1920-1080.mp4" controls playsinline width="100%" poster="../assets/video/pc_02_1920-1080_thumbnail.png"></video> -->
         </div>
       </section>
-      <script>
-        $(document).ready(function () {
-          var player = videojs("myPlayer", {
-            sources: [
-              { src: "../assets/video/pc_02_1920-1080.mp4", type: "video/mp4" },
-            ],
-            poster: "../assets/video/pc_02_1920-1080_thumbnail.png",
-            controls: true,
-            playsinline: true,
-            muted: false,
-            preload: "metadata",
-            controlBar: {
-              playToggle: true,
-              pictureInPictureToggle: true,
-              remainingTimeDisplay: true,
-              progressControl: true,
-            },
-          });
-
-          // video play & pause
-          const video = document.querySelector("video");
-
-          $(".pauseBtn").css({ opacity: "0" });
-
-          $(".pauseBtn").click(() => {
-            if (player.paused()) {
-              video.play();
-              $(".pauseBtn").css({ opacity: "0" });
-            } else {
-              video.pause();
-              $(".pauseBtn").css({ opacity: "1" });
-            }
-          });
-
-          video.addEventListener("touchstart", (e) => {
-            console.log(e);
-            if (e.target.nodeName === "VIDEO") {
-              if (player.paused()) {
-                console.log(player);
-                video.play();
-                $(".pauseBtn").css({ opacity: "0" });
-              } else {
-                video.pause();
-                $(".pauseBtn").css({ opacity: "1" });
-              }
-            }
-          });
-        });
-      </script>
-
       <section class="section04">
-        <!-- slick scroll vertival, progress 적용 예정 -->
         <div class="pc">
           <div class="inner">
             <div class="scroll-slider">
@@ -1322,9 +1259,53 @@
     <!-- 모바일메뉴 팝업 : e -->
   </body>
 </html>
-<script src="../js/cursor.js"></script>
 <script>
   jQuery(document).ready(function () {
+    var player = videojs("myPlayer", {
+      sources: [
+        { src: "../assets/video/pc_02_1920-1080.mp4", type: "video/mp4" },
+      ],
+      poster: "../assets/video/pc_02_1920-1080_thumbnail.png",
+      controls: true,
+      playsinline: true,
+      muted: false,
+      preload: "metadata",
+      controlBar: {
+        playToggle: true,
+        pictureInPictureToggle: true,
+        remainingTimeDisplay: true,
+        progressControl: true,
+      },
+    });
+
+    // video play & pause
+    const video = document.querySelector("video");
+
+    $(".pauseBtn").css({ opacity: "0" });
+
+    $(".pauseBtn").click(() => {
+      if (player.paused()) {
+        video.play();
+        $(".pauseBtn").css({ opacity: "0" });
+      } else {
+        video.pause();
+        $(".pauseBtn").css({ opacity: "1" });
+      }
+    });
+
+    video.addEventListener("touchstart", (e) => {
+      console.log(e);
+      if (e.target.nodeName === "VIDEO") {
+        if (player.paused()) {
+          console.log(player, player.paused());
+          video.play();
+          $(".pauseBtn").css({ opacity: "0" });
+        } else {
+          video.pause();
+          $(".pauseBtn").css({ opacity: "1" });
+        }
+      }
+    });
     var allPanels = $(".section06 .des");
     var openBtn = $(".section06 .openBtn");
 

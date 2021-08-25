@@ -114,6 +114,8 @@ jQuery(document).ready(function () {
   });
 
   // scrollBtn 각 페이지 아래 화살표 버튼
+  // scroll-smooth css - Safari 미지원
+
   $(".scrollBtn").on("click", function (e) {
     var height = $(document).scrollTop();
     var $section02 = $("#section02").offset().top;

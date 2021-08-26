@@ -1260,52 +1260,52 @@
   </body>
 </html>
 <script>
-  jQuery(document).ready(function () {
-    var player = videojs("myPlayer", {
-      sources: [
-        { src: "../assets/video/pc_02_1920-1080.mp4", type: "video/mp4" },
-      ],
-      poster: "../assets/video/pc_02_1920-1080_thumbnail.png",
-      controls: true,
-      playsinline: true,
-      muted: false,
-      preload: "metadata",
-      controlBar: {
-        playToggle: true,
-        pictureInPictureToggle: true,
-        remainingTimeDisplay: true,
-        progressControl: true,
-      },
-    });
+  var player = videojs("myPlayer", {
+    sources: [
+      { src: "../assets/video/pc_02_1920-1080.mp4", type: "video/mp4" },
+    ],
+    poster: "../assets/video/pc_02_1920-1080_thumbnail.png",
+    controls: true,
+    playsinline: true,
+    muted: false,
+    preload: "metadata",
+    controlBar: {
+      playToggle: true,
+      pictureInPictureToggle: true,
+      remainingTimeDisplay: true,
+      progressControl: true,
+    },
+  });
 
-    // video play & pause
-    const video = document.querySelector("video");
+  // video play & pause
+  var video = document.querySelector("video");
 
-    $(".pauseBtn").css({ opacity: "0" });
+  $(".pauseBtn").click(() => {
+    if (player.paused()) {
+      video.play();
+      $(".pauseBtn").removeClass("on");
+    } else {
+      video.pause();
+      $(".pauseBtn").addClass("on");
+    }
+  });
 
-    $(".pauseBtn").click(() => {
+  video.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    if (e.target.nodeName === "VIDEO") {
       if (player.paused()) {
+        console.log(player.paused());
         video.play();
-        $(".pauseBtn").css({ opacity: "0" });
+        $(".pauseBtn").removeClass("on");
       } else {
+        console.log(player.paused());
         video.pause();
-        $(".pauseBtn").css({ opacity: "1" });
+        $(".pauseBtn").addClass("on");
       }
-    });
+    }
+  });
 
-    video.addEventListener("touchstart", (e) => {
-      console.log(e);
-      if (e.target.nodeName === "VIDEO") {
-        if (player.paused()) {
-          console.log(player, player.paused());
-          video.play();
-          $(".pauseBtn").css({ opacity: "0" });
-        } else {
-          video.pause();
-          $(".pauseBtn").css({ opacity: "1" });
-        }
-      }
-    });
+  jQuery(document).ready(function () {
     var allPanels = $(".section06 .des");
     var openBtn = $(".section06 .openBtn");
 

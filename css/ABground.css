@@ -241,7 +241,7 @@ section {
 }
 
 .section03 .inner {
-  height: 720px;
+  height: auto;
   position: relative;
 }
 .video-js .vjs-big-play-button {
@@ -930,9 +930,6 @@ section {
     margin: 0 auto;
     width: 100%;
   }
-  .section03 .inner {
-    height: 180px;
-  }
   .video-play-button:before {
     width: 36px;
     height: 36px;
@@ -943,12 +940,14 @@ section {
     transform: translate(-50%, -50%) !important;
     margin-top: 0 !important;
     margin-left: 0 !important;
+    display: none;
   }
   .pauseBtn {
     margin-top: 10px;
     width: 36px;
     height: 36px;
   }
+
   /* section04 */
   .section04 {
     margin: 100px auto;

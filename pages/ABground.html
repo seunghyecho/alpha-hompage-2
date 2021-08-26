@@ -274,7 +274,7 @@
       </section>
       <section class="section03">
         <div class="inner">
-          <button class="pauseBtn"></button>
+          <button class="pauseBtn"><span></span></button>
           <video
             id="myPlayer"
             class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid"
@@ -1279,6 +1279,7 @@
 
   // video play & pause
   var video = document.querySelector("video");
+  console.log(video);
 
   $(".pauseBtn").click(() => {
     if (player.paused()) {
@@ -1287,21 +1288,6 @@
     } else {
       video.pause();
       $(".pauseBtn").addClass("on");
-    }
-  });
-
-  video.addEventListener("touchstart", (e) => {
-    e.preventDefault();
-    if (e.target.nodeName === "VIDEO") {
-      if (player.paused()) {
-        console.log(player.paused());
-        video.play();
-        $(".pauseBtn").removeClass("on");
-      } else {
-        console.log(player.paused());
-        video.pause();
-        $(".pauseBtn").addClass("on");
-      }
     }
   });
 

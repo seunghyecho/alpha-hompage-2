@@ -13,12 +13,12 @@ $(document).ready(function () {
       var section04_bottom = document
         .querySelector(".section04")
         .getBoundingClientRect().bottom;
-      console.log(
-        "section04_top : " +
-          section04_top +
-          " ///// section04_bottom : " +
-          section04_bottom
-      );
+      // console.log(
+      //   "section04_top : " +
+      //     section04_top +
+      //     " ///// section04_bottom : " +
+      //     section04_bottom
+      // );
       //slide 영역별 위치 지정
 
       if (

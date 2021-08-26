@@ -256,21 +256,43 @@ section {
 .video-js .vjs-big-play-button > * {
   display: none;
 }
+
 .pauseBtn {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
   opacity: 0;
-  transition: all 0.5s;
+}
+.pauseBtn.on {
+  opacity: 1;
+}
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */
+  .pauseBtn {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .pauseBtn.on {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.pauseBtn span {
+  display: inline-block;
+  width: 115px;
+  height: 115px;
+  opacity: 1;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 115px;
-  height: 115px;
   background-size: cover;
   background-image: url(../assets/ABGround/icon_p02_pause.svg);
-  z-index: 3;
-}
-.pauseBtn.on {
-  opacity: 1;
 }
 
 .video-play-button {
@@ -942,10 +964,18 @@ section {
     margin-left: 0 !important;
     display: none;
   }
-  .pauseBtn {
-    margin-top: 10px;
+
+  .pauseBtn span {
+    display: inline-block;
     width: 36px;
     height: 36px;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    background-image: url(../assets/ABGround/icon_p02_pause.svg);
   }
 
   /* section04 */

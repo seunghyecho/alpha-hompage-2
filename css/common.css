@@ -75,23 +75,15 @@ header {
   position: sticky;
   scroll-snap-type: y mandatory;
   top: 0;
-  left: 20px;
-  right: 20px;
   padding: 0 20px;
   box-sizing: border-box;
-  background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: #000;
+
   z-index: 9;
 }
 header.fixed {
-  /* position: sticky;
-  scroll-snap-type: y mandatory; */
-  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   top: 0;
-  background: #000;
-  z-index: 10;
-
-  transition: all 0.5s;
 }
 header .inner {
   width: 1280px;

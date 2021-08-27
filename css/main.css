@@ -1,3 +1,13 @@
+/* header */
+header.main {
+  position: sticky;
+  scroll-snap-type: y mandatory;
+  top: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background: transparent !important;
+}
+
 .pc-main {
   position: fixed;
   top: 0;
@@ -22,12 +32,9 @@
   .fade {
     position: relative;
   }
-  .mb-main .sticky {
-    /* position: sticky;
-    top: 50px;
-    overflow: hidden;
-
-    transition: all 0.5s; */
+  /* header */
+  header.main {
+    background: #000 !important;
   }
   /* mb-main */
   .mb-main {

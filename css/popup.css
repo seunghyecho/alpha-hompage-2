@@ -73,8 +73,8 @@
 
 #gnb .inner .closeBtn {
   position: unset;
-  width: 17px;
-  height: 12px;
+  width: 20px;
+  height: 15px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -99,6 +99,7 @@
   color: #fff;
 
   opacity: 0;
+  transition: all 0.5s;
 }
 
 @media (max-width: 1280px) {

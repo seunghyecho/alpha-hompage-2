@@ -36,7 +36,7 @@ jQuery(document).ready(function () {
   });
   gnbBtn.on("click", function () {
     $("#nav-icon3").addClass("open");
-    gnbPopup.fadeIn(500);
+    gnbPopup.stop().fadeIn(500);
 
     // 모바일 메뉴 animate
     gnb_menu01.stop().animate(
@@ -81,8 +81,14 @@ jQuery(document).ready(function () {
   closeBtn.on("click", function () {
     $("#agreement").fadeOut();
     $("#privacy").fadeOut();
-    $("#gnb").fadeOut(500);
+    $("#gnb").stop().fadeOut(500);
     $("#nav-icon3").removeClass("open");
+
+    // 애니메이션의 큐 제거
+    gnb_menu01.stop(true, true);
+    gnb_menu02.stop(true, true);
+    gnb_menu03.stop(true, true);
+    gnb_menu04.stop(true, true);
 
     // 모바일 메뉴 animate reset
     gnb_menu01.removeAttr("style");

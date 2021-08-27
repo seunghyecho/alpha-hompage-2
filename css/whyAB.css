@@ -128,7 +128,7 @@
 
 #whyAb .section02 p .text_bg {
   position: relative;
-  color: #000;
+  color: #fff;
   z-index: 1;
 }
 
@@ -141,7 +141,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: rgba(253, 173, 21, 0.6);
   z-index: -1;
 }
 

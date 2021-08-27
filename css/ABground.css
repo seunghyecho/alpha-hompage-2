@@ -389,19 +389,19 @@ section {
 }
 
 .section04 .inner .scrollItem01::before {
-  background-image: url(../assets/ABGround/img_p02_Section04_BG01_x2.png);
+  background-image: url(../assets/ABGround/img_p02_Section04_BG01_x1.png);
 }
 
 .section04 .inner .scrollItem02::before {
-  background-image: url(../assets/ABGround/img_p02_Section04_BG02_x2.png);
+  background-image: url(../assets/ABGround/img_p02_Section04_BG02_x1.png);
 }
 
 .section04 .inner .scrollItem03::before {
-  background-image: url(../assets/ABGround/img_p02_Section04_BG03_x2.png);
+  background-image: url(../assets/ABGround/img_p02_Section04_BG03_x1.png);
 }
 
 .section04 .inner .scrollItem04::before {
-  background-image: url(../assets/ABGround/img_p02_Section04_BG04_x2.png);
+  background-image: url(../assets/ABGround/img_p02_Section04_BG04_x1.png);
 }
 
 .section04 .inner .scrollItem .center {
@@ -642,11 +642,11 @@ section {
 
 .section05 .imgArea .left .item:nth-of-type(1) {
   margin-bottom: 40px;
-  background-image: url(../assets/ABGround/img_p02_Section05_Online01_x2.png);
+  background-image: url(../assets/ABGround/img_p02_Section05_Online01_x1.png);
 }
 
 .section05 .imgArea .left .item:nth-of-type(2) {
-  background-image: url(../assets/ABGround/img_p02_Section05_Online02_x2.png);
+  background-image: url(../assets/ABGround/img_p02_Section05_Online02_x1.png);
 }
 
 .section05 .imgArea .right .item {
@@ -655,7 +655,7 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(../assets/ABGround/img_p02_Section05_Online03_x2.png);
+  background-image: url(../assets/ABGround/img_p02_Section05_Online03_x1.png);
 }
 
 .section05 .imgArea .item .hoverText {

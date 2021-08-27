@@ -52,7 +52,7 @@
 #portfolio section p b {
   display: inline-block;
   margin-top: 10px;
-  font-weight: 400;
+  font-weight: 900;
 }
 
 #portfolio section p .text_bg {
@@ -106,9 +106,7 @@
 
 /* section02 */
 #portfolio .section02 {
-  margin: 84px 0;
-  padding: 100px 0 0;
-  height: 100%;
+  padding: 250px 0 0;
 }
 
 #portfolio .section02 .inner {
@@ -666,7 +664,7 @@
   }
 
   #portfolio section p b {
-    font-weight: 800;
+    font-weight: 900;
   }
   #portfolio .section03 .inner .historyWrap .history03 .t-text p {
     line-height: 1.3;
@@ -781,22 +779,19 @@
 
   #portfolio .section04 .inner .portfolio .infoImg .img,
   #portfolio .section04 .inner .found .infoImg .img {
-    width: 243px;
+    width: 100%;
     height: 325px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
   }
 
-  .portfolio-slider .slick-list {
-    margin: 0 -14px;
+  #portfolio .section04 .inner .portfolio .infoImg ul .slick-list {
+    margin: 0px 15px 0px 0px;
   }
 
-  .portfolio-slider .slick-list:first-of-type {
-    margin: 0 -14px 0 20px;
-  }
-
-  .portfolio-slider .slick-slide {
-    margin: 0 14px;
+  #portfolio .section04 .inner .portfolio .infoImg ul li.slick-slide {
+    margin-left: 20px;
+    margin-right: 0px;
   }
 }

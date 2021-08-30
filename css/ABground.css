@@ -1,7 +1,7 @@
 .scrollBtn {
   z-index: 2;
   position: absolute;
-  bottom: 65px;
+  bottom: 11%;
   left: 50%;
   transform: translateX(-50%);
   width: 37px;
@@ -71,7 +71,8 @@ section {
 }
 
 .section01 .inner {
-  height: 920px;
+  /* height: 920px; */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,13 +95,21 @@ section {
 }
 
 /* ABground 애니메이션 처리 추가 s */
+.section01.highlight {
+  display: block;
+}
 .section01.highlight .inner {
   /* header 영역과 h1 밑에 텍스트의 높이를 고려하여 height 조절 */
-  height: 920px;
+  height: 100vh;
   max-width: 100%;
   margin: 0px auto;
   background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 .section01.highlight .inner h1 {
   margin-top: 100px;
 }
@@ -114,7 +123,9 @@ section {
 .section01.highlight .inner::after {
   display: none;
 }
-
+.section01.normal .inner h1 {
+  margin-top: -160px;
+}
 .section01.normal .inner h1,
 .section01.normal .inner p {
   z-index: 2;
@@ -123,8 +134,11 @@ section {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  /* max-width: 1920px; */
-  height: 100%;
+  margin: 0 auto;
+  max-width: 100%;
+  /* height: 860px; */
+  height: 100vh;
+  min-height: 100vh;
   position: absolute;
   background-repeat: no-repeat;
 }
@@ -149,7 +163,7 @@ section {
 }
 
 .section02 {
-  padding: 200px 0 0;
+  padding: 300px 0 0;
 }
 
 .section02 .inner {

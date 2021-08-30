@@ -55,8 +55,22 @@
           infinite: false,
           slidesToShow: 1,
           slidesToScroll: 1,
-          cssEase: "ease-in-out",
+          focusOnSelect: true,
+          cssEase: "linear",
+          speed: 800,
         });
+        $(".historyWrap-mb").on(
+          "beforeChange",
+          function (event, { slideCount: count }, currentSlide, nextSlide) {
+            let selectors = [nextSlide, nextSlide - count, nextSlide + count]
+              .map((n) => `[data-slick-index="${n}"]`)
+              .join(", ");
+            $(".slick-now").removeClass("slick-now");
+            $(selectors).addClass("slick-now");
+          }
+        );
+
+        $('[data-slick-index="0"]').addClass("slick-now");
         $(".portfolio-slider").slick({
           slickPrev: true,
           slickNext: true,

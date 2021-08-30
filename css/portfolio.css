@@ -285,6 +285,24 @@
 
   opacity: 0;
 }
+/* slick-now */
+#portfolio .section03 .inner .historyWrap-mb .history p {
+  color: #4c4c4c;
+  opacity: 0;
+  transition: all 0.5s;
+}
+#portfolio .section03 .inner .historyWrap-mb .slick-now.history p {
+  opacity: 1;
+  color: #fff;
+}
+#portfolio .section03 .inner .historyWrap-mb .history .m-dot {
+  background-color: transparent;
+  opacity: 0;
+}
+#portfolio .section03 .inner .historyWrap-mb .slick-now.history .m-dot {
+  background-color: #fff;
+  opacity: 1;
+}
 
 /* section04 */
 #portfolio .section04 {

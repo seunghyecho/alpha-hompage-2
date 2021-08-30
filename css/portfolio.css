@@ -625,6 +625,7 @@
   #portfolio .section03 .inner .historyWrap {
     margin: 33px 0;
     border-bottom: none;
+    overflow: hidden;
   }
 
   #portfolio .section03 .inner .historyWrap .history .m-dot {
@@ -655,11 +656,11 @@
   }
   .slick-prev:before,
   .slick-next:before {
-    opacity: 0.95;
+    opacity: 0.95 !important;
   }
   .slick-prev.slick-disabled:before,
   .slick-next.slick-disabled:before {
-    opacity: 0.05;
+    opacity: 0 !important;
   }
   #portfolio .section03 .inner .historyWrap button.slick-prev {
     left: 0;

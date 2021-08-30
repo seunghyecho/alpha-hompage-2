@@ -4,6 +4,9 @@ $(document).ready(function () {
   var $progressBar = $(".section04 .pc .progress");
   var $progressBarLabel = $(".section04 .pc .slider__label");
 
+  var _abGround_section04 = $("#abGround .section04").offset().top;
+  console.log(_abGround_section04);
+
   if ($(window).width() > 1200) {
     //scroll 위치가 section4 에 있고 slide 가 마지막 일 때만 스크롤이 작동되도록
     $(window).scroll(function (event) {
@@ -13,12 +16,12 @@ $(document).ready(function () {
       var section04_bottom = document
         .querySelector(".section04")
         .getBoundingClientRect().bottom;
-      // console.log(
-      //   "section04_top : " +
-      //     section04_top +
-      //     " ///// section04_bottom : " +
-      //     section04_bottom
-      // );
+      console.log(
+        "section04_top : " +
+          section04_top +
+          " ///// section04_bottom : " +
+          section04_bottom
+      );
       //slide 영역별 위치 지정
 
       if (
@@ -38,6 +41,7 @@ $(document).ready(function () {
             e.stopPropagation();
             //slick slide event 부터 처리하기
             var delta = e.originalEvent.deltaY;
+            console.log(delta);
             if (delta > 0) {
               //mouser scroll up
               console.log("scroll going down");

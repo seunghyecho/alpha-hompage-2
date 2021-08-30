@@ -119,6 +119,9 @@
         $(".section01.highlight").css("display", "none");
       }
 
+      // 100vh 맞게 이미지 적용?
+      // "../assets/ABGround/abground_bg_top1.png" 디폴트 이미지?
+
       $(".normal-image-bg div").mouseenter(function () {
         var image = $(this).data("bg");
         $(".normal-image-bg").css(
@@ -194,7 +197,7 @@
                   빌더입니다.
                 </p>
                 <a
-                  href="../assets/linkFile/CompanyInfo.pdf"
+                  href="../assets/linkFile/Alpha Brothers Company Info.pdf"
                   download
                   class="downBtn"
                   >회사소개서 다운받기</a
@@ -1268,29 +1271,31 @@
 
     $(window).on("scroll", function () {
       var height = $(document).scrollTop();
+
       var _scrollTop = window.scrollY || document.documentElement.scrollTop;
       var _abGround_section02 = $("#abGround .section02").offset().top;
       var _abGround_section05 = $("#abGround .section05").offset().top;
       var _abGround_section06 = $("#abGround .section06").offset().top;
-
+      console.log(height, _abGround_section05);
       if (_scrollTop > _abGround_section02 - 350) {
         var $arrow = $("#abGround .arrow");
         $arrow.addClass("on");
       }
-      if (_scrollTop > _abGround_section05 - 0) {
+      if (_scrollTop > _abGround_section05 - 700) {
         var textAni01 = $(".section05 .pc .textArea .textAni01");
         var textAni02 = $(".section05 .pc .textArea .textAni02");
         var textAni03 = $(".section05 .pc .textArea .textAni03");
         var textAni04 = $(".section05 .textAni04.pc");
         var imgArea = $(".section05 .imgArea.pc");
 
-        textAni02.stop().animate({ opacity: "1" }, 1000);
+        textAni02.stop().animate({ opacity: "1" }, 500, "linear");
         textAni01.stop().animate(
           {
             opacity: "0",
             top: "-20px",
           },
-          1000,
+          500,
+          "linear",
           function () {
             textAni02.stop().animate(
               {
@@ -1302,7 +1307,8 @@
                   {
                     opacity: "1",
                   },
-                  500
+                  500,
+                  "linear"
                 );
                 textAni04.stop().animate(
                   {
@@ -1310,13 +1316,15 @@
                     marginTop: "0",
                   },
                   500,
+                  "linear",
                   function () {
                     imgArea.stop().animate(
                       {
                         opacity: "1",
                         marginTop: "-100",
                       },
-                      500
+                      500,
+                      "linear"
                     );
                   }
                 );
@@ -1326,7 +1334,7 @@
         );
       }
 
-      if (_scrollTop > _abGround_section06 - 350) {
+      if (_scrollTop > _abGround_section06 - 700) {
         var $section06_h1 = $(".section06 h1");
         var $section06_item = $(".section06 .item-container > .item");
         $section06_h1.addClass("animate__fadeInUp");

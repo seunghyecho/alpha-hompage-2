@@ -1,6 +1,12 @@
 jQuery(document).ready(function () {
   console.log("hihi");
 
+  window.onload = function () {
+    setTimeout(function () {
+      scrollTo(0, 0);
+    }, 100);
+  };
+
   var url = window.location.pathname,
     urlRegExp = new RegExp(url.replace(/\/$/, ""));
 

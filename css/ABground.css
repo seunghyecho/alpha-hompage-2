@@ -239,8 +239,8 @@ section {
   position: relative;
   top: -195px;
   z-index: -2;
-  width: 522px;
-  height: 680px;
+  width: 442px;
+  height: 576px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -526,7 +526,7 @@ section {
 }
 /* section05 */
 .section05 {
-  padding: 100px 0 0;
+  padding: 0;
 }
 
 .section05 .inner {
@@ -652,6 +652,8 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  transition: all 0.8s ease-in-out;
 }
 
 .section05 .imgArea .left .item:nth-of-type(1) {
@@ -679,7 +681,6 @@ section {
   left: 50%;
   text-align: center;
   transform: translate(-50%, -50%);
-  transition: all 0.8s ease-in-out;
   z-index: 2;
 }
 
@@ -693,6 +694,11 @@ section {
   font-size: 20px;
 }
 
+.section05 .imgArea .item::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 0.5s;
+}
 .section05 .imgArea .item:hover::after {
   content: "";
   display: block;
@@ -703,6 +709,7 @@ section {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
+  opacity: 1;
 }
 
 .section05 .imgArea .item:hover .hoverText {

@@ -141,6 +141,7 @@ section {
   min-height: 100vh;
   position: absolute;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 .section01.normal .normal-image-bg div {
   width: 25%;

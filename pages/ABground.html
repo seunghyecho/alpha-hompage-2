@@ -119,8 +119,11 @@
         $(".section01.highlight").css("display", "none");
       }
 
-      // 100vh 맞게 이미지 적용?
-      // "../assets/ABGround/abground_bg_top1.png" 디폴트 이미지?
+      // 첫 입장시 디폴트 이미지
+      $(".normal-image-bg").css(
+        "background-image",
+        "url(../assets/ABGround/abground_bg_top1.png)"
+      );
 
       $(".normal-image-bg div").mouseenter(function () {
         var image = $(this).data("bg");

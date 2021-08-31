@@ -34,10 +34,14 @@ header.main {
   }
   /* header */
   header.main {
+    position: unset;
+
     background: #000 !important;
   }
   /* mb-main */
   .mb-main {
+    position: sticky;
+    top: 0;
     transition: all 0.5s;
   }
   .mb-main .section01 {
@@ -86,6 +90,7 @@ header.main {
   }
 
   .mb-main .section02 {
+    height: 730px;
     background-color: #000;
   }
   .mb-main .section02 .inner {

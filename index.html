@@ -108,7 +108,7 @@
               </h1>
             </div>
           </div>
-          <a class="scrollBtn" href="#section02"></a>
+          <a class="scrollBtn" href="#"></a>
         </div>
       </section>
       <section class="section02" id="section02">
@@ -690,8 +690,21 @@
             .animate({ opacity: "1", margin: "-50px 0 0 0" }, 500);
         });
     }
-    $(window).scroll(function () {
-      // console.log($mb_main_section01_mainText02.css("opacity"));
+
+    window.addEventListener("scroll", function () {
+      console.log("스크롤 이벤트 감지!!");
+
+      var height = $(document).scrollTop();
+      var $mb_main = document.getElementsByClassName("mb-main")[0];
+      var $section01 = document.getElementsByClassName("section01")[0];
+
+      // 부모 요소와의 거리
+      const distanceBetweenParentAndChild =
+        $section01.getBoundingClientRect().top -
+        $mb_main.getBoundingClientRect().top;
+
+      console.log("부모 요소와의 거리", distanceBetweenParentAndChild);
+
       //mainText02 가 나타나기 전에는 스크롤 처리 안되도록 추가
       if ($mb_main_section01_mainText02.css("opacity") == 0) {
         $(".mb-main").one("scroll touchmove mousewheel", function (e) {
@@ -702,16 +715,7 @@
           return false;
         });
         //mobile main text event 처리
-
         mobile_main_txt_event();
-      }
-
-      var height = $(document).scrollTop();
-      console.log(height);
-      if (height > 0 && height < 50) {
-        $(".section01").addClass("sticky");
-      } else if (height > 50) {
-        $(".section01").removeClass("sticky");
       }
     });
   });

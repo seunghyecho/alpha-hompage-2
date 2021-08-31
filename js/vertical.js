@@ -41,7 +41,6 @@ $(document).ready(function () {
             e.stopPropagation();
             //slick slide event 부터 처리하기
             var delta = e.originalEvent.deltaY;
-            console.log(delta);
             if (delta > 0) {
               //mouser scroll up
               console.log("scroll going down");

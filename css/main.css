@@ -76,7 +76,7 @@ header.main {
 
   .mb-main .section01 .scrollBtn {
     position: absolute;
-    bottom: 75px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     width: 37px;

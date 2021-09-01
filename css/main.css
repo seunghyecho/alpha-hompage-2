@@ -32,13 +32,9 @@ header.main {
   .fade {
     position: relative;
   }
-  .mb-main .section01 .inner .textWrap .text.visible {
-    opacity: 1;
-  }
+
   /* header */
   header.main {
-    position: unset;
-
     background: #000 !important;
   }
   /* mb-main */
@@ -54,6 +50,7 @@ header.main {
     width: 100%;
     height: 639px;
     position: relative;
+    overflow: hidden;
   }
   .mb-main .section01 .inner .textWrap {
     padding: 0 20px;

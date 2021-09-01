@@ -259,7 +259,7 @@ section {
   height: auto;
   position: relative;
 }
-.video-js .vjs-big-play-button {
+#abGround .video-js .vjs-big-play-button {
   width: 115px !important;
   height: 115px !important;
   border: none !important;
@@ -268,7 +268,7 @@ section {
   background-image: url(../assets/ABGround/icon_p02_play.svg);
   box-sizing: border-box;
 }
-.video-js .vjs-big-play-button > * {
+#abGround .video-js .vjs-big-play-button > * {
   display: none;
 }
 
@@ -863,6 +863,9 @@ section {
 }
 
 @media (max-width: 1280px) {
+  .scrollBtn {
+    bottom: 15%;
+  }
   .section01.normal .normal-image-bg {
     display: none;
   }
@@ -905,6 +908,9 @@ section {
   }
   .section01 .inner h1 {
     font-size: 54px;
+  }
+  .section01.normal .inner h1 {
+    margin-top: 0;
   }
 
   .section01 .inner p {
@@ -974,17 +980,17 @@ section {
     margin: 0 auto;
     width: 100%;
   }
-  .video-play-button:before {
+  #abGround .video-play-button:before {
     width: 36px;
     height: 36px;
   }
-  .video-js .vjs-big-play-button {
+  #abGround .video-js .vjs-big-play-button {
     width: 36px !important;
     height: 36px !important;
     transform: translate(-50%, -50%) !important;
     margin-top: 0 !important;
     margin-left: 0 !important;
-    display: none;
+    /* display: none; */
   }
 
   .pauseBtn span {

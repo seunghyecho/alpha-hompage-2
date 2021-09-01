@@ -29,6 +29,15 @@ header.main {
 }
 
 @media (max-width: 1280px) {
+  @supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */
+    .pauseBtn {
+      opacity: 0;
+      visibility: hidden;
+      display: none;
+    }
+  }
+
   .fade {
     position: relative;
   }

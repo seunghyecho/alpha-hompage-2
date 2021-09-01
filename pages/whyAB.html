@@ -45,6 +45,16 @@
       type="text/javascript"
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
+
+    <!-- html5 기반 video player -->
+    <link
+      href="https://unpkg.com/video.js/dist/video-js.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+    <script>
+      window.HELP_IMPROVE_VIDEOJS = false;
+    </script>
   </head>
 
   <body>
@@ -167,14 +177,26 @@
           </div>
           <div class="sectionImg mb">
             <video
+              id="video"
               class="video"
               src="../assets/video/mb_03_2.mp4"
               muted
               autoplay
               loop
+              muted="muted"
+              autoplay="autoplay"
+              loop="loop"
               playsinline
               width="100%"
               poster="../assets/video/mb_03_2_thumbnail.png"
+            ></video>
+            <video
+              id="whyab_Video"
+              class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid"
+              muted
+              autoplay
+              loop
+              webkit-playsinline
             ></video>
           </div>
           <p class="mb">
@@ -812,6 +834,30 @@
 </html>
 
 <script>
+  var player = videojs("whyab_Video", {
+    sources: [{ src: "../assets/video/mb_03_2.mp4", type: "video/mp4" }],
+    poster: "../assets/video/mb_03_2_thumbnail.png",
+    controls: false,
+    playsinline: true,
+    muted: false,
+    preload: "metadata",
+    autoplay: true,
+    loop: true,
+    height: 318,
+    width: 318,
+    controlBar: {
+      playToggle: true,
+      pictureInPictureToggle: true,
+      remainingTimeDisplay: true,
+      progressControl: true,
+      fullscreenToggle: false,
+    },
+  });
+
+  var video = document.querySelector("video");
+  console.log(video);
+  video.play();
+
   jQuery(document).ready(function () {
     $(window).on("scroll", function () {
       var height = $(document).scrollTop();

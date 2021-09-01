@@ -36,6 +36,9 @@
 
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/index.js"></script>
+    <script>
+      document.getElementById("video").play();
+    </script>
   </head>
 
   <body class="bodyFix">
@@ -80,11 +83,12 @@
       <section class="section01">
         <div class="inner">
           <video
+            id="video"
             class="video graphic-item"
             src="assets/video/mb_01_2.mp4"
-            muted
-            autoplay
-            loop
+            muted="muted"
+            autoplay="autoplay"
+            loop="loop"
             playsinline
             width="100%"
             poster="assets/video/MOBILE_vid01_2_thumbnail.png"

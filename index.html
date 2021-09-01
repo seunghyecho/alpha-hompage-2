@@ -671,50 +671,37 @@
   jQuery(document).ready(function () {
     if ($(window).width() < 1200) {
       $("header").addClass("fixed");
+      //모바일 메인 div 스크롤 방지
+      $(".bodyFix").css("overflow-y", "hidden");
     }
-  });
+    var $mb_main_section01_mainText01 = $(".mb-main .section01 .mainText01");
+    var $mb_main_section01_mainText02 = $(".mb-main .section01 .mainText02");
 
-  // 모바일 메인 스크롤-------------------------------------------
+    $mb_main_section01_mainText01.css({ opacity: "1" });
+    $mb_main_section01_mainText02.css({ opacity: "0" });
 
-  const textElems = document.querySelectorAll(".text");
+    // 모바일 메인 스크롤-------------------------------------------
 
-  const graphicElems = document.querySelectorAll(".graphic-item");
-  let currentItem = textElems[0];
-  let ioIndex;
-
-  const io = new IntersectionObserver((entries, observer) => {
-    ioIndex = entries[0].target.dataset.index * 1;
-  });
-
-  for (let i = 0; i < textElems.length; i++) {
-    io.observe(textElems[i]);
-    textElems[i].dataset.index = i;
-  }
-  function activate(action) {
-    currentItem.classList.add("visible");
-  }
-
-  function inactivate(action) {
-    currentItem.classList.remove("visible");
-  }
-
-  window.addEventListener("scroll", () => {
-    let text;
-    let boundingRect;
-
-    for (let i = ioIndex; i < ioIndex + 1; i++) {
-      text = textElems[i];
-      if (!text) continue;
-      boundingRect = text.getBoundingClientRect();
-
-      if (
-        boundingRect.top > window.innerHeight * 0.1 &&
-        boundingRect.top < window.innerHeight * 0.8
-      ) {
-        inactivate(currentItem.dataset.action);
-        currentItem = textElems[text.dataset.index];
-        activate(currentItem.dataset.action);
+    function mobile_main_txt_event() {
+      if ($mb_main_section01_mainText02.css("opacity") == 0) {
+        $mb_main_section01_mainText01
+          .stop()
+          .animate({ opacity: "0", margin: "-50px 0 0 0" }, 500, function () {
+            $mb_main_section01_mainText02
+              .stop()
+              .animate(
+                { opacity: "1", margin: "-50px 0 0 0" },
+                500,
+                function () {
+                  // Animation complete.
+                  $(".bodyFix").css("overflow-y", "auto");
+                }
+              );
+          });
       }
     }
+    $("body").on("touchstart", function (e) {
+      mobile_main_txt_event();
+    });
   });
 </script>

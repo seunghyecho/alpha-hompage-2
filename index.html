@@ -83,7 +83,7 @@
       <section class="section01">
         <div class="inner">
           <video
-            class="video"
+            class="video graphic-item"
             src="assets/video/mb_01_2.mp4"
             muted
             autoplay
@@ -93,7 +93,7 @@
             poster="assets/video/MOBILE_vid01_2_thumbnail.png"
           ></video>
           <div class="textWrap">
-            <div class="text mainText01">
+            <div class="text mainText01 visible">
               <h1>
                 투자에만 머물던<br />
                 엑셀러레이팅의<br />
@@ -672,51 +672,49 @@
     if ($(window).width() < 1200) {
       $("header").addClass("fixed");
     }
-    var $mb_main_section01_mainText01 = $(".mb-main .section01 .mainText01");
-    var $mb_main_section01_mainText02 = $(".mb-main .section01 .mainText02");
+  });
 
-    $mb_main_section01_mainText01.css({ opacity: "1" });
-    $mb_main_section01_mainText02.css({ opacity: "0" });
+  // 모바일 메인 스크롤-------------------------------------------
 
-    // 모바일 메인 스크롤-------------------------------------------
+  const textElems = document.querySelectorAll(".text");
 
-    function mobile_main_txt_event() {
-      $(".section01").css({ overflow: "hidden" });
-      $mb_main_section01_mainText01
-        .stop()
-        .animate({ opacity: "0", margin: "-50px 0 0 0" }, 500, function () {
-          $mb_main_section01_mainText02
-            .stop()
-            .animate({ opacity: "1", margin: "-50px 0 0 0" }, 500);
-        });
-    }
+  const graphicElems = document.querySelectorAll(".graphic-item");
+  let currentItem = textElems[0];
+  let ioIndex;
 
-    window.addEventListener("scroll", function () {
-      console.log("스크롤 이벤트 감지!!");
+  const io = new IntersectionObserver((entries, observer) => {
+    ioIndex = entries[0].target.dataset.index * 1;
+  });
 
-      var height = $(document).scrollTop();
-      var $mb_main = document.getElementsByClassName("mb-main")[0];
-      var $section01 = document.getElementsByClassName("section01")[0];
+  for (let i = 0; i < textElems.length; i++) {
+    io.observe(textElems[i]);
+    textElems[i].dataset.index = i;
+  }
+  function activate(action) {
+    currentItem.classList.add("visible");
+  }
 
-      // 부모 요소와의 거리
-      const distanceBetweenParentAndChild =
-        $section01.getBoundingClientRect().top -
-        $mb_main.getBoundingClientRect().top;
+  function inactivate(action) {
+    currentItem.classList.remove("visible");
+  }
 
-      console.log("부모 요소와의 거리", distanceBetweenParentAndChild);
+  window.addEventListener("scroll", () => {
+    let text;
+    let boundingRect;
 
-      //mainText02 가 나타나기 전에는 스크롤 처리 안되도록 추가
-      if ($mb_main_section01_mainText02.css("opacity") == 0) {
-        $(".mb-main").one("scroll touchmove mousewheel", function (e) {
-          //scroll event 전파 막기
-          e.preventDefault();
-          e.stopPropagation();
+    for (let i = ioIndex; i < ioIndex + 1; i++) {
+      text = textElems[i];
+      if (!text) continue;
+      boundingRect = text.getBoundingClientRect();
 
-          return false;
-        });
-        //mobile main text event 처리
-        mobile_main_txt_event();
+      if (
+        boundingRect.top > window.innerHeight * 0.1 &&
+        boundingRect.top < window.innerHeight * 0.8
+      ) {
+        inactivate(currentItem.dataset.action);
+        currentItem = textElems[text.dataset.index];
+        activate(currentItem.dataset.action);
       }
-    });
+    }
   });
 </script>

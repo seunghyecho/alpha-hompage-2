@@ -32,6 +32,9 @@ header.main {
   .fade {
     position: relative;
   }
+  .mb-main .section01 .inner .textWrap .text.visible {
+    opacity: 1;
+  }
   /* header */
   header.main {
     position: unset;
@@ -66,6 +69,7 @@ header.main {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    opacity: 0;
   }
 
   .mb-main .section01 .inner .textWrap .text h1 {

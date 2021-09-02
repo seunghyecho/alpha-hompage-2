@@ -176,7 +176,7 @@
             ></video>
           </div>
           <div class="sectionImg mb">
-            <video
+            <!-- <video
               id="video"
               class="video"
               src="../assets/video/mb_03_2.mp4"
@@ -189,15 +189,8 @@
               playsinline
               width="100%"
               poster="../assets/video/mb_03_2_thumbnail.png"
-            ></video>
-            <video
-              id="whyab_Video"
-              class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid"
-              muted
-              autoplay
-              loop
-              webkit-playsinline
-            ></video>
+            ></video> -->
+            <img src="../assets/video/mb_03_2_SparkVideo.gif" alt="" />
           </div>
           <p class="mb">
             최적의 PMF을 도출할 때까지 끊임없이 MVP를 제작하고 지속적으로 사업의
@@ -834,31 +827,9 @@
 </html>
 
 <script>
-  var player = videojs("whyab_Video", {
-    sources: [{ src: "../assets/video/mb_03_2.mp4", type: "video/mp4" }],
-    poster: "../assets/video/mb_03_2_thumbnail.png",
-    controls: false,
-    playsinline: true,
-    muted: false,
-    preload: "metadata",
-    autoplay: true,
-    loop: true,
-    height: 318,
-    width: 318,
-    controlBar: {
-      playToggle: true,
-      pictureInPictureToggle: true,
-      remainingTimeDisplay: true,
-      progressControl: true,
-      fullscreenToggle: false,
-    },
-  });
-
-  var video = document.querySelector("video");
-  console.log(video);
-  video.play();
-
   jQuery(document).ready(function () {
+    console.log(document);
+
     $(window).on("scroll", function () {
       var height = $(document).scrollTop();
       var _scrollTop = window.scrollY || document.documentElement.scrollTop;

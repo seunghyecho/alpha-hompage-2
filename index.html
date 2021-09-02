@@ -669,18 +669,18 @@
 </html>
 <script>
   jQuery(document).ready(function () {
-    if ($(window).width() < 1200) {
-      $("header").addClass("fixed");
-      //모바일 메인 div 스크롤 방지
-      $(".bodyFix").css("overflow-y", "hidden");
-    }
+    // 모바일 메인 인터렉션
     var $mb_main_section01_mainText01 = $(".mb-main .section01 .mainText01");
     var $mb_main_section01_mainText02 = $(".mb-main .section01 .mainText02");
 
     $mb_main_section01_mainText01.css({ opacity: "1" });
     $mb_main_section01_mainText02.css({ opacity: "0" });
 
-    // 모바일 메인 스크롤-------------------------------------------
+    if ($(window).width() < 1200) {
+      $("header").addClass("fixed");
+      //모바일 메인 div 스크롤 방지
+      $(".bodyFix").css("overflow-y", "hidden");
+    }
 
     function mobile_main_txt_event() {
       if ($mb_main_section01_mainText02.css("opacity") == 0) {

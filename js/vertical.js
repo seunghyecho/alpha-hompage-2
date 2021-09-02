@@ -1,13 +1,26 @@
 // pc progressbar 높이 540
 $(document).ready(function () {
-  var $slider_pc = $(".section04 .pc .scroll-slider");
-  var $progressBar = $(".section04 .pc .progress");
-  var $progressBarLabel = $(".section04 .pc .slider__label");
+  var $slider = $(".section04 .scroll-slider");
 
-  var _abGround_section04 = $("#abGround .section04").offset().top;
-  console.log(_abGround_section04);
+  var $progressBar_pc = $(".section04 .pc .progress");
+  var $progressBar_mb = $(".section04 .mb .progress");
+
+  var $progressBarHeight_pc = $progressBar_pc.children("span").height();
+  var $progressBarHeight_mb = $progressBar_mb.children("span").height();
+
+  $slider.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    speed: 400,
+    infinite: false,
+    vertical: true,
+    verticalSwiping: true,
+    arrows: false,
+    cssEase: "linear",
+  });
 
   if ($(window).width() > 1200) {
+    // pc
     var scroll_action = "down";
     //scroll 위치가 section4 에 있고 slide 가 마지막 일 때만 스크롤이 작동되도록
     $(window).scroll(function (event) {
@@ -24,11 +37,9 @@ $(document).ready(function () {
       var section04_bottom = document
         .querySelector(".section04")
         .getBoundingClientRect().bottom;
-      // console.log( "section04_top : " + section04_top + "/// section04_bottom : " + section04_bottom );
 
       var section04_offset = document.querySelector(".section04").offsetTop;
       var section05_offset = document.querySelector(".section05").offsetTop;
-      // console.log("section04_offset : " + section04_offset);
 
       //slide 영역별 위치 지정
       if (
@@ -54,7 +65,7 @@ $(document).ready(function () {
             var delta = e.originalEvent.deltaY;
             if (delta > 0) {
               //mouser scroll up
-              $slider_pc.slick("slickNext");
+              $slider.slick("slickNext");
               change_slide_index = $(".slick-current").data("slick-index");
               if (change_slide_index == 3) {
                 //추가된 부분
@@ -68,7 +79,7 @@ $(document).ready(function () {
                 $("#abGround").off("scroll touchmove mousewheel");
               }
             } else {
-              $slider_pc.slick("slickPrev");
+              $slider.slick("slickPrev");
               change_slide_index = $(".slick-current").data("slick-index");
               if (change_slide_index == 0) {
                 //추가된 부분
@@ -82,58 +93,27 @@ $(document).ready(function () {
         }
       }
     });
+    // pc progressBar
+    $slider.on(
+      "beforeChange",
+      function (event, slick, currentSlide, nextSlide) {
+        if (event.cancelable) event.preventDefault();
+
+        var calc = 25 + (nextSlide / slick.slideCount) * 100;
+        $progressBar_pc.css("height", calc * $progressBarHeight_pc * 0.01);
+      }
+    );
+  } else if ($(window).width() < 1200) {
+    // mb
+    // mb progressBar
+    $slider.on(
+      "beforeChange",
+      function (event, slick, currentSlide, nextSlide) {
+        if (event.cancelable) event.preventDefault();
+
+        var calc = 25 + (nextSlide / slick.slideCount) * 100;
+        $progressBar_mb.css("height", calc * $progressBarHeight_mb * 0.01);
+      }
+    );
   }
-
-  $slider_pc.on(
-    "beforeChange",
-    function (event, slick, currentSlide, nextSlide) {
-      if (event.cancelable) event.preventDefault();
-
-      var calc = 25 + (nextSlide / slick.slideCount) * 100;
-
-      $progressBar.css("height", calc * 540 * 0.01);
-      $progressBarLabel.text(calc + "% completed");
-    }
-  );
-
-  $slider_pc.slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    speed: 400,
-    infinite: false,
-    vertical: true,
-    verticalSwiping: true,
-    arrows: false,
-    cssEase: "linear",
-  });
-});
-
-// mb progressbar 높이 200
-$(document).ready(function () {
-  var $slider_mb = $(".section04 .mb .scroll-slider");
-  var $progressBar = $(".section04 .mb .progress");
-  var $progressBarLabel = $(".section04 .mb .slider__label");
-
-  $slider_mb.on(
-    "beforeChange",
-    function (event, slick, currentSlide, nextSlide) {
-      if (event.cancelable) event.preventDefault();
-      var calc = 25 + (nextSlide / slick.slideCount) * 100;
-
-      $progressBar.css("height", calc * 200 * 0.01);
-
-      $progressBarLabel.text(calc + "% completed");
-    }
-  );
-
-  $slider_mb.slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    speed: 400,
-    infinite: false,
-    vertical: true,
-    verticalSwiping: true,
-    arrows: false,
-    cssEase: "linear",
-  });
 });

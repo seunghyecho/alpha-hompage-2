@@ -1144,27 +1144,6 @@
   });
 
   jQuery(document).ready(function () {
-    var allPanels = $(".section06 .des");
-    var openBtn = $(".section06 .openBtn");
-
-    openBtn.on("click", function (e) {
-      e.preventDefault();
-      allPanels.slideUp();
-
-      $(this).toggleClass("on");
-
-      if ($(this).hasClass("on")) {
-        $(this).parent().next().slideDown();
-        $(this)
-          .parent()
-          .parent()
-          .siblings()
-          .find("a > button")
-          .removeClass("on");
-      }
-      return false;
-    });
-
     $(".section05-slider").slick({
       arrows: false,
       dots: false,
@@ -1255,6 +1234,28 @@
         $section06_h1.addClass("animate__fadeInUp");
         $section06_item.addClass("animate__fadeInUp");
       }
+    });
+
+    // section06 추가 js
+    var allPanels = $(".section06 .des");
+    var openBtn = $(".section06 .openBtn");
+
+    openBtn.on("click", function (e) {
+      e.preventDefault();
+      allPanels.slideUp();
+
+      $(this).toggleClass("on");
+
+      if ($(this).hasClass("on")) {
+        $(this).parent().next().slideDown();
+        $(this)
+          .parent()
+          .parent()
+          .siblings()
+          .find("a > button")
+          .removeClass("on");
+      }
+      return false;
     });
   });
 </script>

@@ -1,12 +1,14 @@
 jQuery(document).ready(function () {
-  console.log("hihi");
+  console.log("alpha");
 
+  // 새로고침 시 최상단 이동
   window.onload = function () {
     setTimeout(function () {
       scrollTo(0, 0);
     }, 100);
   };
 
+  // 페이지 진입 시 메뉴 스타일 적용
   var url = window.location.pathname,
     urlRegExp = new RegExp(url.replace(/\/$/, ""));
 
@@ -16,7 +18,34 @@ jQuery(document).ready(function () {
     }
   });
 
-  //약관, 개인정보, 모바일메뉴 팝업------------------------------
+  // 헤더 스크롤
+  $(window).scroll(function () {
+    var height = $(document).scrollTop();
+    // pc header
+    if (height > 100) {
+      $("header").addClass("fixed");
+    } else {
+      $("header").removeClass("fixed");
+    }
+  });
+
+  // 아래 화살표 버튼
+  $(".scrollBtn").on("click", function (e) {
+    var height = $(document).scrollTop();
+    var $section02 = $("#section02").offset().top;
+
+    e.preventDefault();
+
+    $("body, html").stop().animate(
+      {
+        scrollTop: $section02,
+      },
+      "fast"
+    );
+    return false;
+  });
+
+  //약관, 개인정보, 모바일메뉴 팝업------------------------------------------
   var popup = $(".popup");
   popup.hide();
 
@@ -101,44 +130,5 @@ jQuery(document).ready(function () {
     gnb_menu02.removeAttr("style");
     gnb_menu03.removeAttr("style");
     gnb_menu04.removeAttr("style");
-  });
-
-  // 헤더 스크롤-------------------------------------------
-
-  $(window).scroll(function () {
-    var height = $(document).scrollTop();
-    // pc header
-    if (height > 100) {
-      $("header").addClass("fixed");
-    } else {
-      $("header").removeClass("fixed");
-    }
-
-    // mobile header
-    // if (height > $("header").height()) {
-    //   $("header").addClass("fixed");
-    //   $(".mb-main").css({ position: "relative" });
-    // } else {
-    //   $("header").removeClass("fixed");
-    //   $(".mb-main").css({ position: "relative" });
-    // }
-  });
-
-  // scrollBtn 각 페이지 아래 화살표 버튼
-  // scroll-smooth css - Safari 미지원
-
-  $(".scrollBtn").on("click", function (e) {
-    var height = $(document).scrollTop();
-    var $section02 = $("#section02").offset().top;
-
-    e.preventDefault();
-
-    $("body, html").stop().animate(
-      {
-        scrollTop: $section02,
-      },
-      "fast"
-    );
-    return false;
   });
 });
